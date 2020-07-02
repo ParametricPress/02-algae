@@ -21,7 +21,7 @@
     "d3": "^5.15.0",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
-    "parametric-components": "^2.1.9",
-    "parametric-styles": "^2.1.5"
+    "parametric-components": "^2.1.10",
+    "parametric-styles": "^2.1.6"
   }
 }

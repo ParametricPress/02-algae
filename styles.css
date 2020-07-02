@@ -206,8 +206,6 @@ input[type=range]:focus::-ms-fill-upper {
   top: 0;
   border-bottom: solid 1px #222222;
   background-color: #ADADAD;
-  margin: 0;
-  padding: 0.5em 50px;
   color: #222222;
 }
 
@@ -295,4 +293,9 @@ button {
 
 .parametric-header-hed-text {
   border-bottom-color: #ADADAD;
+}
+
+.parametric-issue-toc {
+  line-height: 1.2;
+  color: #222222;
 }
