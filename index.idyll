@@ -31,7 +31,9 @@ The Intergovernmental Panel on Climate Change (IPCC) has published six assessmen
 
 The IPCC has outlined four potential pathways for how the world can avoid the irreversible consequences of 1.5 - 2 degrees C warming over the next decade. According to their research, if we have a chance of staying below 1.5 degrees, it won’t be by simply reducing emissions: we also need to be actively removing CO₂ from the atmosphere. All four of the IPCC’s pathways to a world below 1.5 degrees of warming require both reducing and removing CO₂.
 
+[Aside]
 [img src: "static/images/hero.png" /]
+[Aside /]
 
 The IPCC recommendations roughly fall under two categories: reduction and removal of CO₂. Methods of reduction you’ve likely heard of: solar panels, windmills, plant-based diets. At a global scale these changes would reduce the amount of energy we use and limit our reliance on fossil fuels. 
 
@@ -42,31 +44,53 @@ This is a story about how we could get there; a story about trees and algae and 
 
 ## The hope of a trillion trees
 
-At Davos this year, the World Economic Forum announced a [a href:"https://www.1t.org/"]plan to plant one trillion trees[/a]] over the next decade. The campaign received widespread approval and enthusiasm from attendees, and even got a stamp of approval from President Trump in his State of the Union. (This may seem surprising to many coming from the man who notoriously [a href:"https://www.nytimes.com/2019/11/04/climate/trump-paris-agreement-climate.html"]tried to withdraw[/a]] the US from the Paris Agreement on coordinated climate action.) But as we'll see, the possibility of even planting a trillion trees may be more of a romantic pipedream than an achievable reality.
+At Davos this year, the World Economic Forum announced a [link text:"plan to plant one trillion trees" url:"https://www.1t.org/"/] over the next decade. The campaign received widespread approval and enthusiasm from attendees, and even got a stamp of approval from President Trump in his State of the Union. (This may seem surprising to many coming from the man who notoriously [link text:"tried to withdraw" url:"https://www.nytimes.com/2019/11/04/climate/trump-paris-agreement-climate.html" /] the US from the Paris Agreement on coordinated climate action.) But as we'll see, the possibility of even planting a trillion trees may be more of a romantic pipedream than an achievable reality.
 
-More trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and amount of CO₂ removed are planting more trees (reforestation) and keeping the trees we have now from being destroyed (avoided forest conversion). The "trillion" target for number of new trees planted is also supported by research: [The global tree restoration potential](https://science.sciencemag.org/content/365/6448/76), a study published last year in Science, claimed that planting 1.2 trillion tree saplings on 1.7 billion hectares could remove "two-thirds of all the emissions from human activities that remain in the atmosphere today."
+More trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and amount of CO₂ removed are planting more trees (reforestation) and keeping the trees we have now from being destroyed (avoided forest conversion). The "trillion" target for number of new trees planted is also supported by research: [a href:"https://science.sciencemag.org/content/365/6448/76"]The global tree restoration potential[/a], a study published last year in Science, claimed that planting 1.2 trillion tree saplings on 1.7 billion hectares could remove "two-thirds of all the emissions from human activities that remain in the atmosphere today." For scale, this would be the equivalent of reforesting an area of land the size of the United States and Canada combined.
 
 Trees, and plants in general, are very good at the removing CO₂ part of our fight against irreversible climate change. Many people categorize this as a viable carbon sequestration method. But there's a problem with planting a trillion trees: we need the land to do it.
 
 ## A trillion trees fall short
 
-Shortly after releasing the study claiming that 1.7 billion hectares of new forests could drastically reduce emissions, the authors of the study received [a series of sharp rebuttals](https://science.sciencemag.org/content/366/6463/eaay8060/tab-pdf) from the scientific community. Critics claim that the study drastically overestimated the amount of carbon sequestered by trees; alternative models suggest it's closer to half of what was projected.
+Shortly after releasing the study claiming that 1.7 billion hectares of new forests could drastically reduce emissions, the authors of the study received [a href:"https://science.sciencemag.org/content/366/6463/eaay8060/tab-pdf"] series of sharp rebuttals[/a] from the scientific community. Critics claim that the study drastically overestimated the amount of carbon sequestered by trees; alternative models suggest it's closer to half of what was projected.
 
 But model estimates aside, the trillion tree plan has a few other significant drawbacks: time and scale. Let's look at time first.
 
-Travel booking app Hopper [announced](https://media.hopper.com/news/introducing-hopper-trees) earlier this year that for every flight booked through their app, they will donate money to plant four trees. Their back-of-the-envelope math estimates that one tree will sequester around a metric ton of carbon dioxide, which would offset a return trip from a single passenger in the air on a cross country flight. But there's a problem: trees don't spring into the earth fully grown, sucking their max amount of carbon out of the atmosphere. Best case estimates show that it will take [around 25 years](https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/) before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight. So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate.
+Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hopper-trees"]announced[/a] earlier this year that for every flight booked through their app, they will donate money to plant four trees. Their back-of-the-envelope math estimates that one tree will sequester around a metric ton of carbon dioxide, which would offset a return trip from a single passenger in the air on a cross country flight. But there's a problem: trees don't spring into the earth fully grown, sucking their max amount of carbon out of the atmosphere. 
 
-The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States. But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
+Best case estimates show that it will take [a href:"https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/"]around 25 years[/a] before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight (some trees can take up to 100 years to mature fully). So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate. A team of scientists at NASA [a href:"https://climate.nasa.gov/news/2927/examining-the-viability-of-planting-trees-to-help-mitigate-climate-change/"]estimate[/a] that reforesting 1.7 billion hectares of new trees between one and two thousand years.
 
-To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [report](https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change) this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
+The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from Nature would require land the size of the US plus Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
+
+To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [a href:"https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change"]report[/a] this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
 
 Converting farmland is not an isolated effort either: Reducing traditional crops by around 20% means the government will also count on people to adopt low-carbon farming practices, reduce food waste, and make diet changes described as "a 20% shift away from beef, lamb and dairy to alternative protein sources".
 
 If you apply this concept across the world, the amount of farmland we need to convert is daunting. According to the IPCC report, over 70% of Earth's ice-free land is being used or shaped by human activity. Around 25-30% of this usable land is going straight to producing food, raising cattle, growing cotton for clothes, and energy production.
 
-On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them (which as we saw in 2019, can be challenging). Deforestation in the Amazon rainforest[  rose by nearly 30% in 2019](https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK). (Elsewhere, bushfires in Australia emitted[  nearly half](https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions) of the country's annual emissions, and that's on top of Australia's usual CO₂ output.)
+On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a], and bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"]nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output.)
 
-[img src:"static/images/hero.png" /]
+[data name:"treeloss" source:"treeloss_by_category.csv" /]
+
+[Table data:treeloss /]
+
+[IdyllVegaLite data:treeloss spec:`{
+  mark: "line",
+  width: 400,
+  encoding: {
+    x: {
+      field: "umd_tree_cover_loss__year",
+      type: "temporal",
+      axis: {format:"%y"}
+    },
+    y: {
+      field: "umd_tree_cover_loss__ha",
+      type: "quantitative",
+      axis: {title: "Tree loss"},
+      // scale: { domain: [575, 582] }
+    }
+  }
+}` /]
 
 Planting trees is unquestionably a good idea, but it’s likely not the “silver bullet” solution to fighting climate change. We also need to be pursuing new technologies and methods of capturing carbon from the atmosphere like direct carbon capture from the air. And maybe, we might find inspiration for tackling one of humanity’s biggest technical challenges in one of Earth’s smallest life forms: algae.
 
@@ -76,71 +100,71 @@ You've probably seen algae before---it's floating about on ponds and washing up 
 
 In recent years, there has been a growing interest in how we can use algae like we use trees to suck carbon dioxide out of our atmosphere. Except with algae, there are different possibilities: due to its size and composition, algae excels at a special type of carbon removal method called bioenergy with carbon capture and storage (BECCS). This means that researchers are studying two things: 1) how we can use algae to remove carbon and 2) how we can use the captured carbon for something else, such as fuel, food, and heat.
 
-Some researchers have criticized BECCS as being too premature for industrial scale solutions since these types of solutions have often not been demonstrated at a commercial scale.  Regardless of being a younger research solution, scientists agree that in the long term BECCS is no longer an optional piece to solving the climate crisis. In the latest IPCC [assessment report](http://ar5-syr.ipcc.ch/topic_summary.php) published in 2014, 101 of the 116 scenarios that achieved a "likely" chance of staying below 2C relied on BECCS. And [67% of these scenarios](http://www.nature.com/nclimate/journal/v4/n10/full/nclimate2392.html) said BECCS would represent at least 20% of the world's primary energy by 2100.
+Some researchers have criticized BECCS as being too premature for industrial scale solutions since these types of solutions have often not been demonstrated at a commercial scale.  Regardless of being a less developed research solution, scientists agree that in the long term BECCS is no longer an optional piece to solving the climate crisis. In the latest IPCC [a href:"http://ar5-syr.ipcc.ch/topic_summary.php"]assessment report[/a] published in 2014, 101 of the 116 scenarios that achieved a "likely" chance of staying below 2C relied on BECCS. And [a href:"http://www.nature.com/nclimate/journal/v4/n10/full/nclimate2392.html"]67% of these scenarios[/a] said BECCS would represent at least 20% of the world's primary energy by 2100.
 
 Algae presents one of the most promising BECCS candidates to date.
 
 Here are a few reasons why we're so interested in algae as a possible climate change solution:
 
--   Usually, it's small. Algae uses far less land than trees, which is great because as we've already seen, land is in short supply. It [tends to produce](https://news.cornell.edu/stories/2017/03/microalgae-could-play-key-role-relieving-climate-warming) an equal amount of bioenergy to terrestrial plants using only 1/10th of the land area. While most algae is small, but giant sea kelp can grow up to 100ft.
+-   Usually, it's small. Algae uses far less land than trees, which is great because as we've already seen, land is in short supply. It [a href:"https://news.cornell.edu/stories/2017/03/microalgae-could-play-key-role-relieving-climate-warming"]tends to produce[/a] an equal amount of bioenergy to terrestrial plants using only 1/10th of the land area. While most algae is small, but giant sea kelp can grow up to 100ft.
 
--   It's easy to grow. Growing microalgae [consumes less water](https://aiche.onlinelibrary.wiley.com/doi/full/10.1021/bp070371k) than many land crops and they also are not picky about where they grow. Algae has been shown to thrive in areas where other plants die, such as wastewater and saltwater.
+-   It's easy to grow. Growing microalgae [a href:"https://aiche.onlinelibrary.wiley.com/doi/full/10.1021/bp070371k"]consumes less water[/a] than many land crops and they also are not picky about where they grow. Algae has been shown to thrive in areas where other plants die, such as wastewater and saltwater.
 
--   It thrives in very high CO₂ environments. One acre of algae should be able to remove about [2.7 tons/day of CO₂](https://www.intechopen.com/books/algae/co-sub-2-sub-capture-for-industries-by-algae#B2). Certain species of microalgae have also been shown to efficiently remove CO₂ in environments at a rate of [10-50 times higher](https://aiche.onlinelibrary.wiley.com/doi/full/10.1021/bp070371k) than terrestrial plants.
+-   It thrives in very high CO₂ environments. One acre of algae should be able to remove about [a href:"https://www.intechopen.com/books/algae/co-sub-2-sub-capture-for-industries-by-algae#B2"]2.7 tons/day of CO₂[/a]. Certain species of microalgae have also been shown to efficiently remove CO₂ in environments at a rate of [a href:"https://aiche.onlinelibrary.wiley.com/doi/full/10.1021/bp070371k"]10-50 times higher[/a] than terrestrial plants.
 
-It has many uses. Algae can be converted into fuel, food, energy and more, all within a much smaller space. One [study](https://spectrum.ieee.org/energy/environment/new-tech-could-turn-algae-into-the-climates-slimy-savior) showed that compared to a crop like soybeans, a single hectare of algae ponds generates 27 times as much protein.
+It has many uses. Algae can be converted into fuel, food, energy and more, all within a much smaller space. One [a href:"https://spectrum.ieee.org/energy/environment/new-tech-could-turn-algae-into-the-climates-slimy-savior"]study[/a] showed that compared to a crop like soybeans, a single hectare of algae ponds generates 27 times as much protein.
 
 ## Uses of algae
 
-Perhaps even more impressive than algae’s ability to sequester carbon is its potential for being used after it has captured carbon. Instead of sinking it to the bottom of an ocean, for example, scientists are finding all sorts of ways to use the bioenergy from algae in creative and sustainable ways.
+Perhaps even more impressive than algae’s ability to sequester carbon is its potential for being used after it has captured carbon. When discussing methods of carbon capture, some scientists advocate for burying the resulting carbon away in hopes that it doesn’t return to the atmosphere. But with algae, instead of sinking it to the bottom of an ocean, for example, scientists are finding all sorts of ways to use the bioenergy from algae in creative and sustainable ways.
 
 Algae has a number of byproducts that can be used as biofuels for transportation, building materials, feed for animals and humans, and clothing. This is the crucial part of a BECCS technology: once you capture the CO₂, you need to figure out what to do with it. Otherwise, the CO₂ will find its way back into the atmosphere, just like when a tree dies at the end of its life (or more tragically, is burned). 
 
-[img src:"static/images/hero.png" /]
+[Aside]
+[img src:"static/images/algae-building.jpg" /]
+[Aside/]
 
-Researchers at Technical University of Munich are currently [converting algae into carbon fiber](https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/) which can be used for buildings and construction. Dutch designers [Eric Klarenbeek and Maartje Dros](https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution) are using algae to create plastics using 3d printing. Commercial companies such as [Pond Technologies](https://sustainablebrands.com/read/cleantech/pond-using-algae-to-turn-co2-to-our-many-advantages) are creating new products based on algae such as animal feed, ingredients for cosmetics, and even seaweed snacks. There is even a [building in Germany](https://newatlas.com/algae-powered-building/27118/) that uses an algae-laced skin around it to power the electricity for the facility. And as research continues, more methods of adapting algae proteins for sustainable usage are sure to emerge.
+Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3d printing. Commercial companies such as [a href:"https://sustainablebrands.com/read/cleantech/pond-using-algae-to-turn-co2-to-our-many-advantages"]Pond Technologies[/a] are creating new products based on algae such as animal feed, ingredients for cosmetics, and even seaweed snacks. There is even a [a href:"https://newatlas.com/algae-powered-building/27118/"]building in Germany[/a] that uses an algae-laced skin around it to power the electricity for the facility. And as research continues, more methods of adapting algae proteins for sustainable usage are sure to emerge.
 
 ## Methods and complications of using algae for carbon capture
 
-So how can scientists use algae to pull CO₂ from the air? Well, much like any other plant, algae uses photosynthesis to take in CO₂, water and sunlight in order to produce energy. But unlike many plants, [most of this energy](https://academic.oup.com/bioscience/article/60/9/722/238034) is devoted to cell division, meaning it is constantly self-replicating into more algae. Since algae does not need to make energy for stems or roots like land plants, it can replicate much faster. This makes it incredibly easy to grow, but also challenging to maintain.
+So how can scientists use algae to pull CO₂ from the air? Well, much like any other plant, algae uses photosynthesis to take in CO₂, water and sunlight in order to produce energy. But unlike many plants, [a href:"https://academic.oup.com/bioscience/article/60/9/722/238034"]most of this energy[/a] is devoted to cell division, meaning it is constantly self-replicating into more algae. Since algae does not need to make energy for stems or roots like land plants, it can replicate much faster. This makes it incredibly easy to grow, but also challenging to maintain.
 
 ### Sinking it in the ocean
 
-One method of growing algae at scale is to use our open oceans. [Research](https://www.nature.com/articles/nature11229) has shown that by adding iron to the ocean, algae will grow in an algae bloom and start to remove CO₂ from the atmosphere. When this algae begins to die, it sinks towards the ocean floor along with the carbon it just sequestered. Once sunk, scientists estimate it could stay there for centuries.
+One method of growing algae at scale is to use our open oceans. [a href:"https://www.nature.com/articles/nature11229"]Research[/a] has shown that by adding iron to the ocean, algae will grow in an algae bloom and start to remove CO₂ from the atmosphere. When this algae begins to die, it sinks towards the ocean floor along with the carbon it just sequestered. Once sunk, scientists estimate it could stay there for centuries.
 
-Critics of this method cite the unintended environmental side effects as too dangerous. The ecological impact of fertilizing the oceans at large are still relatively unknown (for example, the possibility of the CO₂ leaking in the future). Other [studies](https://www.nature.com/news/dumping-iron-at-sea-does-sink-carbon-1.11028) have shown how unrestricted algal blooms can turn toxic, killing ecosystems and valuable marine life.
+Critics of this method cite the unintended environmental side effects as too dangerous. The ecological impact of fertilizing the oceans at large are still relatively unknown (for example, the possibility of the CO₂ leaking in the future). Other [a href:"https://www.nature.com/news/dumping-iron-at-sea-does-sink-carbon-1.11028"]studies[/a] have shown how unrestricted algal blooms can turn toxic, killing ecosystems and valuable marine life.
 
 Some people think the pros of removing CO₂ outweigh the cons. Prof Victor Smetacek at the Alfred Wegener Institute for Polar and Marine Research in Germany, who led a research study on using algae to sink CO₂ to the bottom of the ocean, said, "The time has come to differentiate: some geoengineering techniques are more dangerous than others. Doing nothing is probably the worst option."
 
 ### Grow it in a pond
 
-There are also options to grow algae for carbon sequestration in controlled environments. A [research experiment](https://academic.oup.com/bioscience/article/60/9/722/238034) published in the American Institute of Biological Sciences tested growing algae in a controlled pond environment. The researchers strategically placed this pond next to a fossil-fuel power plant to test its maximum carbon capture potential. They found that in addition to the algae absorbing CO₂, the injection of flue gas from the power plant actually accelerated algae growth, increasing biomass productivity by up to 30%. The downsides of growing algae near power plants come down to cost: despite promising experiments, most energy companies do not consider it worth the investment due to a lack of economic incentives to adopt emerging technologies.
+There are also options to grow algae for carbon sequestration in controlled environments. A [a href:"https://academic.oup.com/bioscience/article/60/9/722/238034"]research experiment[/a] published in the American Institute of Biological Sciences tested growing algae in a controlled pond environment. The researchers strategically placed this pond next to a fossil-fuel power plant to test its maximum carbon capture potential. They found that in addition to the algae absorbing CO₂, the injection of flue gas from the power plant actually accelerated algae growth, increasing biomass productivity by up to 30%. The downsides of growing algae near power plants come down to cost: despite promising experiments, most energy companies do not consider it worth the investment due to a lack of economic incentives to adopt emerging technologies.
 
 VISUALIZE SOME RESULTS FROM THIS STUDY
 
 
 ### Cultivate in a bioreactor
 
-Perhaps the most advanced method of using algae for BECCS is to grow it within a bioreactor. In 2019, artificial intelligence company Hypergiant Industries [released designs](https://newatlas.com/environment/algae-fueled-bioreactor-carbon-sequestration/) for an algae-fueled bioreactor prototype. They claim that by growing a particularly effective strain of algae called chlorella vulgaris inside the bioreactor, the device can soak up to 400x more CO₂ than typical trees.
+Perhaps the most advanced method of using algae for BECCS is to grow it within a bioreactor. In 2019, artificial intelligence company Hypergiant Industries [a href:"https://newatlas.com/environment/algae-fueled-bioreactor-carbon-sequestration/"]released designs[/a] for an algae-fueled bioreactor prototype. They claim that by growing a particularly effective strain of algae called chlorella vulgaris inside the bioreactor, the device can soak up to 400x more CO₂ than typical trees.
 
 The magic of bioreactors lies in the ability to hyper-regulate an environment. The bioreactor is constantly taking measurements of the algae's growth environment, and then using machine learning algorithms to find the perfect balance of light, temperature, and pH levels that algae will flourish under.
 
 ## Think big by thinking small
 
-Here are a couple things that we know: the Earth is getting hotter, and human activity has caused this transition. There are many methods by which we could slow or reduce this warming through natural solutions. And time is absolutely of the essence---a [study in Nature](https://www.nature.com/articles/d41586-020-00571-x) estimates that the past decade has shrunk our time window to minimize the effects of climate change. Instead of 30 years, we now have closer to ten.
+Here are a couple things that we know: the Earth is getting hotter, and human activity has caused this transition. There are many methods by which we could slow or reduce this warming through natural solutions. And time is absolutely of the essence---a [a href:"https://www.nature.com/articles/d41586-020-00571-x"]study in Nature[/a] estimates that the past decade has shrunk our time window to minimize the effects of climate change. Instead of 30 years, we now have closer to ten.
 
 Despite all the benefits of algae listed above, it's time to accept the uncomfortable truth of our time: there is no single solution to climate change. Not a carbon tax, not trees, and not even algae. Given the urgency of our global predicament, we need a coordinated suite of multiple solutions to solve this problem. We need holistic climate solutions, ones that take out the bad stuff (CO₂) while also creating new value---like replacing oil-based plastics with algae-based polymers.
 
 This is the power, and the potential promise, of algae. Rather than the single benefit of reducing CO₂, it is the combination of benefits that matters most: it's small, it can grow wherever there is water, and it contains proteins that can be repurposed into a myriad of different products. But this isn't to say algae alone can save the world; our strategies to counter climate change need to be as diverse and multi-faceted as algae can be. Our ecosystems are deeply interconnected and multifaceted; why shouldn't our climate change strategies look the same way?
 
-
-
-
 [AuthorBio]
 
-[b][a href:""]Your Name[/a][/b] is _TK insert bio here_.
+[b][a href:"https://bendoesdataviz.com"]Benjamin Cooley[/a][/b] is _TK insert bio here_.
 
 Edited by TK editor list.
+
 [/AuthorBio]
 
 [NextArticle slug:parametricSlug fullWidth:true /]
@@ -148,4 +172,4 @@ Edited by TK editor list.
 [Footer fullWidth:true /]
 
 // Uncomment before pub
-// [Analytics google:"UA-139053456-1" tag:parametricSlug /]
+// [Analytics google: "UA-139053456-1" tag:parametricSlug /]
