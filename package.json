@@ -22,7 +22,8 @@
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
+    "p5": "^1.1.9",
     "parametric-components": "^2.1.10",
-    "parametric-styles": "^2.1.6"
+    "parametric-styles": "^2.1.6",
   }
 }

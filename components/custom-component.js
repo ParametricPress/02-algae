@@ -11,7 +11,7 @@ class CustomComponent extends React.Component {
     // `updateProps` is a special function that allows you
     // to send updates back up to Idyll variables.
     this.props.updateProps({
-      clickCount: this.props.clickCount + 1
+      clickCount: this.props.value + 1
     })
   }
 
