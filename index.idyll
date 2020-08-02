@@ -29,11 +29,19 @@
 
 The Intergovernmental Panel on Climate Change (IPCC) has published six assessment reports on future climate scenarios with recommended methods and target reduction rates. The most common of these reports focus on methods by which we can reduce the rate of global warming by 1.5 - 2 degrees C per year. Scientists use these levels as a benchmark: 1.5 - 2 degrees C of warming [a href:"https://www.brookings.edu/opinions/were-almost-out-of-time-the-alarming-ipcc-climate-report-and-what-to-do-next/"]over the next 10 years[/a] will cause irreversible changes to the Earth’s climate.
 
+[data name:"rcp" source:"rcp/rcp_scenario_3.csv" /]
+
+[ParametricGraphic hed:"Header" subhed:"subheader chart" source:"ICCP"]
+[D3LineChart data:rcp /]
+[/ParametricGraphic]
+
 The IPCC has outlined four potential pathways for how the world can avoid the irreversible consequences of 1.5 - 2 degrees C warming over the next decade. According to their research, if we have a chance of staying below 1.5 degrees, it won’t be by simply reducing emissions: we also need to be actively removing CO₂ from the atmosphere. All of the IPCC’s pathways that would lead to a world below 1.5 degrees of warming [a href:"https://www.carbonbrief.org/in-depth-qa-ipccs-special-report-on-climate-change-at-one-point-five-c"]require[/a] both reducing and removing CO₂.
 
-[Aside]
-[img src: "static/images/hero.png" /]
-[/Aside]
+
+[ParametricGraphic hed:"Hello" subhed:"subhead" source:"hhtp"]
+  [img src:"static/images/hero.png" /]
+[/ParametricGraphic]
+
 
 The IPCC recommendations roughly fall under two categories: reduction and removal of CO₂. Methods of reduction you’ve likely heard of: solar panels, windmills, plant-based diets. At a global scale these changes would reduce the amount of energy we use and limit our reliance on fossil fuels. 
 
@@ -72,21 +80,19 @@ If you apply this concept across the world, the amount of farmland we need to co
 
 On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a], and bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"]nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output.)
 
-[data name:"treeloss" source:"treeloss_by_category.csv" /]
-
-[Table data:treeloss /]
+[data name:"treeloss" source:"rcp/rcp_scenario_3.csv" /]
 
 [IdyllVegaLite data:treeloss spec:`{
   mark: "line",
   width: 400,
   encoding: {
     x: {
-      field: "umd_tree_cover_loss__year",
+      field: "years",
       type: "temporal",
       axis: {format:"%y"}
     },
     y: {
-      field: "umd_tree_cover_loss__ha",
+      field: "CO2EQ",
       type: "quantitative",
       axis: {title: "Tree loss"},
       // scale: { domain: [575, 582] }
@@ -124,6 +130,9 @@ Algae has a number of byproducts that can be used as biofuels for transportation
 
 [Aside]
 [img src:"static/images/algae-building.jpg" /]
+[Caption]
+  A building in Germany built with algae-laced walls.
+[/Caption]
 [/Aside]
 
 Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3d printing. Commercial companies such as [a href:"https://sustainablebrands.com/read/cleantech/pond-using-algae-to-turn-co2-to-our-many-advantages"]Pond Technologies[/a] are creating new products based on algae such as animal feed, ingredients for cosmetics, and even seaweed snacks. There is even a [a href:"https://newatlas.com/algae-powered-building/27118/"]building in Germany[/a] that uses an algae-laced skin around it to power the electricity for the facility. And as research continues, more methods of adapting algae proteins for sustainable usage are sure to emerge.
