@@ -72,6 +72,20 @@ Best case estimates show that it will take [a href:"https://www.technologyreview
 
 The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from Nature would require land the size of the US plus Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
 
+
+[FullWidth]
+// [ReactMapGL
+//   width:800
+//   height:400
+//   latitude:47.6062
+//   longitude:-122.3321
+//   zoom:8
+//   mapboxApiAccessToken:"pk.eyJ1IjoiYmNvb2xleSIsImEiOiJja2RkbHIycTIxODlhMnhsMGNxOHd5dHZmIn0.78wTRiX8siEWCrNq4W90Vg"
+//  /]
+ [/FullWidth]
+
+ [CustomMap /]
+
 To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [a href:"https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change"]report[/a] this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
 
 Converting farmland is not an isolated effort either: Reducing traditional crops by around 20% means the government will also count on people to adopt low-carbon farming practices, reduce food waste, and make diet changes described as "a 20% shift away from beef, lamb and dairy to alternative protein sources".
