@@ -26,7 +26,6 @@ class RadarChart extends D3Component {
                     {axis: 'Land', value: 0.667},
                     {axis: 'Direct CO2 Seq', value: 0.963},
                     {axis: 'Cost dir', value: 1},
-                    {axis: 'Cost dir and indir', value: 1},
                     {axis: 'EROI', value: 0.129},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 0.614}
@@ -37,7 +36,6 @@ class RadarChart extends D3Component {
                     {axis: 'Land', value: 1},
                     {axis: 'Direct CO2 Seq', value: 1},
                     {axis: 'Cost dir', value: 0.511},
-                    {axis: 'Cost dir and indir', value: 0.534},
                     {axis: 'EROI', value: 1},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 1}
@@ -47,8 +45,7 @@ class RadarChart extends D3Component {
                 axes: [
                     {axis: 'Land', value: 0.667},
                     {axis: 'Direct CO2 Seq', value: 0.899},
-                    {axis: 'Cost dir', value: 0.329},
-                    {axis: 'Cost dir and indir', value: 0.31},
+                    {axis: 'Cost dir', value: 0.329},                    
                     {axis: 'EROI', value: 0.64},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 0.61}
@@ -66,9 +63,9 @@ class RadarChart extends D3Component {
           margin: margin,
           levels: 5,
           roundStrokes: true,
-          color: d3.scaleOrdinal().range(["#AFC52F", "f8eadd", "#ff6600"]),
+          color: d3.scaleOrdinal().range(["#ff6600", "f8eadd", "#AFC52F"]),
             format: '.0f',
-            legend: { title: 'Organization XYZ', translateX: 110, translateY: 40 },
+            legend: { title: 'Carbon capture method', translateX: 110, translateY: 20 },
             // unit: '$'
         };
 
@@ -79,18 +76,18 @@ class RadarChart extends D3Component {
         ///// Second example /////////////////////////////////////////
         ///// Chart legend, custom color, custom unit, etc. //////////
         //////////////////////////////////////////////////////////////
-        var radarChartOptions2 = {
-          w: 290,
-          h: 350,
-          margin: margin,
-          maxValue: 60,
-          levels: 6,
-          roundStrokes: false,
-          color: d3.scaleOrdinal().range(["#AFC52F", "f8eadd", "#ff6600"]),
-            format: '.0f',
-            legend: { title: 'Organization XYZ', translateX: 60, translateY: 40 },
-            unit: '$'
-        };
+        // var radarChartOptions2 = {
+        //   w: 290,
+        //   h: 350,
+        //   margin: margin,
+        //   maxValue: 60,
+        //   levels: 6,
+        //   roundStrokes: false,
+        //   color: d3.scaleOrdinal().range(["#AFC52F", "f8eadd", "#ff6600"]),
+        //     format: '.0f',
+        //     legend: { title: 'Organization XYZ', translateX: 60, translateY: 40 },
+        //     unit: '$'
+        // };
 
         //Call function to draw the Radar chart
         // this.drawRadarChart(".radarChart2", data, radarChartOptions2, parent);
@@ -200,11 +197,11 @@ class RadarChart extends D3Component {
 	/////////////////////////////////////////////////////////
 
 	//Filter for the outside glow
-	let filter = g.append('defs').append('filter').attr('id','glow'),
-		feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','coloredBlur'),
-		feMerge = filter.append('feMerge'),
-		feMergeNode_1 = feMerge.append('feMergeNode').attr('in','coloredBlur'),
-		feMergeNode_2 = feMerge.append('feMergeNode').attr('in','SourceGraphic');
+	// let filter = g.append('defs').append('filter').attr('id','glow'),
+	// 	feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','coloredBlur'),
+	// 	feMerge = filter.append('feMerge'),
+	// 	feMergeNode_1 = feMerge.append('feMergeNode').attr('in','coloredBlur'),
+	// 	feMergeNode_2 = feMerge.append('feMergeNode').attr('in','SourceGraphic');
 
 	/////////////////////////////////////////////////////////
 	/////////////// Draw the Circular grid //////////////////
@@ -223,7 +220,7 @@ class RadarChart extends D3Component {
 		.style("fill", "#CDCDCD")
 		.style("stroke", "#CDCDCD")
 		.style("fill-opacity", cfg.opacityCircles)
-		.style("filter" , "url(#glow)");
+		// .style("filter" , "url(#glow)");
 
 	//Text indicating at what % each level is
 	axisGrid.selectAll(".axisLabel")
@@ -234,7 +231,7 @@ class RadarChart extends D3Component {
 	   .attr("y", d => -d * radius / cfg.levels)
 	   .attr("dy", "0.4em")
 	   .style("font-size", "10px")
-	   .attr("fill", "#737373")
+	   .attr("fill", "white")
 	   .text(d => Format(maxValue * d / cfg.levels) + cfg.unit);
 
 	/////////////////////////////////////////////////////////
@@ -260,8 +257,8 @@ class RadarChart extends D3Component {
 	//Append the labels at each axis
 	axis.append("text")
 		.attr("class", "legend")
-        .style("font-size", "11px")
-        .style("f", "white")
+        .style("font-size", "14px")
+        .style("fill", "white")
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em")
 		.attr("x", (d,i) => rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI))
@@ -320,7 +317,7 @@ class RadarChart extends D3Component {
 		.style("stroke-width", cfg.strokeWidth + "px")
 		.style("stroke", (d,i) => cfg.color(i))
 		.style("fill", "none")
-		.style("filter" , "url(#glow)");
+		// .style("filter" , "url(#glow)");
 
 	//Append the circles
 	blobWrapper.selectAll(".radarCircle")
@@ -384,9 +381,9 @@ class RadarChart extends D3Component {
 				.attr("class", "title")
 				.attr('transform', `translate(${cfg.legend.translateX},${cfg.legend.translateY})`)
 				.attr("x", cfg.w - 70)
-				.attr("y", 10)
-				.attr("font-size", "12px")
-				.attr("fill", "#404040")
+				.attr("y", -10)
+				.attr("font-size", "14px")
+				.attr("fill", "white")
 				.text(cfg.legend.title);
 		}
 		let legend = legendZone.append("g")

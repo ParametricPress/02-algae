@@ -11,39 +11,26 @@ class D3LineChart extends D3Component {
     let data_3 = [];
     let data_6 = [];
     let data_45 = [];
-
-    var parseTime = d3.timeParse("%Y");
     
-    props.data.forEach( d => {
-      data_85.push({
+    this.drawChart(
+      this.formatData(props.data, data_85),
+      this.formatData(props.scenario45, data_45),
+      this.formatData(props.scenario6, data_6),
+      this.formatData(props.scenario3, data_3)
+    )
+
+  }
+  formatData(rawData, targetData) {
+    var parseTime = d3.timeParse("%Y");
+
+    rawData.forEach( d => {
+      targetData.push({
         date: parseTime(d.years),
         co2: +d['CO2EQ']
       })
     })
 
-    props.scenario3.forEach( d => {
-      data_3.push({
-        date: parseTime(d.years),
-        co2: +d['CO2EQ']
-      })
-    })
-
-    props.scenario6.forEach( d => {
-      data_6.push({
-        date: parseTime(d.years),
-        co2: +d['CO2EQ']
-      })
-    })
-
-    props.scenario45.forEach( d => {
-      data_45.push({
-        date: parseTime(d.years),
-        co2: +d['CO2EQ']
-      })
-    })
-
-    this.drawChart(data_85, data_45, data_6, data_3)
-
+    return targetData
   }
   drawChart(d85, d45, d6, data3) { 
     var margin = {top: 10, right: 30, bottom: 30, left: 40},
@@ -79,26 +66,28 @@ class D3LineChart extends D3Component {
       g.append("g")
         .call(d3.axisLeft(y))
       .append("text")
-        .attr("fill", "#000")
+        .attr("fill", "white")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
+        .attr("class", "y-axis")
         .text("CO2 Equivalent");
 
       g.append("path")
           .datum(d85)
           .attr("fill", "none")
-          .attr("stroke", "white")
+          .attr("stroke", "#245100")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
-          .attr("d", line);
+          .attr("d", line)
+          .attr("class", "first-line");
 
       g.append("path")
           .datum(d45)
           .attr("fill", "none")
-          .attr("stroke", "white")
+          .attr("stroke", "#5e8736")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -107,7 +96,7 @@ class D3LineChart extends D3Component {
       g.append("path")
           .datum(d6)
           .attr("fill", "none")
-          .attr("stroke", "white")
+          .attr("stroke", "#9ac26a")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -116,15 +105,51 @@ class D3LineChart extends D3Component {
       g.append("path")
           .datum(data3)
           .attr("fill", "none")
-          .attr("stroke", "white")
+          .attr("stroke", "#d9ffa2")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line);
   }
+  isolateLine(data) {
+    console.log('new line')
+
+    var margin = {top: 10, right: 30, bottom: 30, left: 40},
+      width = 650 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
+
+    var x = d3.scaleTime()
+        .rangeRound([0, width]);
+
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
+
+    // var line = d3.line()
+    //     .x(function(d) { return x(d.date); })
+    //     .y(function(d) { return y(d.co2); });
+
+      x.domain(d3.extent(data, function(d) { return d.date; }));
+      y.domain(d3.extent(data, function(d) { return d.co2; }));
+
+    d3.select('.first-line')
+        .datum(data)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.co2); })
+        )
+  }
 
   update(props, oldProps) {
     console.log('Updating component properties', props, oldProps);
+    let data_85 = []
+
+    if (props.selectedScenario == "All scenarios") {
+      // this.drawChart(data_85, data_45, data_6, data_3)
+    } else {
+      this.isolateLine(this.formatData(props.data, data_85))
+    }
     // this.svg
     //   .selectAll('circle')
     //   .transition()
