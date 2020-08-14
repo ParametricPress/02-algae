@@ -18,12 +18,17 @@
     ]
   },
   "dependencies": {
+    "@arcgis/webpack-plugin": "^4.16.3",
+    "@esri/react-arcgis": "^5.1.0",
     "d3": "^5.15.0",
+    "esri-loader": "^2.15.0",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
     "p5": "^1.1.9",
     "parametric-components": "^2.1.10",
-    "parametric-styles": "^2.1.6"
+    "parametric-styles": "^2.1.6",
+    "react-map-gl": "^5.2.7",
+    "react-visibility-sensor": "^5.1.1"
   }
 }

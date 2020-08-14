@@ -24,9 +24,9 @@ class RadarChart extends D3Component {
             { name: 'DAC + Soy',
                 axes: [
                     {axis: 'Land', value: 0.667},
-                    {axis: 'Direct CO2 Seq', value: 0.963},
-                    {axis: 'Cost dir', value: 1},
-                    {axis: 'EROI', value: 0.129},
+                    {axis: 'CO₂ Seq', value: 0.963},
+                    {axis: 'Cost ($/t CO₂)', value: 1},
+                    {axis: 'Energy returned', value: 0.129},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 0.614}
                 ]
@@ -34,9 +34,9 @@ class RadarChart extends D3Component {
             { name: 'BECCS + Soy',
                 axes: [
                     {axis: 'Land', value: 1},
-                    {axis: 'Direct CO2 Seq', value: 1},
-                    {axis: 'Cost dir', value: 0.511},
-                    {axis: 'EROI', value: 1},
+                    {axis: 'CO₂ Seq', value: 1},
+                    {axis: 'Cost ($/t CO₂)', value: 0.511},
+                    {axis: 'Energy returned', value: 1},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 1}
                 ]
@@ -44,9 +44,9 @@ class RadarChart extends D3Component {
             { name: 'ABECCS',
                 axes: [
                     {axis: 'Land', value: 0.667},
-                    {axis: 'Direct CO2 Seq', value: 0.899},
-                    {axis: 'Cost dir', value: 0.329},                    
-                    {axis: 'EROI', value: 0.64},
+                    {axis: 'CO₂ Seq', value: 0.899},
+                    {axis: 'Cost ($/t CO₂)', value: 0.329},                    
+                    {axis: 'Energy returned', value: 0.64},
                     {axis: 'GHG impact', value: 1},
                     {axis: 'Water footprint', value: 0.61}
                 ]

@@ -33,7 +33,7 @@ class D3LineChart extends D3Component {
     return targetData
   }
   drawChart(d85, d45, d6, data3) { 
-    var margin = {top: 10, right: 30, bottom: 30, left: 40},
+    var margin = {top: 30, right: 30, bottom: 30, left: 40},
       width = 650 - margin.left - margin.right,
       height = 400 - margin.top - margin.bottom;
     
@@ -84,6 +84,13 @@ class D3LineChart extends D3Component {
           .attr("d", line)
           .attr("class", "first-line");
 
+      g.append("text")
+          .attr("transform", "translate(" + (width-50) + "," + (y(d85[d85.length - 1].co2) - 10) + ")")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .style("fill", "#245100")
+          .text("RCP 85");
+
       g.append("path")
           .datum(d45)
           .attr("fill", "none")
@@ -92,6 +99,13 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line);
+
+      g.append("text")
+          .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .style("fill", "#5e8736")
+          .text("RCP 4.5");
 
       g.append("path")
           .datum(d6)
@@ -102,6 +116,13 @@ class D3LineChart extends D3Component {
           .attr("stroke-width", 3)
           .attr("d", line);
 
+      g.append("text")
+          .attr("transform", "translate(" + (width-50) + "," + (y(d6[d6.length - 1].co2) - 10) + ")")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .style("fill", "#9ac26a")
+          .text("RCP 6");
+
       g.append("path")
           .datum(data3)
           .attr("fill", "none")
@@ -110,11 +131,19 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line);
+
+      g.append("text")
+          .attr("transform", "translate(" + (width-50) + "," + (y(data3[data3.length - 1].co2) - 10) + ")")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .style("fill", "#d9ffa2")
+          .text("RCP 2.6");
+    
   }
   isolateLine(data) {
     console.log('new line')
 
-    var margin = {top: 10, right: 30, bottom: 30, left: 40},
+    var margin = {top: 30, right: 40, bottom: 30, left: 40},
       width = 650 - margin.left - margin.right,
       height = 400 - margin.top - margin.bottom;
 
