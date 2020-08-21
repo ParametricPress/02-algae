@@ -256,7 +256,7 @@ class treeSimulator extends Component {
           
           { this.state.yearCount < 2 ? <button id="start-btn">Start Simulation</button> : null }
           { this.props.numtrees < 1 ? <h4>No more trees!</h4> : null }
-          { this.state.yearCount >= 2  ? <button id="restart-btn">Restart</button> : null }
+          { this.state.yearCount >= 2  ? <button id="start-btn">Restart</button> : null }
         </div>
         
         <div className="content column">

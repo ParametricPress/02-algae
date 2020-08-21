@@ -61,6 +61,10 @@ At Davos this year, the World Economic Forum announced a [link text:"plan to pla
 
 More trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and amount of CO₂ removed are planting more trees (reforestation) and keeping the trees we have now from being destroyed (avoided forest conversion). The "trillion" target for number of new trees planted is also supported by research: [a href:"https://science.sciencemag.org/content/365/6448/76"]The global tree restoration potential[/a], a study published last year in Science, claimed that planting 1.2 trillion tree saplings on 1.7 billion hectares could remove "two-thirds of all the emissions from human activities that remain in the atmosphere today." For scale, this would be the equivalent of reforesting an area of land the size of the United States and Canada combined.
 
+[FullWidth]
+ [CustomMap /]
+[/FullWidth]
+
 Trees, and plants in general, are very good at the removing CO₂ part of our fight against irreversible climate change. Many people categorize this as a viable carbon sequestration method. But there's a problem with planting a trillion trees: we need the land to do it and we need to keep them alive.
 
 ## A trillion trees fall short
@@ -73,13 +77,12 @@ Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hop
 
 Best case estimates show that it will take [a href:"https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/"]around 25 years[/a] before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight (some trees can take up to 100 years to mature fully). So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate. A team of scientists at NASA [a href:"https://climate.nasa.gov/news/2927/examining-the-viability-of-planting-trees-to-help-mitigate-climate-change/"]estimate[/a] that reforesting 1.7 billion hectares of new trees between one and two thousand years.
 
-The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from Nature would require land the size of the US plus Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
+[img src:"static/images/redwoods.jpg" /]
+[Caption]
+  The popular California redwood tree takes 5 years of growing in a nursery before it can be planted, after which it will grow between 2 - 6 ft per year. Redwoods are also at high risk of forest fires, as seen in the [a href:"https://kcbsradio.radio.com/articles/californias-oldest-state-park-home-to-redwoods-is-gone"]recent burning in Big Basin State Park[/a].
+[/Caption]
 
-
-// [FullWidth]
-//  [CustomMap /]
-// [/FullWidth]
-
+The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from Nature would require land the size of the US *plus* Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
 
 //  [ArcMap /]
 
@@ -114,6 +117,11 @@ Planting trees is unquestionably a good idea, but it’s likely not the “silve
 
 You've probably seen algae before---it's floating about on ponds and washing up on shores as kelp seaweed. It takes many different forms, though. Algae can be as small as 0.2mm in picoplankton and as large as 60m long in the form of giant sea kelp. And incredibly, when you take all the types of algae together, this family of flora produces about half of all oxygen on the planet.
 
+[img src:"static/images/kelp-forest.jpg" /]
+[Caption]
+  A giant kelp forest. Kelp is considered to be one of the largest forms of algae; most are only a few millimeters in size.
+[/Caption]
+
 In recent years, there has been a growing interest in how we can use algae like we use trees to suck carbon dioxide out of our atmosphere. Except with algae, there are different possibilities: due to its size and composition, algae excels at a special type of carbon removal method called bioenergy with carbon capture and storage (BECCS). This means that researchers are studying two things: 1) how we can use algae to remove carbon and 2) how we can use the captured carbon for something else, such as fuel, food, and heat.
 
 Some researchers have criticized BECCS as being too premature for industrial scale solutions since these types of solutions have often not been demonstrated at a commercial scale.  Regardless of being a less developed research solution, scientists agree that in the long term BECCS is no longer an optional piece to solving the climate crisis. In the latest IPCC [a href:"http://ar5-syr.ipcc.ch/topic_summary.php"]assessment report[/a] published in 2014, 101 of the 116 scenarios that achieved a "likely" chance of staying below 2C relied on BECCS. And [a href:"http://www.nature.com/nclimate/journal/v4/n10/full/nclimate2392.html"]67% of these scenarios[/a] said BECCS would represent at least 20% of the world's primary energy by 2100.
@@ -133,21 +141,28 @@ Here are a few reasons why we're so interested in algae as a possible climate ch
 ## Uses of algae
 
 Algae can be used for a plethora of different things after it has captured carbon. When discussing methods of carbon capture, some scientists advocate for burying the resulting carbon away in hopes that it doesn’t return to the atmosphere. But with algae, instead of sinking it to the bottom of an ocean, for example, scientists are finding all sorts of ways to use the bioenergy from algae in creative and sustainable ways.
-
+[ParametricGraphic hed:"The many uses of algae" subhed:"Algae can be harvested and used as raw materials, food, and energy in a number of different sectors." source:"Hypergiant Inudstries"]
 [AnimatedIcons /]
+
+[/ParametricGraphic]
 
 Algae has a number of byproducts that can be used as biofuels for transportation, building materials, feed for animals and humans, and clothing. This is the crucial part of a BECCS technology: once you capture the CO₂, you need to figure out what to do with it. Otherwise, the CO₂ will find its way back into the atmosphere, just like when a tree dies at the end of its life (or more tragically, is burned). 
 
-Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3d printing. 
-
 [Aside]
-[img width:700 src:"static/images/algae-building.jpg" /]
-[Caption]
-  A building in Germany built with algae-laced walls.
-[/Caption]
+  [img src:"static/images/open-seaweed-farm.jpg" /]
+  [Caption]
+    description of company harvesting seaweed for food
+  [/Caption]
 [/Aside]
 
+Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3d printing. 
+
 Commercial companies such as [a href:"https://sustainablebrands.com/read/cleantech/pond-using-algae-to-turn-co2-to-our-many-advantages"]Pond Technologies[/a] are creating new products based on algae such as animal feed, ingredients for cosmetics, and even seaweed snacks. There is even a [a href:"https://newatlas.com/algae-powered-building/27118/"]building in Germany[/a] that uses an algae-laced skin around it to power the electricity for the facility. And as research continues, more methods of adapting algae proteins for sustainable usage are sure to emerge.
+
+[img src:"static/images/algae-building.jpg" /]
+[Caption]
+  description of company harvesting seaweed for food
+[/Caption]
 
 ## Methods and complications of using algae for carbon capture
 
@@ -157,6 +172,11 @@ So how can scientists use algae to pull CO₂ from the air? Well, much like any 
 
 One method of growing algae at scale is to use our open oceans. [a href:"https://www.nature.com/articles/nature11229"]Research[/a] has shown that by adding iron to the ocean, algae will grow in an algae bloom and start to remove CO₂ from the atmosphere. When this algae begins to die, it sinks towards the ocean floor along with the carbon it just sequestered. Once sunk, scientists estimate it could stay there for centuries.
 
+[img src:"static/images/wet-algae.jpg" /]
+[Caption]
+  wet algae
+[/Caption]
+
 Critics of this method cite the unintended environmental side effects as too dangerous. The ecological impact of fertilizing the oceans at large are still relatively unknown (for example, the possibility of the CO₂ leaking in the future). Other [a href:"https://www.nature.com/news/dumping-iron-at-sea-does-sink-carbon-1.11028"]studies[/a] have shown how unrestricted algal blooms can turn toxic, killing ecosystems and valuable marine life.
 
 Some people think the pros of removing CO₂ outweigh the cons. Prof Victor Smetacek at the Alfred Wegener Institute for Polar and Marine Research in Germany, who led a research study on using algae to sink CO₂ to the bottom of the ocean, said, "The time has come to differentiate: some geoengineering techniques are more dangerous than others. Doing nothing is probably the worst option."
@@ -164,6 +184,11 @@ Some people think the pros of removing CO₂ outweigh the cons. Prof Victor Smet
 ### Grow it in a pond
 
 There are also options to grow algae for carbon sequestration in controlled environments. A [a href:"https://academic.oup.com/bioscience/article/60/9/722/238034"]research experiment[/a] published in the American Institute of Biological Sciences tested growing algae in a controlled pond environment. The researchers strategically placed this pond next to a fossil-fuel power plant to test its maximum carbon capture potential and then compared these results with direct air capture (DAC) and Bioenergy Carbon Capture and Storage (BECCS) using soy. 
+
+[img src:"static/images/nutrex-hawaii-plant.jpg" /]
+[Caption]
+  Nutrix Hawaii algae plant (not from the study)
+[/Caption]
 
 They found that in addition to the algae absorbing CO₂, the injection of flue gas from the power plant actually accelerated algae growth, increasing biomass productivity by up to 30%. The downsides of growing algae near power plants come down to adoption cost: despite promising experiments, most energy companies do not consider it worth the investment due to a lack of economic incentives to adopt emerging technologies.
 
@@ -175,6 +200,11 @@ They found that in addition to the algae absorbing CO₂, the injection of flue 
 ### Cultivate in a bioreactor
 
 Perhaps the most advanced method of using algae for BECCS is to grow it within a bioreactor. In 2019, artificial intelligence company Hypergiant Industries [a href:"https://newatlas.com/environment/algae-fueled-bioreactor-carbon-sequestration/"]released designs[/a] for an algae-fueled bioreactor prototype. They claim that by growing a particularly effective strain of algae called chlorella vulgaris inside the bioreactor, the device can soak up to 400x more CO₂ than typical trees.
+
+[img src:"static/images/hypergiant-bioreactor.png" /]
+[Caption]
+  Hypergiant mockup of bioreactor
+[/Caption]
 
 The magic of bioreactors lies in the ability to hyper-regulate an environment. The bioreactor is constantly taking measurements of the algae's growth environment, and then using machine learning algorithms to find the perfect balance of light, temperature, and pH levels that algae will flourish under.
 
