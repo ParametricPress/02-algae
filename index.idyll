@@ -38,8 +38,8 @@ The IPCC has outlined four potential pathways for how the world can avoid the ir
 
 [ParametricGraphic hed:"A dire scenario" subhed:"The IPCC uses four Representative Concentration Pathways (RCPs) to estimate how we might reduce carbon emissions. Climate scientists currently think that RCP 8.5 (sometimes called 'business-as-usual' is the most likely." source:"IPCC | The Atlantic"]
   [var name:"selectVal" value:"All scenarios" /]
-  [Select value:selectVal options:`["All scenarios", "RCP 8.5", "RCP 4.5", "RCP 6", "RCP 2.6"]`  /]
-  [Display value:selectVal /]
+  [Select value:selectVal options:`["All time", "Where we are now"]`  /]
+  
   [D3LineChart 
     data:rcp_eightyfive
     scenario3:rcp_three

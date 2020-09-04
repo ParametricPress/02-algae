@@ -2,15 +2,29 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
+const margin = {top: 30, right: 30, bottom: 30, left: 40},
+      width = 650 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
+
+const x = d3.scaleTime()
+    .rangeRound([0, width]);
+
+const y = d3.scaleLinear()
+    .rangeRound([height, 0]);
+
+const line = d3.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.co2); });
+
+let data_85 = [];
+let data_3 = [];
+let data_6 = [];
+let data_45 = [];
+
 class D3LineChart extends D3Component {
   initialize(node, props) {
     // console.log('Initializing custom D3 component. This component requires that the author is responsible for updating the DOM as properties change.');
     const svg = (this.svg = d3.select(node).append('svg'));
-
-    let data_85 = [];
-    let data_3 = [];
-    let data_6 = [];
-    let data_45 = [];
     
     this.drawChart(
       this.formatData(props.data, data_85),
@@ -20,6 +34,7 @@ class D3LineChart extends D3Component {
     )
 
   }
+
   formatData(rawData, targetData) {
     var parseTime = d3.timeParse("%Y");
 
@@ -33,26 +48,13 @@ class D3LineChart extends D3Component {
     return targetData
   }
   drawChart(d85, d45, d6, data3) { 
-    var margin = {top: 30, right: 30, bottom: 30, left: 40},
-      width = 650 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
-    
     const svg = d3.select('svg')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
 
     const g = svg.append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    var x = d3.scaleTime()
-        .rangeRound([0, width]);
-
-    var y = d3.scaleLinear()
-        .rangeRound([height, 0]);
-
-    var line = d3.line()
-        .x(function(d) { return x(d.date); })
-        .y(function(d) { return y(d.co2); });
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .attr("class", "chartBase");
 
       x.domain(d3.extent(d85, function(d) { return d.date; }));
       y.domain(d3.extent(d85, function(d) { return d.co2; }));
@@ -60,6 +62,7 @@ class D3LineChart extends D3Component {
       g.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
+        .attr("class", "x-axis")
       .select(".domain")
         .remove();
 
@@ -82,7 +85,7 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line)
-          .attr("class", "first-line");
+          .attr("class", "worst-line");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d85[d85.length - 1].co2) - 10) + ")")
@@ -98,7 +101,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
-          .attr("d", line);
+          .attr("d", line)
+          .attr("class", "bad-line");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
@@ -114,7 +118,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
-          .attr("d", line);
+          .attr("d", line)
+          .attr("class", "good-line");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d6[d6.length - 1].co2) - 10) + ")")
@@ -130,7 +135,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
-          .attr("d", line);
+          .attr("d", line)
+          .attr("class", "best-line");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(data3[data3.length - 1].co2) - 10) + ")")
@@ -140,51 +146,46 @@ class D3LineChart extends D3Component {
           .text("RCP 2.6");
     
   }
-  isolateLine(data) {
-    console.log('new line')
+  updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
 
-    var margin = {top: 30, right: 40, bottom: 30, left: 40},
-      width = 650 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+    x.domain(newXDomain);
+    console.log(y.domain())
+    y.domain(newYDomain)
+    
+    d3.select('.x-axis').transition().duration(2000).call(d3.axisBottom(x));
+    d3.select('.y-axis').transition().duration(2000).call(d3.axisLeft(y));
 
-    var x = d3.scaleTime()
-        .rangeRound([0, width]);
-
-    var y = d3.scaleLinear()
-        .rangeRound([height, 0]);
-
-    // var line = d3.line()
-    //     .x(function(d) { return x(d.date); })
-    //     .y(function(d) { return y(d.co2); });
-
-      x.domain(d3.extent(data, function(d) { return d.date; }));
-      y.domain(d3.extent(data, function(d) { return d.co2; }));
-
-    d3.select('.first-line')
-        .datum(data)
-        .transition()
-        .duration(1000)
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.date); })
-          .y(function(d) { return y(d.co2); })
-        )
+    d3.select('.worst-line').datum(data_85).transition().duration(2000).attr("d", line);
+    d3.select('.bad-line').datum(data_45).transition().duration(2000).attr("d", line);
+    d3.select('.good-line').datum(data_6).transition().duration(2000).attr("d", line);
+    d3.select('.best-line').datum(data_3).transition().duration(2000).attr("d", line);
   }
 
   update(props, oldProps) {
-    console.log('Updating component properties', props, oldProps);
-    let data_85 = []
-
-    if (props.selectedScenario == "All scenarios") {
-      // this.drawChart(data_85, data_45, data_6, data_3)
+    // console.log('Updating component properties', props, oldProps);
+    if (props.selectedScenario == "All") {
+      const newXDomain = [new Date(1765, 1, 1, 10, 30, 30, 0), new Date(2500, 1, 1, 10, 30, 30, 0)]
+      const newYDomain = [277, 2650]
+      this.updateRange(
+        newXDomain,
+        newYDomain,
+        data_85,
+        data_45,
+        data_6,
+        data_3
+      )
     } else {
-      this.isolateLine(this.formatData(props.data, data_85))
+      const newXDomain = [new Date(2000, 1, 1, 10, 30, 30, 0), new Date(2050, 1, 1, 10, 30, 30, 0)]
+      const newYDomain = [277, 600]
+      this.updateRange(
+        newXDomain,
+        newYDomain,
+        data_85,
+        data_45,
+        data_6,
+        data_3
+      )
     }
-    // this.svg
-    //   .selectAll('circle')
-    //   .transition()
-    //   .duration(750)
-    //   .attr('cx', Math.random() * sizeX)
-    //   .attr('cy', Math.random() * sizeY);
   }
 }
 
