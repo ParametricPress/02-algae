@@ -21,6 +21,7 @@
     "@arcgis/webpack-plugin": "^4.16.3",
     "@esri/react-arcgis": "^5.1.0",
     "d3": "^5.15.0",
+    "deck.gl": "^8.2.7",
     "esri-loader": "^2.15.0",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",

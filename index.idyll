@@ -60,9 +60,11 @@ This is a story about how we could get there; a story about trees and algae and 
 At Davos this year, the World Economic Forum announced a [link text:"plan to plant one trillion trees" url:"https://www.1t.org/"/] over the next decade. The campaign received widespread approval and enthusiasm from attendees, and even got a stamp of approval from President Trump in his State of the Union. (This may seem surprising to many coming from the man who notoriously [link text:"tried to withdraw" url:"https://www.nytimes.com/2019/11/04/climate/trump-paris-agreement-climate.html" /] the US from the Paris Agreement on coordinated climate action.) But as we'll see, the possibility of even planting a trillion trees may be more of a romantic pipedream than an achievable reality.
 
 More trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and amount of CO₂ removed are planting more trees (reforestation) and keeping the trees we have now from being destroyed (avoided forest conversion). The "trillion" target for number of new trees planted is also supported by research: [a href:"https://science.sciencemag.org/content/365/6448/76"]The global tree restoration potential[/a], a study published last year in Science, claimed that planting 1.2 trillion tree saplings on 1.7 billion hectares could remove "two-thirds of all the emissions from human activities that remain in the atmosphere today." For scale, this would be the equivalent of reforesting an area of land the size of the United States and Canada combined.
+[data name:"treeloss" source:"geo.json" /]
 
 [FullWidth]
- [CustomMap /]
+ [var name:"mapZoomHomes" value:false /]
+  [ParaMap map:"homes" zoomEnabled:mapZoomHomes geoJSON:treeloss initialViewport:`{latitude: 33.7620, longitude: -84.4150, zoom: 2}` /]
 [/FullWidth]
 
 Trees, and plants in general, are very good at the removing CO₂ part of our fight against irreversible climate change. Many people categorize this as a viable carbon sequestration method. But there's a problem with planting a trillion trees: we need the land to do it and we need to keep them alive.
