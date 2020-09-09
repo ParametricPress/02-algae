@@ -11,7 +11,9 @@ class treeSimulator extends Component {
     this.state = {
       branches: [],
       yearCount: 0,
-      disasterCount: 0
+      disasterCount: 0,
+      simulationState: 'stopped',
+      simulationMessage: "Let's eat up this CO₂!"
     }
   };
 
@@ -50,10 +52,10 @@ class treeSimulator extends Component {
       }
     }
 
-    let angle=-100+Math.random()*20;
+    let angle=-100+Math.random()*25;
 
     for (let i = 0; i < this.props.numtrees; i++) {
-      drawTree((Math.random() * 100) + 1, 100, angle, depth);
+      drawTree((Math.random() * 150) + 1, 100, angle, depth);
     }   
     
     return branches;
@@ -89,7 +91,7 @@ class treeSimulator extends Component {
   }
 
   componentDidMount() {
-    this.NUM_OF_BRANCHES = 80;
+    this.NUM_OF_BRANCHES = 40;
 
     this.restart();
 
@@ -111,7 +113,7 @@ class treeSimulator extends Component {
 
     let simulation = d3.forceSimulation()
           .force("x", d3.forceX().x(width/2))
-          .force("y", d3.forceY().y(100))
+          .force("y", d3.forceY().y(160))
           .force("gravity", d3.forceManyBody().strength(-radius - 2))
           .force("collide", d3.forceCollide()
               .radius(d => d.radius + 0.1)
@@ -153,44 +155,59 @@ class treeSimulator extends Component {
     }
     
     d3.select("#start-btn").on("click", () => {
-      let counterForYears = setInterval(() => {
-        let treeCarbonCount = this.props.numtrees * 1;
-        for (let i = 0; i < treeCarbonCount; i++) {
-          removeNode();
-        }
-        updateSim();
+        this.restart()
+        this.setState({
+          simulationState: 'running',
+          simulationMessage: 'Removing CO₂...'
+        });
 
-        this.setState({ 
-          yearCount: this.state.yearCount + 1,
-        })
+        d3.select('.tooltip')
+            .attr('opacity', 1)
 
-        if ((this.state.yearCount > 20) || (this.props.numtrees < 1)) {
-          console.log('Out of time!')
-          clearInterval(counterForYears)
-        }
+        let counterForYears = setInterval(() => {
+          let treeCarbonCount = this.props.numtrees * 1;
+          for (let i = 0; i < treeCarbonCount; i++) {
+            removeNode();
+          }
+          updateSim();
 
-      }, 2000);
+          this.setState({ 
+            yearCount: this.state.yearCount + 1,
+          })
 
-      let counterForTrees = setInterval(() => {
-        // for every year that elapsed, release all carbon from tree
-        for (let i = 0; i < this.state.yearCount * 1; i++) {
-          addNode();
-        }
-        updateSim();
+          if ((this.state.yearCount > 20) || (this.props.numtrees < 1)) {
+            clearInterval(counterForYears)
+            this.setState({
+              simulationState: 'stopped'
+            });
+          }
 
-        this.props.updateProps({
-          numtrees: this.props.numtrees - 1
-        })
+        }, 2000);
 
-        this.setState({ 
-          disasterCount: this.state.disasterCount + 1,
-        })
+        let counterForTrees = setInterval(() => {
+          // for every tree killed, release all carbon from tree
+          for (let i = 0; i < this.state.yearCount * 1; i++) {
+            addNode();
+          }
+          updateSim();
 
-        if (this.props.numtrees < 1) {
-          console.log('No more trees')
-          clearInterval(counterForTrees)
-        }
-      }, 5000);
+          this.props.updateProps({
+            numtrees: this.props.numtrees - 1
+          })
+
+          this.setState({ 
+            disasterCount: this.state.disasterCount + 1,
+            simulationMessage: 'Deforestation killed a tree!'
+          })
+
+          if (this.props.numtrees < 1) {
+            clearInterval(counterForTrees)
+            this.setState({
+              simulationState: 'stopped',
+              simulationMessage: 'We ran out of trees...'
+            });
+          }
+        }, 5000);
       }
     );
 
@@ -218,7 +235,7 @@ class treeSimulator extends Component {
 
         bubs.exit()
           .transition()
-          .duration(1000)
+          .duration(400)
           .attr("cy", 370)
           .remove();
 
@@ -238,7 +255,9 @@ class treeSimulator extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
       console.log('draw again')
-      this.restart()
+      if (this.state.simulationState == 'running') {
+        this.restart()
+      }
     }
   }
   render() {
@@ -246,22 +265,33 @@ class treeSimulator extends Component {
     return (
       <div className="app row">
         <div className="column sim-controls">
+          <div class='progress-bar-outer'>
+            <div class='progress-bar-inner' style={{width: ((this.props.numtrees - 0) / (this.props.maxTrees - this.props.numtrees)) * 100 + '%'}}></div>
+          </div>
           <p>Trees in forest: {this.props.numtrees}</p>
-          <p>
-            Years elapsed: {this.state.yearCount}
-          </p>
-          <p>
-            Deforestation events: {this.state.disasterCount}
-          </p>
+
+          <div class='progress-bar-outer'>
+              <div class='progress-bar-inner' style={{width: (this.state.yearCount * 5) + '%'}}></div>
+          </div>
+          <p>Years elapsed: {this.state.yearCount}</p>
+          
+          <div class='progress-bar-outer'>
+              <div class='progress-bar-inner' style={{width: ((this.state.disasterCount*10)) + '%'}}></div>
+          </div>
+          <p>Deforestation events: {this.state.disasterCount}</p>
           
           { this.state.yearCount < 2 ? <button id="start-btn">Start Simulation</button> : null }
-          { this.props.numtrees < 1 ? <h4>No more trees!</h4> : null }
+          { this.props.numtrees < 1 ? <p style={{ 'text-align': 'center' }}>Try again?</p> : null }
           { this.state.yearCount >= 2  ? <button id="start-btn">Restart</button> : null }
         </div>
         
         <div className="content column">
-          <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg"
-            >
+          <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
+            <rect class='tooltip-box' x='200' y='10' width='300' height='60' rx='10' ry='10'></rect>
+            <text class='tooltip-text' x='280' y='45'>
+              {this.state.simulationMessage}
+            </text>
+        
             {this.state.branches.map((b, i) => (
               <g id="svg_1" 
               key={i}
