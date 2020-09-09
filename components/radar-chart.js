@@ -8,19 +8,19 @@ class RadarChart extends D3Component {
     // const svg = (this.svg = d3.select(node).append('svg'));
     const parent = d3.select(node);
 
-    //////////////////////////////////////////////////////////////
-			//////////////////////// Set-Up //////////////////////////////
-			//////////////////////////////////////////////////////////////
+    	//////////////////////////////////////////////////////////////
+		//////////////////////// Set-Up //////////////////////////////
+		//////////////////////////////////////////////////////////////
 
-			var margin = { top: 50, right: 80, bottom: 50, left: 80 },
-            width = Math.min(700, window.innerWidth / 4) - margin.left - margin.right,
-            height = Math.min(width, window.innerHeight - margin.top - margin.bottom);
+		const margin = { top: 50, right: 80, bottom: 50, left: 80 },
+		width = Math.min(700, window.innerWidth / 4) - margin.left - margin.right,
+		height = Math.min(width, window.innerHeight - margin.top - margin.bottom);
 
         //////////////////////////////////////////////////////////////
         ////////////////////////// Data //////////////////////////////
         //////////////////////////////////////////////////////////////
 
-        var data = [
+        const data = [
 			{ name: 'DAC + Soy',
 			summary: 'Expensive and energy inefficient',
                 axes: [
@@ -57,8 +57,8 @@ class RadarChart extends D3Component {
         ];
 
         //////////////////////////////////////////////////////////////
-        ////// First example /////////////////////////////////////////
-  		///// (not so much options) //////////////////////////////////
+        ////// Radar spec /////////////////////////////////////////
+  		///// //////////////////////////////////
         //////////////////////////////////////////////////////////////
         var radarChartOptions = {
           w: 290,
@@ -74,26 +74,6 @@ class RadarChart extends D3Component {
 
         // Draw the chart, get a reference the created svg element :
         this.drawRadarChart(".radarChart", data, radarChartOptions, parent);
-
-        //////////////////////////////////////////////////////////////
-        ///// Second example /////////////////////////////////////////
-        ///// Chart legend, custom color, custom unit, etc. //////////
-        //////////////////////////////////////////////////////////////
-        // var radarChartOptions2 = {
-        //   w: 290,
-        //   h: 350,
-        //   margin: margin,
-        //   maxValue: 60,
-        //   levels: 6,
-        //   roundStrokes: false,
-        //   color: d3.scaleOrdinal().range(["#AFC52F", "f8eadd", "#ff6600"]),
-        //     format: '.0f',
-        //     legend: { title: 'Organization XYZ', translateX: 60, translateY: 40 },
-        //     unit: '$'
-        // };
-
-        //Call function to draw the Radar chart
-        // this.drawRadarChart(".radarChart2", data, radarChartOptions2, parent);
   }
   drawRadarChart(id, data, options, parent) {
     const max = Math.max;
@@ -302,7 +282,7 @@ class RadarChart extends D3Component {
 	const tooltipPreviewText = g.append("text")
 		.attr('x', -150)
 		.attr('y', -162)
-		.style('fill', 'black')
+		.style('fill', 'white')
 		.style('font-family', 'Graphik Web')
 		.style('font-size', '18px')
 		.style('opacity', 0.5)
@@ -460,8 +440,6 @@ class RadarChart extends D3Component {
 	}
 	return svg;
 }
-
-  
 
   update(props, oldProps) {
     // console.log('Updating component properties', props, oldProps);
