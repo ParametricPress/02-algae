@@ -50,11 +50,20 @@ class D3LineChart extends D3Component {
   drawChart(d85, d45, d6, data3) { 
     const svg = d3.select('svg')
         .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-
+        .attr("height", height + margin.top + margin.bottom);
+    
     const g = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .attr("class", "chartBase");
+
+       // Add a clipPath: everything out of this area won't be drawn.
+    const clip = svg.append("defs").append("svg:clipPath")
+       .attr("id", "clip")
+       .append("svg:rect")
+       .attr("width", width )
+       .attr("height", height )
+       .attr("x", 0)
+       .attr("y", 0);
 
       x.domain(d3.extent(d85, function(d) { return d.date; }));
       y.domain(d3.extent(d85, function(d) { return d.co2; }));
@@ -85,7 +94,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line)
-          .attr("class", "worst-line");
+          .attr("class", "worst-line")
+          .attr("clip-path", "url(#clip)");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d85[d85.length - 1].co2) - 10) + ")")
@@ -102,7 +112,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line)
-          .attr("class", "bad-line");
+          .attr("class", "bad-line")
+          .attr("clip-path", "url(#clip)");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
@@ -119,7 +130,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line)
-          .attr("class", "good-line");
+          .attr("class", "good-line")
+          .attr("clip-path", "url(#clip)");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(d6[d6.length - 1].co2) - 10) + ")")
@@ -136,7 +148,8 @@ class D3LineChart extends D3Component {
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
           .attr("d", line)
-          .attr("class", "best-line");
+          .attr("class", "best-line")
+          .attr("clip-path", "url(#clip)");
 
       g.append("text")
           .attr("transform", "translate(" + (width-50) + "," + (y(data3[data3.length - 1].co2) - 10) + ")")
@@ -149,7 +162,7 @@ class D3LineChart extends D3Component {
   updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
 
     x.domain(newXDomain);
-    console.log(y.domain())
+    console.log(x.domain())
     y.domain(newYDomain)
     
     d3.select('.x-axis').transition().duration(2000).call(d3.axisBottom(x));
@@ -163,7 +176,8 @@ class D3LineChart extends D3Component {
 
   update(props, oldProps) {
     // console.log('Updating component properties', props, oldProps);
-    if (props.selectedScenario == "All") {
+    console.log(props.selectedScenario)
+    if (props.selectedScenario == "Entire projection") {
       const newXDomain = [new Date(1765, 1, 1, 10, 30, 30, 0), new Date(2500, 1, 1, 10, 30, 30, 0)]
       const newYDomain = [277, 2650]
       this.updateRange(
