@@ -13,8 +13,7 @@ class treeSimulator extends Component {
       yearCount: 0,
       disasterCount: 0,
       simulationState: 'beforeFirstStart',
-      simulationMessage: "Let's eat up this CO₂!",
-      numSimulationsRun: 0
+      simulationMessage: "Let's eat up this CO₂!"
     }
   };
 
@@ -178,7 +177,6 @@ class treeSimulator extends Component {
             clearInterval(counterForYears)
             this.setState({
               simulationState: 'waitingForRestart',
-              numSimulationsRun: numSimulationsRun + 1
             });
           }
 
