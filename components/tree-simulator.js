@@ -13,7 +13,8 @@ class treeSimulator extends Component {
       yearCount: 0,
       disasterCount: 0,
       simulationState: 'beforeFirstStart',
-      simulationMessage: "Let's eat up this CO₂!"
+      simulationMessage: "Let's eat up this CO₂!",
+      numSimulationsRun: 0
     }
   };
 
@@ -177,6 +178,7 @@ class treeSimulator extends Component {
             clearInterval(counterForYears)
             this.setState({
               simulationState: 'waitingForRestart',
+              numSimulationsRun: numSimulationsRun + 1
             });
           }
 
@@ -236,24 +238,24 @@ class treeSimulator extends Component {
   }
   resetTheSim() {
     this.setState({
-      simulationState: 'clickedRestart',
-      simulationMessage: "Let's eat this carbon!"
+      simulationState: 'beforeFirstStart',
+      simulationMessage: "Try planting more trees this",
+      yearCount: 0,
+      disasterCount: 0
     });
+
+    this.NUM_OF_BRANCHES = 20;
+      this.updateTrees();
+      console.log('restart the sim')
+      this.startNodeSimulation(); 
   }
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
-      console.log('draw again')
+      
       // do not redraw trees until start button pressed
       if (this.state.simulationState != 'beforeFirstStart') {
         this.updateTrees()
-      } else if (this.state.simulationState == 'clickedRestart') {
-        this.NUM_OF_BRANCHES = 20;
-        this.updateTrees();
-        this.setState({
-          simulationState: 'running'
-        })
-        this.startNodeSimulation(); 
-      }
+      } 
     }
   }
   render() {
@@ -276,9 +278,9 @@ class treeSimulator extends Component {
           </div>
           <p>Deforestation events: {this.state.disasterCount}</p>
           
-          { (this.state.simulationState == 'beforeFirstStart') ? <button id="start-btn">Start Simulation</button> : null }
+          { (this.state.simulationState == 'waitingForRestart') || (this.state.simulationState == 'beforeFirstStart') ? <button id="start-btn">Start Simulation</button> : null }
           { this.props.numtrees < 1 ? <p style={{ textAlign: 'center' }}>Plant more trees to try again.</p> : null }
-          { this.state.simulationState == 'waitingForRestart'  ? <button onClick={() => this.resetTheSim()}>Restart</button> : null }
+          { this.state.simulationState == 'waitingForRestart'  ? <button id="restart-btn" onClick={() => this.resetTheSim()}>Reset</button> : null }
         </div>
         
         <div className="content column">
