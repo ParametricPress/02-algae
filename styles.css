@@ -355,6 +355,13 @@ p.icon-name {
   height: 10px
 }
 
+span.simulation-citation {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgb(130, 130, 130);
+  max-width: 500px
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .column {

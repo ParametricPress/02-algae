@@ -12,12 +12,12 @@ class treeSimulator extends Component {
       branches: [],
       yearCount: 0,
       disasterCount: 0,
-      simulationState: 'stopped',
+      simulationState: 'beforeFirstStart',
       simulationMessage: "Let's eat up this CO₂!"
     }
   };
 
-  restart = e => {
+  updateTrees = e => {
     this.branchList = this.createBranches(this.NUM_OF_BRANCHES);
     this.setState({ branches: this.branchList });
   };
@@ -91,10 +91,8 @@ class treeSimulator extends Component {
   }
 
   componentDidMount() {
-    this.NUM_OF_BRANCHES = 40;
-
-    this.restart();
-
+    this.NUM_OF_BRANCHES = 20;
+    this.updateTrees();
     this.startNodeSimulation(); 
   }
 
@@ -155,7 +153,7 @@ class treeSimulator extends Component {
     }
     
     d3.select("#start-btn").on("click", () => {
-        this.restart()
+        this.updateTrees()
         this.setState({
           simulationState: 'running',
           simulationMessage: 'Removing CO₂...'
@@ -172,17 +170,17 @@ class treeSimulator extends Component {
           updateSim();
 
           this.setState({ 
-            yearCount: this.state.yearCount + 1,
+            yearCount: this.state.yearCount + 1
           })
 
-          if ((this.state.yearCount > 20) || (this.props.numtrees < 1)) {
+          if ((this.state.yearCount > 30) || (this.props.numtrees < 1)) {
             clearInterval(counterForYears)
             this.setState({
-              simulationState: 'stopped'
+              simulationState: 'waitingForRestart',
             });
           }
 
-        }, 2000);
+        }, 1000);
 
         let counterForTrees = setInterval(() => {
           // for every tree killed, release all carbon from tree
@@ -197,35 +195,19 @@ class treeSimulator extends Component {
 
           this.setState({ 
             disasterCount: this.state.disasterCount + 1,
-            simulationMessage: 'Deforestation killed a tree!'
+            simulationMessage: 'Tree down: carbon escaped!'
           })
 
           if (this.props.numtrees < 1) {
             clearInterval(counterForTrees)
             this.setState({
-              simulationState: 'stopped',
-              simulationMessage: 'We ran out of trees...'
+              simulationState: 'waitingForRestart',
+              simulationMessage: 'We ran out of trees...😔'
             });
           }
-        }, 5000);
+        }, 3000);
       }
     );
-
-    d3.select("#restart-btn").on("click", () => {
-      nodes = [];
-      counter = 0;
-      int.stop();
-      simulation.restart();
-      updateSim();
-      startSimulation();
-      this.setState({
-        yearCount: 0
-      });
-
-      this.props.updateProps({
-        numtrees: 5
-      })
-    });
 
     function updateSim() {
         simulation.nodes(nodes);
@@ -252,11 +234,25 @@ class treeSimulator extends Component {
         simulation.alphaTarget(0.5);
     }
   }
+  resetTheSim() {
+    this.setState({
+      simulationState: 'clickedRestart',
+      simulationMessage: "Let's eat this carbon!"
+    });
+  }
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
       console.log('draw again')
-      if (this.state.simulationState == 'running') {
-        this.restart()
+      // do not redraw trees until start button pressed
+      if (this.state.simulationState != 'beforeFirstStart') {
+        this.updateTrees()
+      } else if (this.state.simulationState == 'clickedRestart') {
+        this.NUM_OF_BRANCHES = 20;
+        this.updateTrees();
+        this.setState({
+          simulationState: 'running'
+        })
+        this.startNodeSimulation(); 
       }
     }
   }
@@ -266,12 +262,12 @@ class treeSimulator extends Component {
       <div className="app row">
         <div className="column sim-controls">
           <div class='progress-bar-outer'>
-            <div class='progress-bar-inner' style={{width: ((this.props.numtrees - 0) / (this.props.maxTrees - this.props.numtrees)) * 100 + '%'}}></div>
+            <div class='progress-bar-inner' style={{width: (((this.props.numtrees - 1) / (this.props.maxTrees - 1))*100) + '%'}}></div>
           </div>
           <p>Trees in forest: {this.props.numtrees}</p>
 
           <div class='progress-bar-outer'>
-              <div class='progress-bar-inner' style={{width: (this.state.yearCount * 5) + '%'}}></div>
+              <div class='progress-bar-inner' style={{width: (this.state.yearCount * 3.333) + '%'}}></div>
           </div>
           <p>Years elapsed: {this.state.yearCount}</p>
           
@@ -280,15 +276,15 @@ class treeSimulator extends Component {
           </div>
           <p>Deforestation events: {this.state.disasterCount}</p>
           
-          { this.state.yearCount < 2 ? <button id="start-btn">Start Simulation</button> : null }
-          { this.props.numtrees < 1 ? <p style={{ 'text-align': 'center' }}>Try again?</p> : null }
-          { this.state.yearCount >= 2  ? <button id="start-btn">Restart</button> : null }
+          { (this.state.simulationState == 'beforeFirstStart') ? <button id="start-btn">Start Simulation</button> : null }
+          { this.props.numtrees < 1 ? <p style={{ textAlign: 'center' }}>Plant more trees to try again.</p> : null }
+          { this.state.simulationState == 'waitingForRestart'  ? <button onClick={() => this.resetTheSim()}>Restart</button> : null }
         </div>
         
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
             <rect class='tooltip-box' x='200' y='10' width='300' height='60' rx='10' ry='10'></rect>
-            <text class='tooltip-text' x='280' y='45'>
+            <text class='tooltip-text' x='270' y='45'>
               {this.state.simulationMessage}
             </text>
         
@@ -304,6 +300,9 @@ class treeSimulator extends Component {
                 />
               </g>))}
           </svg>
+        </div>
+        <div>
+        <span class="simulation-citation">The data for this simulation is based on a few estimates. Rate of removal is based on x, rate of deforestation based on <a href="">y</a>.</span>
         </div>
       </div>
     );
