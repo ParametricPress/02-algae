@@ -2355,6 +2355,37 @@ p.icon-name {
   color: #e0feb7
 }
 
+.tooltip-box {
+  fill: rgb(79, 79, 79);
+  stroke: black;
+  stroke-width: 3;
+  opacity: 0.8;
+}
+
+.tooltip-text {
+  fill: white;
+  font-family: 'Graphik Web';
+  font-size: 18px;
+  opacity: 1
+}
+
+.progress-bar-outer {
+  background-color: #222222!important;
+  height: 10px;
+}
+
+.progress-bar-inner {
+  background-color: #D8FFA2;
+  height: 10px
+}
+
+span.simulation-citation {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgb(130, 130, 130);
+  max-width: 500px
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .column {
