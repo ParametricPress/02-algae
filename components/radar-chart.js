@@ -21,41 +21,44 @@ class RadarChart extends D3Component {
         //////////////////////////////////////////////////////////////
 
         var data = [
-            { name: 'DAC + Soy',
+			{ name: 'DAC + Soy',
+			summary: 'Expensive and energy inefficient',
                 axes: [
-                    {axis: 'Land', value: 0.667},
-                    {axis: 'CO₂ Seq', value: 0.963},
+                    {axis: 'Land use (ha)', value: 0.667},
+                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 0.963},
                     {axis: 'Cost ($/t CO₂)', value: 1},
                     {axis: 'Energy returned', value: 0.129},
-                    {axis: 'GHG impact', value: 1},
-                    {axis: 'Water footprint', value: 0.614}
+                    // {axis: 'GHG impact (kg CO₂e/t)', value: 1},
+                    {axis: 'Water footprint (m3/t)', value: 0.614}
                 ]
             },
-            { name: 'BECCS + Soy',
+			{ name: 'BECCS + Soy',
+			summary: 'Energy efficient but big land/water footprint',
                 axes: [
-                    {axis: 'Land', value: 1},
-                    {axis: 'CO₂ Seq', value: 1},
+                    {axis: 'Land use (ha)', value: 1},
+                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 1},
                     {axis: 'Cost ($/t CO₂)', value: 0.511},
                     {axis: 'Energy returned', value: 1},
-                    {axis: 'GHG impact', value: 1},
-                    {axis: 'Water footprint', value: 1}
+                    // {axis: 'GHG impact', value: 1},
+                    {axis: 'Water footprint (m3/t)', value: 1}
                 ]
             },
-            { name: 'ABECCS',
+			{ name: 'ABECCS',
+			summary: 'Small, energy positive and cost effective',
                 axes: [
-                    {axis: 'Land', value: 0.667},
-                    {axis: 'CO₂ Seq', value: 0.899},
+                    {axis: 'Land use (ha)', value: 0.667},
+                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 0.899},
                     {axis: 'Cost ($/t CO₂)', value: 0.329},                    
                     {axis: 'Energy returned', value: 0.64},
-                    {axis: 'GHG impact', value: 1},
-                    {axis: 'Water footprint', value: 0.61}
+                    // {axis: 'GHG impact (kg CO₂e/t)', value: 1},
+                    {axis: 'Water footprint (m3/t)', value: 0.61}
                 ]
             }
         ];
 
         //////////////////////////////////////////////////////////////
         ////// First example /////////////////////////////////////////
-  ///// (not so much options) //////////////////////////////////
+  		///// (not so much options) //////////////////////////////////
         //////////////////////////////////////////////////////////////
         var radarChartOptions = {
           w: 290,
@@ -65,7 +68,7 @@ class RadarChart extends D3Component {
           roundStrokes: true,
           color: d3.scaleOrdinal().range(["#ff6600", "f8eadd", "#AFC52F"]),
             format: '.0f',
-            legend: { title: 'Carbon capture method', translateX: 110, translateY: 20 },
+            legend: { title: 'Methods', translateX: 110, translateY: 20 },
             // unit: '$'
         };
 
@@ -128,10 +131,10 @@ class RadarChart extends D3Component {
 	const cfg = {
 	 w: 600,				//Width of the circle
 	 h: 600,				//Height of the circle
-	 margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
+	 margin: {top: 20, right: 5, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
-	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
+	 labelFactor: 1.35, 	//How much farther than the radius of the outer circle should the labels be placed
 	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
 	 opacityArea: 0.35, 	//The opacity of the area of the blob
 	 dotRadius: 4, 			//The size of the colored circles of each blog
@@ -190,7 +193,8 @@ class RadarChart extends D3Component {
 
 	//Append a g element
 	let g = svg.append("g")
-			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
+			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left + 50) + "," + (cfg.h/2 + cfg.margin.top) + ")")
+			.style('position', 'relative');
 
 	/////////////////////////////////////////////////////////
 	////////// Glow filter for some extra pizzazz ///////////
@@ -286,6 +290,36 @@ class RadarChart extends D3Component {
 		.enter().append("g")
 		.attr("class", "radarWrapper");
 
+	const tooltipBox = g.append("rect")
+		.attr("x", -250)
+		.attr("y", -190)
+		.attr('width', 200)
+		.attr('height', 60)
+		.attr('rx', 10)
+		.attr('ry', 10)
+		.attr('class', 'tooltip-box');
+
+	const tooltipPreviewText = g.append("text")
+		.attr('x', -150)
+		.attr('y', -162)
+		.style('fill', 'black')
+		.style('font-family', 'Graphik Web')
+		.style('font-size', '18px')
+		.style('opacity', 0.5)
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.35em")
+		.text('Hover for summary');
+	
+	const tooltip = g.append("text")
+		.attr("class", "tooltip")
+		.style('fill', 'white')
+		.style('font-family', 'Graphik Web')
+		.style('font-size', '18px')
+		.style('opacity', 0)
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.35em");
+
+
 	//Append the backgrounds
 	blobWrapper
 		.append("path")
@@ -302,12 +336,33 @@ class RadarChart extends D3Component {
 			d3.select(this)
 				.transition().duration(200)
 				.style("fill-opacity", 0.7);
+
+			tooltipPreviewText.style('opacity', 0)
+			// tooltip.transition().duration(50)
+
+			tooltip
+				.style('opacity', '1');
+
+			
+		})
+		.on('mousemove', function(d) {
+			tooltip
+				.attr('x', -150)
+				.attr('y', -175)			
+				.text(d.summary)
+				.call(wrap, 180);
 		})
 		.on('mouseout', () => {
 			//Bring back all blobs
 			parent.selectAll(".radarArea")
 				.transition().duration(200)
 				.style("fill-opacity", cfg.opacityArea);
+
+			tooltip
+				// .transition().duration(50)
+				.style('opacity', 0)
+
+			tooltipPreviewText.style('opacity', 0.5)
 		});
 
 	//Create the outlines
@@ -352,26 +407,17 @@ class RadarChart extends D3Component {
 		.style("fill", "none")
 		.style("pointer-events", "all")
 		.on("mouseover", function(d,i) {
-			tooltip
-				.attr('x', this.cx.baseVal.value - 10)
-				.attr('y', this.cy.baseVal.value - 10)
-				.transition()
-				.style('display', 'block')
-				.text(Format(d.value) + cfg.unit);
+			// tooltip
+			// 	.attr('x', 100)
+			// 	.attr('y', 100)
+			// 	.transition()
+			// 	.style('display', 'block')				
+			// 	.text(Format(d.value) + cfg.unit);
 		})
 		.on("mouseout", function(){
-			tooltip.transition()
-				.style('display', 'none').text('');
+			// tooltip.transition()
+			// 	.style('display', 'none').text('');
 		});
-
-	const tooltip = g.append("text")
-		.attr("class", "tooltip")
-		.attr('x', 0)
-		.attr('y', 0)
-		.style("font-size", "12px")
-		.style('display', 'none')
-		.attr("text-anchor", "middle")
-		.attr("dy", "0.35em");
 
 	if (cfg.legend !== false && typeof cfg.legend === "object") {
 		let legendZone = svg.append('g');
@@ -396,8 +442,8 @@ class RadarChart extends D3Component {
 		  .data(names)
 		  .enter()
 		  .append("rect")
-		  .attr("x", cfg.w - 65)
-		  .attr("y", (d,i) => i * 20)
+		  .attr("x", cfg.w - 55)
+		  .attr("y", (d,i) => i * 20 - 20)
 		  .attr("width", 10)
 		  .attr("height", 10)
 		  .style("fill", (d,i) => cfg.color(i));
@@ -406,10 +452,10 @@ class RadarChart extends D3Component {
 		  .data(names)
 		  .enter()
 		  .append("text")
-		  .attr("x", cfg.w - 52)
-		  .attr("y", (d,i) => i * 20 + 9)
-		  .attr("font-size", "11px")
-		  .attr("fill", "#737373")
+		  .attr("x", cfg.w - 40)
+		  .attr("y", (d,i) => i * 20 - 10)
+		  .attr("font-size", "14px")
+		  .attr("fill", "white")
 		  .text(d => d);
 	}
 	return svg;
@@ -418,13 +464,7 @@ class RadarChart extends D3Component {
   
 
   update(props, oldProps) {
-    console.log('Updating component properties', props, oldProps);
-    // this.svg
-    //   .selectAll('circle')
-    //   .transition()
-    //   .duration(750)
-    //   .attr('cx', Math.random() * sizeX)
-    //   .attr('cy', Math.random() * sizeY);
+    // console.log('Updating component properties', props, oldProps);
   }
 }
 
