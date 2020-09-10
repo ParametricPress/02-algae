@@ -91,7 +91,7 @@ class treeSimulator extends Component {
   }
 
   componentDidMount() {
-    this.NUM_OF_BRANCHES = 20;
+    this.NUM_OF_BRANCHES = 10;
     this.updateTrees();
     this.startNodeSimulation(); 
   }
@@ -173,7 +173,7 @@ class treeSimulator extends Component {
             yearCount: this.state.yearCount + 1
           })
 
-          if ((this.state.yearCount > 30) || (this.props.numtrees < 1)) {
+          if ((this.state.yearCount > 29) || (this.props.numtrees < 1)) {
             clearInterval(counterForYears)
             this.setState({
               simulationState: 'waitingForRestart',
@@ -203,6 +203,12 @@ class treeSimulator extends Component {
             this.setState({
               simulationState: 'waitingForRestart',
               simulationMessage: 'We ran out of trees...😔'
+            });
+          } else if (this.state.yearCount > 29) {
+            clearInterval(counterForTrees)
+            this.setState({
+              simulationState: 'waitingForRestart',
+              simulationMessage: "It's been 30 yrs. We ran out of time...😔"
             });
           }
         }, 3000);
@@ -242,7 +248,7 @@ class treeSimulator extends Component {
       disasterCount: 0
     });
 
-    this.NUM_OF_BRANCHES = 20;
+    this.NUM_OF_BRANCHES = 10;
       this.updateTrees();
       console.log('restart the sim')
       this.startNodeSimulation(); 
