@@ -66,7 +66,7 @@ class RadarChart extends D3Component {
           margin: margin,
           levels: 5,
           roundStrokes: true,
-          color: d3.scaleOrdinal().range(["#ff6600", "f8eadd", "#AFC52F"]),
+          color: d3.scaleOrdinal().range(["#F09989", "#9BBBD8", "#D8FFA2"]),
             format: '.0f',
             legend: { title: 'Methods', translateX: 110, translateY: 20 },
             // unit: '$'
