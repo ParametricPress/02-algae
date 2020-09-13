@@ -65,8 +65,7 @@ More trees in the world does give us some reason to celebrate. According to a [a
 [data name:"treeloss" source:"geo.json" /]
 
 [FullWidth]
- [var name:"mapZoomHomes" value:false /]
-  [ParaMap map:"homes" zoomEnabled:mapZoomHomes geoJSON:treeloss initialViewport:`{latitude: 33.7620, longitude: -84.4150, zoom: 2}` /]
+  [iframe src:"http://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100vw', height: '50vh'}` /]
 [/FullWidth]
 
 Trees, and plants in general, are very good at the removing CO₂ part of our fight against irreversible climate change. Many people categorize this as a viable carbon sequestration method. But there's a problem with planting a trillion trees: we need the land to do it and we need to keep them alive.
@@ -81,14 +80,14 @@ Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hop
 
 Best case estimates show that it will take [a href:"https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/"]around 25 years[/a] before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight (some trees can take up to 100 years to mature fully). So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate. A team of scientists at NASA [a href:"https://climate.nasa.gov/news/2927/examining-the-viability-of-planting-trees-to-help-mitigate-climate-change/"]estimate[/a] that reforesting 1.7 billion hectares of new trees between one and two thousand years.
 
-[img src:"static/images/redwoods.jpg" /]
-[Caption]
-  The popular California redwood tree takes 5 years of growing in a nursery before it can be planted, after which it will grow between 2 - 6 ft per year. Redwoods are also at high risk of forest fires, as seen in the [a href:"https://kcbsradio.radio.com/articles/californias-oldest-state-park-home-to-redwoods-is-gone"]recent burning in Big Basin State Park[/a].
-[/Caption]
+[FullWidth]
+  [img src:"static/images/redwood_park.jpg" /]
+  [Caption]
+    The popular California redwood tree takes 5 years of growing in a nursery before it can be planted, after which it will grow between 2 - 6 ft per year. Redwoods are also at high risk of forest fires, as seen in the [a href:"https://kcbsradio.radio.com/articles/californias-oldest-state-park-home-to-redwoods-is-gone"]recent burning in Big Basin State Park[/a].
+  [/Caption]
+[/FullWidth]
 
 The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from Nature would require land the size of the US *plus* Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
-
-//  [ArcMap /]
 
 To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [a href:"https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change"]report[/a] this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
 
@@ -98,7 +97,29 @@ If you apply this concept across the world, the amount of farmland we need to co
 
 On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a], and bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"]nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output. When trees die, they release all the CO₂ they have eaten up back to the atmosphere.
 
-// [data name:"treeloss" source:"rcp/rcp_scenario_3.csv" /]
+[var name:"scrollerIndex" value:0 /]
+[Scroller currentStep:scrollerIndex]
+
+  // step through images based on scroll index
+  [Graphic]
+    [Conditional if:`scrollerIndex == 0`]
+      [img class:"primer-image" src:"static/images/screenshot.png" /]
+    [/Conditional]
+    [Conditional if:`scrollerIndex == 1`]
+      [img class:"primer-image" src:"static/images/kelp2.jpg" /]
+    [/Conditional]
+    [Conditional if:`scrollerIndex == 2`]
+      [img class:"primer-image" src:"static/images/kelp3.jpg" /]
+    [/Conditional]
+  [/Graphic]
+
+  [Step]To fully understand the complications around relying on trees to save the planet, it's useful to look at how this actually plays out with a simulation.[/Step]
+  [Step]Each green dot represents xx amount of CO₂. Studies estimate that a single tree can remove up to CO₂ per year; but sometimes trees are felled, burnt, or just die naturally.[/Step]
+  [Step]When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The menu bar on th eleft keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).[/Step]
+  [Step]Run the simulation for yourself below to see if trees can really do the trick![/Step]
+  
+
+[/Scroller]
 
 ### Can you remove all the CO₂ with trees?
 Plant a forest to see how many trees it would take to remove all the CO₂ bubbles. But be careful: when you lose a tree, you also lose the CO₂!
@@ -107,9 +128,6 @@ Plant a forest to see how many trees it would take to remove all the CO₂ bubbl
 [Range value:trees min:0 max:20 /]
 Let's plant a forest of [Display value:trees /] young trees
 
-// [Button id:"kill-tree-btn" onClick:`trees = trees - 1`]
-//   Fire
-// [/Button]
 [treeSimulator 
   ref:"simulator" 
   numtrees:trees
@@ -122,10 +140,12 @@ Planting trees is unquestionably a good idea, but it’s likely not the “silve
 
 You've probably seen algae before---it's floating about on ponds and washing up on shores as kelp seaweed. It takes many different forms, though. Algae can be as small as 0.2mm in picoplankton and as large as 60m long in the form of giant sea kelp. And incredibly, when you take all the types of algae together, this family of flora produces about half of all oxygen on the planet.
 
-[img src:"static/images/kelp-forest.jpg" /]
-[Caption]
-  A giant kelp forest. Kelp is considered to be one of the largest forms of algae; most are only a few millimeters in size.
-[/Caption]
+[FullWidth]
+  [img src:"static/images/kelp2.jpg" /]
+  [Caption]
+    A giant kelp forest. Kelp is considered to be one of the largest forms of algae; most are only a few millimeters in size.
+  [/Caption]
+[/FullWidth]
 
 In recent years, there has been a growing interest in how we can use algae like we use trees to suck carbon dioxide out of our atmosphere. Except with algae, there are different possibilities: due to its size and composition, algae excels at a special type of carbon removal method called bioenergy with carbon capture and storage (BECCS). This means that researchers are studying two things: 1) how we can use algae to remove carbon and 2) how we can use the captured carbon for something else, such as fuel, food, and heat.
 
