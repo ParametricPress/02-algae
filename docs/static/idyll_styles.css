@@ -2366,6 +2366,8 @@ p.icon-name {
   fill: white;
   font-family: 'Graphik Web';
   font-size: 18px;
+  text-align: center;
+  text-anchor: middle;
   opacity: 1
 }
 
@@ -2384,6 +2386,18 @@ span.simulation-citation {
   margin-bottom: 20px;
   color: rgb(130, 130, 130);
   max-width: 500px
+}
+
+.primer-image {
+  margin-left: 45vw;
+  width: 600px;
+}
+
+.idyll-step {
+  background-color: #222222;
+  stroke: black;
+  stroke-width: 3;
+  opacity: 0.8;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
