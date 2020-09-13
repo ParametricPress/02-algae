@@ -8,12 +8,14 @@ const d3 = require('d3');
 class treeSimulator extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       branches: [],
       yearCount: 0,
       disasterCount: 0,
       simulationState: 'beforeFirstStart',
-      simulationMessage: "Let's eat up this CO₂!"
+      simulationMessage: "Let's eat up this CO₂!",
+      readyToSimulate: true
     }
   };
 
@@ -21,6 +23,7 @@ class treeSimulator extends Component {
     this.branchList = this.createBranches(this.NUM_OF_BRANCHES);
     this.setState({ branches: this.branchList });
   };
+
   setColor(r) {
     //hue based on r : 0 -60 red to yellow
     var s = 10;
@@ -28,21 +31,22 @@ class treeSimulator extends Component {
     var c = this.hslToHex(r * 2, s, l);
     return c;
   }
-  createBranches(num) {
 
+  createBranches(num) {
+    var treeHeight = 6;
     var deg_to_rad = Math.PI / 180.0;
-    var depth = 6;
-    let length=4+Math.random()*.8;
+    var depth = 5;
+    let length= treeHeight + Math.random()*2;
     let branches = [];
     let _self=this;
     function drawTree(x1, y1, angle, depth){
-        angle+=10-Math.random()*20;
+        angle+=10-Math.random()*15;
 
       if (depth !== 0){
         var x2 = x1 + (Math.cos(angle * deg_to_rad) * depth * length);
         var y2 = y1 + (Math.sin(angle * deg_to_rad) * depth * length);
-        // let color=_self.setColor(12+(2*depth));
-        let color=_self.setColor(Math.random()*2*depth);
+        let color=_self.setColor(12+(2*depth));
+        // let color=_self.setColor(Math.random()*2*depth);
         let branch={x1:x1,y1: y1, x2:x2, y2:y2, depth:depth,color:color};
         branches.push(branch);
 
@@ -55,7 +59,7 @@ class treeSimulator extends Component {
     let angle=-100+Math.random()*25;
 
     for (let i = 0; i < this.props.numtrees; i++) {
-      drawTree((Math.random() * 150) + 1, 100, angle, depth);
+      drawTree((Math.random() * 200) + 5, 100, angle, depth);
     }   
     
     return branches;
@@ -153,65 +157,95 @@ class treeSimulator extends Component {
     }
     
     d3.select("#start-btn").on("click", () => {
-        this.updateTrees()
-        this.setState({
-          simulationState: 'running',
-          simulationMessage: 'Removing CO₂...'
-        });
 
-        d3.select('.tooltip')
-            .attr('opacity', 1)
-
-        let counterForYears = setInterval(() => {
-          let treeCarbonCount = this.props.numtrees * 1;
-          for (let i = 0; i < treeCarbonCount; i++) {
-            removeNode();
-          }
-          updateSim();
-
+        if (!this.state.readyToSimulate) {
           this.setState({ 
-            yearCount: this.state.yearCount + 1
+            simulationMessage: "You need to reset the simulation first!"
           })
+        } else {
+          this.updateTrees()
+          this.setState({
+            simulationState: 'running',
+            simulationMessage: 'Removing CO₂...'
+          });
 
-          if ((this.state.yearCount > 29) || (this.props.numtrees < 1)) {
-            clearInterval(counterForYears)
-            this.setState({
-              simulationState: 'waitingForRestart',
-            });
-          }
+          d3.select('.tooltip')
+              .attr('opacity', 1)
 
-        }, 1000);
+          let counterForYears = setInterval(() => {
+            let treeCarbonCount = this.props.numtrees * 1;
+            for (let i = 0; i < treeCarbonCount; i++) {
+              removeNode();
 
-        let counterForTrees = setInterval(() => {
-          // for every tree killed, release all carbon from tree
-          for (let i = 0; i < this.state.yearCount * 1; i++) {
-            addNode();
-          }
-          updateSim();
+              // add dot by the trees for every carbon removed
+              d3.select("#treelandscape")
+                  .append('rect')
+                  .attr("x", 270+(this.state.yearCount*10))
+                  .attr("y", 395 - (i*10))
+                  .attr('rx', 10)
+                  .attr('ry', 10)
+                  .attr('width', 5)
+                  .attr('height', 5)
+                  .attr('fill', '#9BBBD8')
+                  .attr('opacity', 0)
+                  .attr('class', 'removed-carbon')
+                  .transition()
+                  .delay(300)
+                  .attr('opacity', 1);
+            }
+            updateSim();
 
-          this.props.updateProps({
-            numtrees: this.props.numtrees - 1
-          })
+            this.setState({ 
+              yearCount: this.state.yearCount + 1
+            })
 
-          this.setState({ 
-            disasterCount: this.state.disasterCount + 1,
-            simulationMessage: 'Tree down: carbon escaped!'
-          })
+            if ((this.state.yearCount > 29) || (this.props.numtrees < 1)) {
+              clearInterval(counterForYears)
+              this.setState({
+                simulationState: 'waitingForRestart',
+              });
+            }
 
-          if (this.props.numtrees < 1) {
-            clearInterval(counterForTrees)
-            this.setState({
-              simulationState: 'waitingForRestart',
-              simulationMessage: 'We ran out of trees...😔'
-            });
-          } else if (this.state.yearCount > 29) {
-            clearInterval(counterForTrees)
-            this.setState({
-              simulationState: 'waitingForRestart',
-              simulationMessage: "It's been 30 yrs. We ran out of time...😔"
-            });
-          }
-        }, 3000);
+          }, 1000);
+
+          let counterForTrees = setInterval(() => {
+            // for every tree killed, release all carbon from tree
+            for (let i = 0; i < this.state.yearCount * 1; i++) {
+              addNode();
+              
+              // remove # of carbon that tree has sequestered
+              d3.select("#treelandscape").select('.removed-carbon')
+                  .remove();
+            }
+            updateSim();
+
+            this.props.updateProps({
+              numtrees: this.props.numtrees - 1
+            })
+
+            this.setState({ 
+              disasterCount: this.state.disasterCount + 1,
+              simulationMessage: 'We lost a tree! Removing CO₂...'
+            })
+
+            if (this.props.numtrees < 1) {
+              clearInterval(counterForTrees)
+              this.setState({
+                simulationState: 'waitingForRestart',
+                simulationMessage: 'We ran out of trees...😔',
+                readyToSimulate: false
+              });
+
+            } else if (this.state.yearCount > 29) {
+              clearInterval(counterForTrees)
+              this.setState({
+                simulationState: 'waitingForRestart',
+                simulationMessage: "It's been 30 yrs. We ran out of time...😔",
+                readyToSimulate: false
+              });
+            }
+          }, 3000);
+        }
       }
     );
 
@@ -243,27 +277,26 @@ class treeSimulator extends Component {
   resetTheSim() {
     this.setState({
       simulationState: 'beforeFirstStart',
-      simulationMessage: "Try planting more trees this",
+      simulationMessage: "Drag the slider to plant more trees.",
       yearCount: 0,
-      disasterCount: 0
+      disasterCount: 0,
+      readyToSimulate: true
     });
 
     this.NUM_OF_BRANCHES = 10;
-      this.updateTrees();
-      console.log('restart the sim')
-      this.startNodeSimulation(); 
+    this.updateTrees();
+    console.log('restart the sim')
+    this.startNodeSimulation(); 
   }
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
       
-      // do not redraw trees until start button pressed
-      if (this.state.simulationState != 'beforeFirstStart') {
-        this.updateTrees()
-      } 
+      this.updateTrees()
+       
     }
   }
   render() {
-    const viewHeight = 15;
+    const viewHeight = 25;
     return (
       <div className="app row">
         <div className="column sim-controls">
@@ -282,25 +315,24 @@ class treeSimulator extends Component {
           </div>
           <p>Deforestation events: {this.state.disasterCount}</p>
           
-          { (this.state.simulationState == 'waitingForRestart') || (this.state.simulationState == 'beforeFirstStart') ? <button id="start-btn">Start Simulation</button> : null }
-          { this.props.numtrees < 1 ? <p style={{ textAlign: 'center' }}>Plant more trees to try again.</p> : null }
+          <button id="start-btn">Start Simulation</button>
           { this.state.simulationState == 'waitingForRestart'  ? <button id="restart-btn" onClick={() => this.resetTheSim()}>Reset</button> : null }
         </div>
         
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
-            <rect class='tooltip-box' x='200' y='10' width='300' height='60' rx='10' ry='10'></rect>
-            <text class='tooltip-text' x='270' y='45'>
+            <rect class='tooltip-box' x='150' y='10' width='400' height='60' rx='10' ry='10'></rect>
+            <text class='tooltip-text' x='340' y='45'>
               {this.state.simulationMessage}
             </text>
         
             {this.state.branches.map((b, i) => (
               <g id="svg_1" 
               key={i}
-              transform="translate(300,300)"
+              transform="translate(260,300)"
               >             
              <line id="svg_2" x1={b.x1} y1={b.y1} x2={b.x2} y2={b.y2}
-                  strokeWidth=".3"
+                  strokeWidth=".5"
                   stroke={b.color}
                  
                 />
@@ -308,7 +340,7 @@ class treeSimulator extends Component {
           </svg>
         </div>
         <div>
-        <span class="simulation-citation">The data for this simulation is based on a few estimates. Rate of removal is based on x, rate of deforestation based on <a href="">y</a>.</span>
+        <span class="simulation-citation">The data for this simulation is based on a few estimates, but is mainly meant to illustrate a wider problem. Rate of CO₂ removal assumes that a mature tree absorbs 48 lbs/yr (estimate from the <a href="http://www.tenmilliontrees.org/trees/" target="_blank">10 Million Trees project</a>), but these estimates vary greatly by region, type of tree, and age of tree. The rate of deforestation assumes that deforestation rates will stay the same or increase in the future.</span>
         </div>
       </div>
     );
