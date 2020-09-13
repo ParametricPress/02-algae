@@ -21,6 +21,11 @@ let data_3 = [];
 let data_6 = [];
 let data_45 = [];
 
+const color1 = "#D8FFA2",
+  color3 = "#9BBBD8",
+  color2 = "#ADADAD",
+  color4 = "#F09989";
+
 class D3LineChart extends D3Component {
   initialize(node, props) {
     // console.log('Initializing custom D3 component. This component requires that the author is responsible for updating the DOM as properties change.');
@@ -89,7 +94,7 @@ class D3LineChart extends D3Component {
       g.append("path")
           .datum(d85)
           .attr("fill", "none")
-          .attr("stroke", "#245100")
+          .attr("stroke", color4)
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -101,13 +106,13 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d85[d85.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
-          .style("fill", "#245100")
+          .style("fill", color4)
           .text("RCP 85");
 
       g.append("path")
           .datum(d45)
           .attr("fill", "none")
-          .attr("stroke", "#5e8736")
+          .attr("stroke", color3)
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -119,13 +124,13 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
-          .style("fill", "#5e8736")
+          .style("fill", color3)
           .text("RCP 4.5");
 
       g.append("path")
           .datum(d6)
           .attr("fill", "none")
-          .attr("stroke", "#9ac26a")
+          .attr("stroke", color2)
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -137,13 +142,13 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d6[d6.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
-          .style("fill", "#9ac26a")
+          .style("fill", color2)
           .text("RCP 6");
 
       g.append("path")
           .datum(data3)
           .attr("fill", "none")
-          .attr("stroke", "#d9ffa2")
+          .attr("stroke", color1)
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
           .attr("stroke-width", 3)
@@ -155,7 +160,7 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(data3[data3.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
-          .style("fill", "#d9ffa2")
+          .style("fill", color1)
           .text("RCP 2.6");
     
   }
