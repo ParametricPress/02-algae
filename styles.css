@@ -302,25 +302,12 @@ button {
 
 /* Ben's custom style classes */
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
-
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.sim-controls {
-  background-color: #3f3f3f;
-}
-
-.flex-grid {
-  display: flex;
-}
 .icon-col {
   flex: 1;
 }
@@ -350,12 +337,39 @@ p.icon-name {
 .progress-bar-outer {
   background-color: #222222!important;
   height: 10px;
+  margin-top: 20px;
 }
 
 .progress-bar-inner {
   background-color: #D8FFA2;
   height: 10px
 }
+
+#start-btn {
+  background-color: #9BBBD8
+}
+
+#restart-btn {
+  background-color: #9BBBD8
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child-1 {
+  flex: 1;
+  border: 2px solid yellow;
+}
+
+.flex-child-3 {
+  width: 300px;
+  /* border: 2px solid yellow; */
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+} 
 
 span.simulation-citation {
   font-size: 14px;
@@ -374,6 +388,23 @@ span.simulation-citation {
   stroke: black;
   stroke-width: 3;
   opacity: 0.8;
+}
+
+.co2-legend {
+  font-size: 12px;
+  fill: white;
+}
+
+.co2-type {
+  fill: gray;
+  font-size: 12px
+}
+
+.tree-sim {
+  background-color: #3F3F3F;
+  margin: auto;
+  padding: 20px;
+  height: 850px
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
