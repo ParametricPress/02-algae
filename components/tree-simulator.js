@@ -120,7 +120,7 @@ class treeSimulator extends Component {
             simulationMessage: "You need to reset the simulation first!"
           })
         } else {
-          this.updateTrees()
+          // this.updateTrees()
           this.setState({
             simulationState: 'running',
             simulationMessage: 'Removing CO₂...'
@@ -171,10 +171,17 @@ class treeSimulator extends Component {
               addNode("blue");
               
               // remove # of carbon that tree has sequestered
-              d3.select("#treelandscape").select('.removed-carbon')
-                  .remove();
+              let selec = d3.selectAll('.removed-carbon');
+              let lastNode = selec.nodes()[selec.nodes().length - 1]
+              
+              lastNode.remove();
+              
+              console.log(lastNode)
             }
             updateSim();
+
+            d3.select(".svg-trees")
+                .remove();
 
             this.props.updateProps({
               numtrees: this.props.numtrees - 1
@@ -247,7 +254,10 @@ class treeSimulator extends Component {
   }
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
-      this.updateTrees()
+      if (this.state.simulationState != "running") {
+        this.updateTrees()
+      }
+      
     }
   }
   render() {
@@ -260,7 +270,9 @@ class treeSimulator extends Component {
         </div>
         <div >
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h4>{this.state.simulationMessage}</h4> : null }
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>{this.state.disasterCount} deforestation events </p> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount}</p> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.disasterCount}</p> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {this.state.disasterCount}</p> : null }
         </div>
       
         <div className="content column">
