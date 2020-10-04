@@ -106,13 +106,13 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
   // step through images based on scroll index
   [Graphic]
     [Conditional if:`scrollerIndex == 0`]
-      [img class:"primer-image" src:"static/images/screenshot.png" /]
+      [img class:"primer-image" src:"static/images/sim-preview-1.png" /]
     [/Conditional]
     [Conditional if:`scrollerIndex == 1`]
-      [img class:"primer-image" src:"static/images/tree-remove-carbon.png" /]
+      [img class:"primer-image" src:"static/images/sim-preview-2.png" /]
     [/Conditional]
     [Conditional if:`scrollerIndex == 2`]
-      [img class:"primer-image" src:"static/images/tree-release-carbon.png" /]
+      [img class:"primer-image" src:"static/images/sim-preview-3.png" /]
     [/Conditional]
   [/Graphic]
 

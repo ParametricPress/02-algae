@@ -65,7 +65,7 @@ class treeSimulator extends Component {
       height = 400;
 
     d3.select("#treelandscape").append("svg:image")
-      .attr("xlink:href", "static/images/svg-tree-stroke.svg")
+      .attr("xlink:href", "static/images/svg-tree-stroke-2.svg")
       .attr("class", "svg-trees")
       .attr("width", 60)
       .attr("height", 60)
