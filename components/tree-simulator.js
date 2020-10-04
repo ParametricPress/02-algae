@@ -5,6 +5,34 @@
 import React, { Component } from 'react';
 const d3 = require('d3');
 
+let gridHeightStart = 240;
+let gridWidthStart = 200;
+let spacing = 20;
+
+const blueDotX = {
+  1: gridWidthStart,
+  2: gridWidthStart,
+  3: gridWidthStart,
+  4: gridWidthStart+spacing,
+  5: gridWidthStart+spacing,
+  6: gridWidthStart+spacing,
+  7: gridWidthStart+(spacing*2),
+  8: gridWidthStart+(spacing*2),
+  9: gridWidthStart+(spacing*2),
+};
+
+const blueDotY = {
+  1: gridHeightStart,
+  2: gridHeightStart-spacing,
+  3: gridHeightStart-(spacing*2),
+  4: gridHeightStart,
+  5: gridHeightStart-spacing,
+  6: gridHeightStart-(spacing*2),
+  7: gridHeightStart,
+  8: gridHeightStart-spacing,
+  9: gridHeightStart-(spacing*2),
+};
+
 class treeSimulator extends Component {
   constructor(props) {
     super(props)
@@ -15,7 +43,8 @@ class treeSimulator extends Component {
       disasterCount: 0,
       simulationState: 'beforeFirstStart',
       simulationMessage: "Let's eat up this CO₂!",
-      readyToSimulate: true
+      readyToSimulate: true,
+      carbonDots: 0
     }
   };
 
@@ -33,7 +62,7 @@ class treeSimulator extends Component {
 
   drawSvgTree(x, y) {
     const width = 600,
-      height = 300;
+      height = 400;
 
     d3.select("#treelandscape").append("svg:image")
       .attr("xlink:href", "static/images/svg-tree-stroke.svg")
@@ -41,7 +70,7 @@ class treeSimulator extends Component {
       .attr("width", 60)
       .attr("height", 60)
       .attr("x", (width/6) + x)
-      .attr("y",height - y);
+      .attr("y",(height - y)+20);
   }
 
   componentDidMount() {
@@ -52,7 +81,7 @@ class treeSimulator extends Component {
 
   startNodeSimulation() {
     const width = 600,
-      height = 300,
+      height = 400,
       radius = 2;
 
     let nodes = [],
@@ -65,7 +94,7 @@ class treeSimulator extends Component {
 
     let simulation = d3.forceSimulation()
           .force("x", d3.forceX().x(width/2))
-          .force("y", d3.forceY().y(80))
+          .force("y", d3.forceY().y(100))
           .force("gravity", d3.forceManyBody().strength(-radius - 2))
           .force("collide", d3.forceCollide()
               .radius(d => d.radius + 0.1)
@@ -133,12 +162,43 @@ class treeSimulator extends Component {
             let treeCarbonCount = this.props.numtrees * 1;
             for (let i = 0; i < treeCarbonCount; i++) {
               removeNode();
+              this.state.carbonDots = this.state.carbonDots + 1;
+              // console.log(this.state.carbonDots)
+              // console.log(this.state.carbonDots*10)
 
               // add dot by the trees for every carbon removed
               d3.select("#treelandscape")
                   .append('rect')
-                  .attr("x", 270+(this.state.yearCount*10))
-                  .attr("y", 255 - (i*10))
+                  .attr("x", ()=> {
+                    if (this.state.carbonDots < 20) {
+                      return gridWidthStart+(this.state.carbonDots*10) // row 1
+                    } else if (this.state.carbonDots >= 20 && this.state.carbonDots <39) {
+                      return gridWidthStart-190+(this.state.carbonDots*10) //  row 2
+                    } else if (this.state.carbonDots >= 40 && this.state.carbonDots <59) {
+                      return gridWidthStart-390+(this.state.carbonDots*10) // row 3
+                    } else if (this.state.carbonDots >= 60 && this.state.carbonDots <=79) {
+                      return gridWidthStart-590+(this.state.carbonDots*10) // row 4
+                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <100) {
+                      return gridWidthStart-790+(this.state.carbonDots*10) // row 5
+                    } else {
+                      return gridWidthStart-990+(this.state.carbonDots*10) // row 6
+                    }
+                  })
+                  .attr("y", () => {
+                    if (this.state.carbonDots < 20) {
+                      return gridHeightStart;
+                    } else if (this.state.carbonDots >= 20 && this.state.carbonDots <39) {
+                      return gridHeightStart+10;
+                    } else if (this.state.carbonDots >= 40 && this.state.carbonDots <59) {
+                      return gridHeightStart+20;
+                    } else if (this.state.carbonDots >= 60 && this.state.carbonDots <79) {
+                      return gridHeightStart+30;
+                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <99) {
+                      return gridHeightStart+40;
+                    } else {
+                      return gridHeightStart+50;
+                    }
+                  })
                   .attr('rx', 10)
                   .attr('ry', 10)
                   .attr('width', 5)
@@ -169,14 +229,13 @@ class treeSimulator extends Component {
             // for every tree killed, release all carbon from tree
             for (let i = 0; i < this.state.yearCount * 1; i++) {
               addNode("blue");
+              this.state.carbonDots = this.state.carbonDots - 1;
               
               // remove # of carbon that tree has sequestered
               let selec = d3.selectAll('.removed-carbon');
               let lastNode = selec.nodes()[selec.nodes().length - 1]
               
               lastNode.remove();
-              
-              console.log(lastNode)
             }
             updateSim();
 
@@ -247,6 +306,8 @@ class treeSimulator extends Component {
       readyToSimulate: true
     });
 
+    d3.selectAll('.removed-carbon').remove()
+
     this.NUM_OF_BRANCHES = 10;
     this.updateTrees();
     console.log('restart the sim')
@@ -270,17 +331,17 @@ class treeSimulator extends Component {
         </div>
         <div >
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h4>{this.state.simulationMessage}</h4> : null }
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount}</p> : null }
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.disasterCount}</p> : null }
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {this.state.disasterCount}</p> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount * 1000}</p> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.carbonDots *10}kg CO₂</p> : null }
+          {/* { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {50 - this.state.carbonDots}</p> : null } */}
         </div>
       
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="440" cy="7" rx="3" fill="#F09989"></ellipse>
             <text class="co2-legend" x="450" y="10">= 10kg CO₂</text>
-            <text class="co2-type" x="250" y="10">Atmospheric CO₂</text>
-            <text class="co2-type" x="250" y="290">Sequestered CO₂</text>
+            <text class="co2-type" x="80" y="110">Atmospheric CO₂</text>
+            <text class="co2-type" x="80" y="260">Sequestered CO₂</text>
           </svg>
         </div>
 

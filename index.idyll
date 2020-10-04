@@ -128,7 +128,7 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
 Plant a forest to see how many trees it would take to remove all the CO₂ bubbles. But be careful: When you lose a tree, you also lose the CO₂!
 
 [var name:"trees" value:5 /]
-[Range value:trees min:0 max:20 /]
+[Range value:trees min:0 max:10 /]
 [FullWidth]
   [treeSimulator 
     ref:"simulator" 
@@ -246,7 +246,7 @@ This is the power, and the potential promise, of algae. Rather than the single b
 
 [AuthorBio]
 
-[b][a href:"https://bendoesdataviz.com"]Benjamin Cooley[/a][/b] is _TK insert bio here_.
+[b][a href:"https://bendoesdataviz.com"]Benjamin Cooley[/a][/b] is a designer and developer of data visualizations. He currently builds scientific visualization portals at the Broad Institute.
 
 Edited by TK editor list.
 
