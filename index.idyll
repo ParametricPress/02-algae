@@ -44,8 +44,8 @@ The IPCC has outlined four potential pathways for how the world can avoid the ir
   [Radio value:selectVal options:`["Entire projection", "Where we are now"]`  /]
   // [var name:"selectVal" value:"All scenarios" /]
   // [Select value:selectVal options:`["All time", "Where we are now"]`  /]
-  
-  [D3LineChart 
+
+  [D3LineChart
     data:rcp_eightyfive
     scenario3:rcp_three
     scenario6:rcp_six
@@ -68,7 +68,7 @@ More trees in the world does give us some reason to celebrate. According to a [a
 [data name:"treeloss" source:"geo.json" /]
 
 [FullWidth]
-  [iframe src:"http://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100vw', height: '60vh'}` /]
+  [iframe src:"https://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100%', height: '60vh'}` /]
   [Caption]
     The Global Forest Watch is an open-source web application to monitor global forests in near real-time. Explore the map above to see how deforestation rates have changed over time across the globe.
   [/Caption]
@@ -123,7 +123,7 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
   [Step]Each [Inline][img src:"static/images/green-dot.png" /][/Inline] green dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. When a tree sequesters CO₂, it stores it as a [Inline][img src:"static/images/blue-dot.png" /][/Inline] blue dot. But sometimes trees are felled, burned, or just die naturally...[/Step]
   [Step]When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The menu bar on the left keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).[/Step]
   [Step]Run the simulation for yourself below to see how the cycle of tree planting affects CO₂ levels![/Step]
-  
+
 
 [/Scroller]
 
@@ -133,8 +133,8 @@ Plant a forest to see how many trees it would take to remove all the CO₂ bubbl
 [var name:"trees" value:5 /]
 [Range value:trees min:0 max:10 /]
 [FullWidth]
-  [treeSimulator 
-    ref:"simulator" 
+  [treeSimulator
+    ref:"simulator"
     numtrees:trees
     maxTrees: 20
     yearCounter:0 /]
@@ -177,7 +177,7 @@ Algae can be used for a plethora of different things after it has captured carbo
 
 [/ParametricGraphic]
 
-Algae has a number of byproducts that can be used as biofuels for transportation, building materials, feed for animals and humans, and clothing. This is the crucial part of a BECCS technology: once you capture the CO₂, you need to figure out what to do with it. Otherwise, the CO₂ will find its way back into the atmosphere, just like when a tree dies at the end of its life (or more tragically, is burned). 
+Algae has a number of byproducts that can be used as biofuels for transportation, building materials, feed for animals and humans, and clothing. This is the crucial part of a BECCS technology: once you capture the CO₂, you need to figure out what to do with it. Otherwise, the CO₂ will find its way back into the atmosphere, just like when a tree dies at the end of its life (or more tragically, is burned).
 
 // [Aside]
 //   [img src:"static/images/open-seaweed-farm.jpg" /]
@@ -214,7 +214,7 @@ Some people think the pros of removing CO₂ outweigh the cons. Prof Victor Smet
 
 ### Grow it in a pond
 
-There are also options to grow algae for carbon sequestration in controlled environments. A [a href:"https://academic.oup.com/bioscience/article/60/9/722/238034"]research experiment[/a] published in the American Institute of Biological Sciences tested growing algae in a controlled pond environment. The researchers strategically placed this pond next to a fossil-fuel power plant to test its maximum carbon capture potential and then compared these results with direct air capture (DAC) and Bioenergy Carbon Capture and Storage (BECCS) using soy. 
+There are also options to grow algae for carbon sequestration in controlled environments. A [a href:"https://academic.oup.com/bioscience/article/60/9/722/238034"]research experiment[/a] published in the American Institute of Biological Sciences tested growing algae in a controlled pond environment. The researchers strategically placed this pond next to a fossil-fuel power plant to test its maximum carbon capture potential and then compared these results with direct air capture (DAC) and Bioenergy Carbon Capture and Storage (BECCS) using soy.
 
 [img src:"static/images/nutrex-hawaii-plant.jpg" /]
 [Caption]

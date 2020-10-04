@@ -10,7 +10,7 @@
     "css": "styles.css",
     "authorView": false,
     "template": "_index.html",
-    "layout": "./node_modules/parametric-styles/issue-02-theme.css",
+    "layout": "./node_modules/parametric-styles/issue-02-theme-dark.css",
     "theme": "./node_modules/parametric-styles/issue-02-layout.css",
     "components": [
       "./node_modules/parametric-components/dist/cjs/issue-02",
@@ -27,8 +27,8 @@
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
     "p5": "^1.1.9",
-    "parametric-components": "^2.1.10",
-    "parametric-styles": "^2.1.6",
+    "parametric-components": "^2.1.16",
+    "parametric-styles": "^2.2.7",
     "react-map-gl": "^5.2.7",
     "react-visibility-sensor": "^5.1.1"
   }
