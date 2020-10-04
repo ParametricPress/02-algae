@@ -23,7 +23,7 @@
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
-[img src:"static/images/algae_cover.jpg" /]
+[img src:"static/images/algae-cover.jpg" /]
 [Caption]
   Image by [a href:"https://pixabay.com/users/oli2020-1674251/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4431071"]Oli Hale[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4431071"]Pixabay[/a]
 [/Caption]
@@ -68,10 +68,9 @@ More trees in the world does give us some reason to celebrate. According to a [a
 [data name:"treeloss" source:"geo.json" /]
 
 [FullWidth]
+  [ParametricGraphic hed:"Two decades of deforestation" subhed:"The Global Forest Watch is an open-source web application to monitor global forests in near real-time. Explore the map below to see how deforestation rates have changed over time across the globe." source:"Global Forest Watch"]
   [iframe src:"https://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100%', height: '60vh'}` /]
-  [Caption]
-    The Global Forest Watch is an open-source web application to monitor global forests in near real-time. Explore the map above to see how deforestation rates have changed over time across the globe.
-  [/Caption]
+  [/ParametricGraphic]
 [/FullWidth]
 
 Trees, and plants in general, are very good at the *removing CO₂ part* of our fight against irreversible climate change. Many people categorize this as a viable carbon sequestration method. But there's a problem with planting a trillion trees: we need the amount of land to do it and we need to keep them alive.
