@@ -10,7 +10,7 @@
     "css": "styles.css",
     "authorView": false,
     "template": "_index.html",
-    "layout": "./node_modules/parametric-styles/issue-02-theme.css",
+    "layout": "./node_modules/parametric-styles/issue-02-theme-dark.css",
     "theme": "./node_modules/parametric-styles/issue-02-layout.css",
     "components": [
       "./node_modules/parametric-components/dist/cjs/issue-02",
