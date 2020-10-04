@@ -12,7 +12,7 @@ class RadarChart extends D3Component {
 		//////////////////////// Set-Up //////////////////////////////
 		//////////////////////////////////////////////////////////////
 
-		const margin = { top: 50, right: 80, bottom: 50, left: 80 },
+		const margin = { top: 80, right: 120, bottom: 50, left: 80 },
 		width = Math.min(700, window.innerWidth / 4) - margin.left - margin.right,
 		height = Math.min(width, window.innerHeight - margin.top - margin.bottom);
 
@@ -109,9 +109,9 @@ class RadarChart extends D3Component {
 	}//wrap
 
 	const cfg = {
-	 w: 600,				//Width of the circle
+	 w: 650,				//Width of the circle
 	 h: 600,				//Height of the circle
-	 margin: {top: 20, right: 5, bottom: 20, left: 20}, //The margins of the SVG
+	 margin: {top: 80, right: 25, bottom: 20, left: 10}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
 	 labelFactor: 1.35, 	//How much farther than the radius of the outer circle should the labels be placed
@@ -271,20 +271,20 @@ class RadarChart extends D3Component {
 		.attr("class", "radarWrapper");
 
 	const tooltipBox = g.append("rect")
-		.attr("x", -250)
-		.attr("y", -190)
+		.attr("x", -265)
+		.attr("y", -205)
 		.attr('width', 200)
-		.attr('height', 60)
+		.attr('height', 80)
 		.attr('rx', 10)
 		.attr('ry', 10)
 		.attr('class', 'tooltip-box');
 
 	const tooltipPreviewText = g.append("text")
-		.attr('x', -150)
-		.attr('y', -162)
+		.attr('x', -165)
+		.attr('y', -165)
 		.style('fill', 'white')
 		.style('font-family', 'Graphik Web')
-		.style('font-size', '18px')
+		.style('font-size', '16px')
 		.style('opacity', 0.5)
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em")
@@ -294,7 +294,7 @@ class RadarChart extends D3Component {
 		.attr("class", "tooltip")
 		.style('fill', 'white')
 		.style('font-family', 'Graphik Web')
-		.style('font-size', '18px')
+		.style('font-size', '16px')
 		.style('opacity', 0)
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em");
@@ -327,10 +327,10 @@ class RadarChart extends D3Component {
 		})
 		.on('mousemove', function(d) {
 			tooltip
-				.attr('x', -150)
+				.attr('x', -165)
 				.attr('y', -175)			
 				.text(d.summary)
-				.call(wrap, 180);
+				.call(wrap, 200);
 		})
 		.on('mouseout', () => {
 			//Bring back all blobs
