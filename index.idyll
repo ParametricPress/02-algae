@@ -23,7 +23,10 @@
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
-[img src:"static/images/hero.png" /]
+[img src:"static/images/algae_cover.jpg" /]
+[Caption]
+  Image by [a href:"https://pixabay.com/users/oli2020-1674251/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4431071"]Oli Hale[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4431071"]Pixabay[/a]
+[/Caption]
 
 [br /]
 
@@ -84,9 +87,9 @@ Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hop
 Best case estimates show that it will take [a href:"https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/"]around 25 years[/a] before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight (some trees can take up to 100 years to mature fully). So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate. A team of scientists at NASA [a href:"https://climate.nasa.gov/news/2927/examining-the-viability-of-planting-trees-to-help-mitigate-climate-change/"]estimate[/a] that reforesting 1.7 billion hectares of new trees between one and two thousand years.
 
 [FullWidth]
-  [img src:"static/images/redwood_park.jpg" /]
+  [img src:"static/images/redwoods_2x.JPG" /]
   [Caption]
-    The popular California redwood tree takes 5 years of growing in a nursery before it can be planted, after which it will grow between 2 - 6 ft per year. Redwoods are also at high risk of forest fires, as seen in the [a href:"https://kcbsradio.radio.com/articles/californias-oldest-state-park-home-to-redwoods-is-gone"]recent burning in Big Basin State Park[/a].
+    The popular California redwood tree takes 5 years of growing in a nursery before it can be planted, after which it will grow between 2 - 6 ft per year. Redwoods are also at high risk of forest fires, as seen in the [a href:"https://kcbsradio.radio.com/articles/californias-oldest-state-park-home-to-redwoods-is-gone"]recent burning in Big Basin State Park[/a]. Photo by [a href:"https://commons.wikimedia.org/wiki/File:Williams_Grove_-_Humboldt_Redwoods_State_Park_-_DSC02398.JPG"]Daderot[/a]
   [/Caption]
 [/FullWidth]
 
@@ -144,9 +147,9 @@ Planting trees is unquestionably a good idea, but it’s likely not the “silve
 You've probably seen algae before---it's floating about on ponds and washing up on shores as kelp seaweed. It takes many different forms, though. Algae can be as small as 0.2mm in picoplankton and as large as 60m long in the form of giant sea kelp. And incredibly, when you take all the types of algae together, this family of flora produces about half of all oxygen on the planet.
 
 [FullWidth]
-  [img src:"static/images/kelp2.jpg" /]
+  [img src:"static/images/large_kelp.jpg" /]
   [Caption]
-    A giant kelp forest. Kelp is considered to be one of the largest forms of algae; most are only a few millimeters in size.
+    A giant kelp forest. Kelp is considered to be one of the largest forms of algae; most are only a few millimeters in size. Photo by [a href:"https://www.flickr.com/photos/johnjoh/283901386/in/photostream/"]star5112[/a] / CC.
   [/Caption]
 [/FullWidth]
 
@@ -176,12 +179,12 @@ Algae can be used for a plethora of different things after it has captured carbo
 
 Algae has a number of byproducts that can be used as biofuels for transportation, building materials, feed for animals and humans, and clothing. This is the crucial part of a BECCS technology: once you capture the CO₂, you need to figure out what to do with it. Otherwise, the CO₂ will find its way back into the atmosphere, just like when a tree dies at the end of its life (or more tragically, is burned). 
 
-[Aside]
-  [img src:"static/images/open-seaweed-farm.jpg" /]
-  [Caption]
-    description of company harvesting seaweed for food
-  [/Caption]
-[/Aside]
+// [Aside]
+//   [img src:"static/images/open-seaweed-farm.jpg" /]
+//   [Caption]
+//     PHOTOS COURTESY OF SALT POINT SEAWEED
+//   [/Caption]
+// [/Aside]
 
 Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3D printing. 
 
@@ -189,7 +192,7 @@ Commercial companies such as [a href:"https://sustainablebrands.com/read/cleante
 
 [img src:"static/images/algae-building.jpg" /]
 [Caption]
-  description of company harvesting seaweed for food
+  Located in Hamburg, Germany, the walls of this building are lined with glass panels full of algae. The harvested energy from the algae powers the entire building. Photo by NordNordWest/Wikimedia Commons.
 [/Caption]
 
 ## Methods and complications of using algae for carbon capture
@@ -200,9 +203,9 @@ So how can scientists use algae to pull CO₂ from the air? Well, much like any 
 
 One method of growing algae at scale is to use our open oceans. [a href:"https://www.nature.com/articles/nature11229"]Research[/a] has shown that by adding iron to the ocean, algae will grow in an algae bloom and start to remove CO₂ from the atmosphere. When this algae begins to die, it sinks towards the ocean floor along with the carbon it just sequestered. Once sunk, scientists estimate it could stay there for centuries.
 
-[img src:"static/images/wet-algae.jpg" /]
+[img src:"static/images/algae-smoky_Jukka_CCby2.0.jpg" /]
 [Caption]
-  wet algae
+  Sifting algae at the bottom of a sand quarry near Porvoo, Finland. Photo by [a href:"https://www.flickr.com/photos/jukk_a/6100951386/"]Jukka[/a] under [a href:"https://creativecommons.org/licenses/by/2.0/"]CC 2.0[/a].
 [/Caption]
 
 Critics of this method cite the unintended environmental side effects as too dangerous. The ecological impact of fertilizing the oceans at large are still relatively unknown (for example, the possibility of the CO₂ leaking in the future). Other [a href:"https://www.nature.com/news/dumping-iron-at-sea-does-sink-carbon-1.11028"]studies[/a] have shown how unrestricted algal blooms can turn toxic, killing ecosystems and valuable marine life.
@@ -215,7 +218,7 @@ There are also options to grow algae for carbon sequestration in controlled envi
 
 [img src:"static/images/nutrex-hawaii-plant.jpg" /]
 [Caption]
-  Nutrix Hawaii algae plant (not from the study)
+  An algae farm owned by [a href:"https://www.cyanotech.com/"]Cyanotech[/a], a Hawaii-based company that produces microalgae health and nutrition products. WIKIMEDIA/CC0 1.0 UNIVERSAL
 [/Caption]
 
 They found that in addition to the algae absorbing CO₂, the injection of flue gas from the power plant actually accelerated algae growth, increasing biomass productivity by up to 30%. The downsides of growing algae near power plants come down to the cost of adopting: Despite promising experiments, most energy companies do not consider it worth the investment due to a lack of economic incentives to adopt emerging technologies. Once implemented however, the study showed that compared to DAC and BECCS with soy, algae-based BECCS proved 36% and 67% more cost effective respectively.
@@ -231,7 +234,7 @@ Perhaps the most advanced method of using algae for BECCS is to grow it within a
 
 [img src:"static/images/hypergiant-bioreactor.png" /]
 [Caption]
-  Hypergiant mockup of bioreactor
+  A prototype rendering of an algae-fueled bioreactor from AI company [a href:"https://www.hypergiant.com/"]Hypergiant Industries[/a]. Photo courtesy of Hypergiant Industries.
 [/Caption]
 
 The magic of bioreactors lies in the ability to hyper-regulate an environment. The bioreactor is constantly taking measurements of the algae's growth environment, and then using machine learning algorithms to find the perfect balance of light, temperature, and pH levels that algae will flourish under.
