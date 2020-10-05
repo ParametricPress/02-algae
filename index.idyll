@@ -129,6 +129,8 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
 ### Can you remove all the CO₂ with trees?
 Plant a forest to see how many trees it would take to remove all the CO₂ bubbles. But be careful: When you lose a tree, you also lose the CO₂!
 
+Drag the slider to plant a forest.
+
 [var name:"trees" value:5 /]
 [Range value:trees min:0 max:10 /]
 [FullWidth]

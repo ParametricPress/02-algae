@@ -10,7 +10,7 @@ class AnimatedIcons extends React.Component {
     this.state = {
         imgViz: false
       }
-    console.log('Initializing custom React component.')
+    // console.log('Initializing custom React component.')
   }
 
 //   const SampleComponent = () => {
@@ -28,7 +28,7 @@ class AnimatedIcons extends React.Component {
         }}
         >
         <div>
-            <div class="flex-grid">
+            <div class="flex-container">
                 <div class="icon-col">
                     <img src="static/images/algae-uses_plastic_animated.svg"
                         style={{
@@ -65,7 +65,7 @@ class AnimatedIcons extends React.Component {
                     <p class="icon-name">animal feed</p>
                 </div>
             </div>
-            <div class="flex-grid">
+            <div class="flex-container">
                 <div class="icon-col">
                     <img src="static/images/algae-uses_shirt.svg"
                         class="icon-col"

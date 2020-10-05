@@ -58,11 +58,6 @@ p.icon-name {
   display: flex;
 }
 
-.flex-child-1 {
-  flex: 1;
-  border: 2px solid yellow;
-}
-
 .flex-child-3 {
   width: 300px;
   /* border: 2px solid yellow; */

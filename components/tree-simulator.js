@@ -176,9 +176,9 @@ class treeSimulator extends Component {
                       return gridWidthStart-190+(this.state.carbonDots*10) //  row 2
                     } else if (this.state.carbonDots >= 40 && this.state.carbonDots <59) {
                       return gridWidthStart-390+(this.state.carbonDots*10) // row 3
-                    } else if (this.state.carbonDots >= 60 && this.state.carbonDots <=79) {
+                    } else if (this.state.carbonDots >= 60 && this.state.carbonDots <79) {
                       return gridWidthStart-590+(this.state.carbonDots*10) // row 4
-                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <100) {
+                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <99) {
                       return gridWidthStart-790+(this.state.carbonDots*10) // row 5
                     } else {
                       return gridWidthStart-990+(this.state.carbonDots*10) // row 6
@@ -193,10 +193,10 @@ class treeSimulator extends Component {
                       return gridHeightStart+20;
                     } else if (this.state.carbonDots >= 60 && this.state.carbonDots <79) {
                       return gridHeightStart+30;
-                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <99) {
-                      return gridHeightStart+40;
+                    } else if (this.state.carbonDots >= 80 && this.state.carbonDots <100) {
+                      return gridHeightStart+40; // row 5
                     } else {
-                      return gridHeightStart+50;
+                      return -50;
                     }
                   })
                   .attr('rx', 10)
@@ -208,7 +208,7 @@ class treeSimulator extends Component {
                   .attr('class', 'removed-carbon')
                   .transition()
                   .delay(300)
-                  .attr('opacity', 1);
+                  .attr('opacity', 0.9);
             }
             updateSim();
 
