@@ -8,8 +8,8 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Algae:", "The Tiny CO₂ Killer?"]`
-  longTitle:`["Algae:", "The Tiny CO₂ Killer"]`
+  title:`["Algae, CO₂, and the Theatre", "of Planting one Trillion Trees"]`
+  longTitle:`["Algae, CO₂, and the Theatre",  "of Planting one Trillion Trees"]`
   date:"May 15, 2020"
   dek:"To fight climate change, it’s time to start thinking big by thinking small."
   fullWidth:true
@@ -54,7 +54,7 @@ The IPCC has outlined four potential pathways for how the world can avoid the ir
     /]
 [/ParametricGraphic]
 
-The IPCC recommendations roughly fall under two categories: reduction and removal of CO₂. Methods of reduction you’ve likely heard of: solar panels, windmills, plant-based diets. At a global scale, these changes would reduce the amount of energy we use and limit our reliance on fossil fuels. 
+The IPCC recommendations roughly fall under two categories: reduction and removal of CO₂. Methods of reduction you’ve likely heard of: solar panels, windmills, plant-based diets. At a global scale, these changes would reduce the amount of energy we use and limit our reliance on fossil fuels.
 
 On the other side are methods of removal: things that actively suck carbon dioxide out of our atmosphere. Carbon removal includes things like planting more trees and other plants that naturally absorb CO₂. A carbon removal plan might also include newer technologies that use bioenergy with carbon capture and storage (usually called BECCS, but more on that later).
 
@@ -81,7 +81,7 @@ Shortly after releasing the study claiming that 1.7 billion hectares of new fore
 
 But model estimates aside, the trillion tree plan has a few other significant drawbacks: time and scale. Let's look at time first.
 
-Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hopper-trees"]announced[/a] earlier this year that for every flight booked through their app, they will donate money to plant four trees. Their back-of-the-envelope math estimates that one tree will sequester around a metric ton of carbon dioxide, which would offset a return trip from a single passenger in the air on a cross country flight. But there's a problem: Trees don't spring into the earth fully grown, sucking their max amount of carbon out of the atmosphere. 
+Travel booking app Hopper [a href:"https://media.hopper.com/news/introducing-hopper-trees"]announced[/a] earlier this year that for every flight booked through their app, they will donate money to plant four trees. Their back-of-the-envelope math estimates that one tree will sequester around a metric ton of carbon dioxide, which would offset a return trip from a single passenger in the air on a cross country flight. But there's a problem: Trees don't spring into the earth fully grown, sucking their max amount of carbon out of the atmosphere.
 
 Best case estimates show that it will take [a href:"https://www.technologyreview.com/s/615102/tree-planting-is-a-great-idea-that-could-become-a-dangerous-climate-distraction/"]around 25 years[/a] before the amount of carbon sequestered matches the amount of carbon emissions for a single person's share on a single flight (some trees can take up to 100 years to mature fully). So while the strategy may be effective, it won't help us much in the ~10 years estimated by the IPCC that we have left to prevent irreversible changes to the climate. A team of scientists at NASA [a href:"https://climate.nasa.gov/news/2927/examining-the-viability-of-planting-trees-to-help-mitigate-climate-change/"]estimate[/a] that reforesting 1.7 billion hectares of new trees between one and two thousand years.
 
@@ -100,7 +100,7 @@ Converting farmland is not an isolated effort either: Reducing traditional crops
 
 If you apply this concept across the world, the amount of farmland we need to convert is daunting. According to the IPCC report, over 70% of Earth's ice-free land is being used or shaped by human activity. Around 25-30% of this usable land is going straight to producing food, raising cattle, growing cotton for clothes, and energy production.
 
-On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. When trees die, they release all the CO₂ they have eaten up back to the atmosphere. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a]. On the other side of the globe, bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"] nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output. 
+On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. When trees die, they release all the CO₂ they have eaten up back to the atmosphere. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a]. On the other side of the globe, bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"] nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output.
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
@@ -145,7 +145,7 @@ Planting trees is unquestionably a good idea, but it’s likely not the “silve
 
 ## How algae removes CO₂ from the atmosphere
 
-You've probably seen algae before---it's floating about on ponds and washing up on shores as kelp seaweed. It takes many different forms, though. Algae can be as small as 0.2mm in picoplankton and as large as 60m long in the form of giant sea kelp. And incredibly, when you take all the types of algae together, this family of flora produces about half of all oxygen on the planet.
+You've probably seen algae before—it's floating about on ponds and washing up on shores as kelp seaweed. It takes many different forms, though. Algae can be as small as 0.2mm in picoplankton and as large as 60m long in the form of giant sea kelp. And incredibly, when you take all the types of algae together, this family of flora produces about half of all oxygen on the planet.
 
 [FullWidth]
   [img src:"static/images/large_kelp.jpg" /]
@@ -187,7 +187,7 @@ Algae has a number of byproducts that can be used as biofuels for transportation
 //   [/Caption]
 // [/Aside]
 
-Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3D printing. 
+Researchers at Technical University of Munich are currently [a href:"https://www.tum.de/nc/en/about-tum/news/press-releases/details/35078/"]converting algae into carbon fiber[/a] which can be used for buildings and construction. Dutch designers [a href:"https://www.fastcompany.com/90154210/the-creators-of-this-algae-plastic-want-to-start-a-maker-revolution"]Eric Klarenbeek and Maartje Dros[/a] are using algae to create plastics using 3D printing.
 
 Commercial companies such as [a href:"https://sustainablebrands.com/read/cleantech/pond-using-algae-to-turn-co2-to-our-many-advantages"]Pond Technologies[/a] are creating new products based on algae such as animal feed, ingredients for cosmetics, and even seaweed snacks. There is even a [a href:"https://newatlas.com/algae-powered-building/27118/"]building in Germany[/a] that uses an algae-laced skin around it to power the electricity for the facility. And as research continues, more methods of adapting algae proteins for sustainable usage are sure to emerge.
 
@@ -242,9 +242,9 @@ The magic of bioreactors lies in the ability to hyper-regulate an environment. T
 
 ## Think big by thinking small
 
-Here are a couple things that we know: The Earth is getting hotter, and human activity has caused this transition. There are many methods by which we could slow or reduce this warming through natural solutions. And time is absolutely of the essence---a [a href:"https://www.nature.com/articles/d41586-020-00571-x"]study in *Nature*[/a] estimates that the past decade has shrunk our time window to minimize the effects of climate change. Instead of 30 years, we now have closer to ten.
+Here are a couple things that we know: The Earth is getting hotter, and human activity has caused this transition. There are many methods by which we could slow or reduce this warming through natural solutions. And time is absolutely of the essence—a [a href:"https://www.nature.com/articles/d41586-020-00571-x"]study in *Nature*[/a] estimates that the past decade has shrunk our time window to minimize the effects of climate change. Instead of 30 years, we now have closer to ten.
 
-Despite all the benefits of algae listed above, it's time to accept the uncomfortable truth of our time: There is no single solution to climate change. Not a carbon tax, not trees, and not even algae. Given the urgency of our global predicament, we need a coordinated suite of multiple solutions to solve this problem. We need holistic climate solutions, ones that take out the bad stuff (CO₂) while also creating new value---like replacing oil-based plastics with algae-based polymers.
+Despite all the benefits of algae listed above, it's time to accept the uncomfortable truth of our time: There is no single solution to climate change. Not a carbon tax, not trees, and not even algae. Given the urgency of our global predicament, we need a coordinated suite of multiple solutions to solve this problem. We need holistic climate solutions, ones that take out the bad stuff (CO₂) while also creating new value—like replacing oil-based plastics with algae-based polymers.
 
 This is the power, and the potential promise, of algae. Rather than the single benefit of reducing CO₂, it is the combination of benefits that matters most: It's small, it can grow wherever there is water, and it contains proteins that can be repurposed into a myriad of different products. But this isn't to say algae alone can save the world; our strategies to counter climate change need to be as diverse and multi-faceted as algae can be. Our ecosystems are deeply interconnected and multifaceted; why shouldn't our climate change strategies look the same way?
 

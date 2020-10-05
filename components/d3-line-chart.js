@@ -30,7 +30,7 @@ class D3LineChart extends D3Component {
   initialize(node, props) {
     // console.log('Initializing custom D3 component. This component requires that the author is responsible for updating the DOM as properties change.');
     const svg = (this.svg = d3.select(node).append('svg'));
-    
+
     this.drawChart(
       this.formatData(props.data, data_85),
       this.formatData(props.scenario45, data_45),
@@ -52,11 +52,11 @@ class D3LineChart extends D3Component {
 
     return targetData
   }
-  drawChart(d85, d45, d6, data3) { 
+  drawChart(d85, d45, d6, data3) {
     const svg = d3.select('svg')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom);
-    
+
     const g = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .attr("class", "chartBase");
@@ -107,7 +107,7 @@ class D3LineChart extends D3Component {
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
           .style("fill", color4)
-          .text("RCP 85");
+          .text("RCP 8.5");
 
       g.append("path")
           .datum(d45)
@@ -162,14 +162,14 @@ class D3LineChart extends D3Component {
           .attr("text-anchor", "start")
           .style("fill", color1)
           .text("RCP 2.6");
-    
+
   }
   updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
 
     x.domain(newXDomain);
     console.log(x.domain())
     y.domain(newYDomain)
-    
+
     d3.select('.x-axis').transition().duration(2000).call(d3.axisBottom(x));
     d3.select('.y-axis').transition().duration(2000).call(d3.axisLeft(y));
 
