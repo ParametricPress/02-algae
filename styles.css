@@ -16,7 +16,8 @@
 p.icon-name {
   font-size: 16px;
   text-align: center;
-  color: #e0feb7
+  color: #e0feb7;
+  font-family: 'Graphik Web';
 }
 
 .tooltip-box {
@@ -32,18 +33,18 @@ p.icon-name {
   font-size: 18px;
   text-align: center;
   text-anchor: middle;
-  opacity: 1
+  opacity: 1;
 }
 
 .progress-bar-outer {
-  background-color: #222222!important;
+  background-color: #222222 !important;
   height: 10px;
   margin-top: 20px;
 }
 
 .progress-bar-inner {
   background-color: #D8FFA2;
-  height: 10px
+  height: 10px;
 }
 
 #start-btn {
@@ -69,9 +70,14 @@ p.icon-name {
 
 span.simulation-citation {
   font-size: 14px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: rgb(130, 130, 130);
-  max-width: 500px
+  max-width: 500px;
+  line-height: 16px;
+}
+
+.parametric-graphic-source-citation {
+  line-height: 1.2;
 }
 
 .primer-image {
@@ -100,7 +106,11 @@ span.simulation-citation {
   background-color: #3F3F3F;
   margin: auto;
   padding: 20px;
-  height: 850px
+  height: 850px;
+}
+
+.parametric-graphic label {
+  margin-right: 1em;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -113,8 +123,14 @@ span.simulation-citation {
 
 /* Matt custom additions */
 
+.parametric-header-metadata-component > div > * {
+  margin-right: 0.5em;
+}
+
 .fullWidth img {
   margin-left: 50px;
+  max-width: calc(100vw - 100px);
+  max-height: calc(100vh - 65px - 4em);
 }
 .fullWidth .parametric-caption {
   margin-left: 50px;
@@ -126,6 +142,8 @@ span.simulation-citation {
 @media screen and (max-width: 800px) {
   .fullWidth img {
     margin-left: 1em;
+    max-width: calc(100vw - 2em);
+    max-height: calc(100vh - 65px - 4em);
   }
   .fullWidth .parametric-caption {
     margin-left: 1em;
