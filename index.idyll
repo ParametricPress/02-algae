@@ -119,7 +119,7 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
   [/Graphic]
 
   [Step]To fully understand the complications around relying on trees to save the planet, it's useful to look at how this actually plays out with a simulation.[/Step]
-  [Step]Each [Inline][img src:"static/images/green-dot.png" /][/Inline] green dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. When a tree sequesters CO₂, it stores it as a [Inline][img src:"static/images/blue-dot.png" /][/Inline] blue dot. But sometimes trees are felled, burned, or just die naturally...[/Step]
+  [Step]Each [span style:`{color: '#F09989'}`]■[/span] red dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. When a tree sequesters CO₂, it stores this unit as a [span style:`{color: '#9BBBD8'}`]■[/span] blue dot. But sometimes trees are felled, burned, or just die naturally...[/Step]
   [Step]When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The menu bar on the left keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).[/Step]
   [Step]Run the simulation for yourself below to see how the cycle of tree planting affects CO₂ levels![/Step]
 
