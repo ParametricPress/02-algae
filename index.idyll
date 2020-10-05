@@ -8,8 +8,8 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Algae, CO₂, and the Theatre", "of Planting One Trillion Trees"]`
-  longTitle:`["Algae, CO₂, and the Theatre",  "of Planting One Trillion Trees"]`
+  title:`["Algae, CO₂, and the Theatre", "of Planting one Trillion Trees"]`
+  longTitle:`["Algae, CO₂, and the Theatre",  "of Planting one Trillion Trees"]`
   date:"May 15, 2020"
   dek:"To fight climate change, it’s time to start thinking big by thinking small."
   fullWidth:true
