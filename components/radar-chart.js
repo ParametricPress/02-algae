@@ -13,7 +13,7 @@ class RadarChart extends D3Component {
 		//////////////////////////////////////////////////////////////
 
 		const margin = { top: 80, right: 120, bottom: 50, left: 80 },
-		width = Math.min(700, window.innerWidth / 4) - margin.left - margin.right,
+		width = Math.min(700, window.innerWidth / 6) - margin.left - margin.right,
 		height = Math.min(width, window.innerHeight - margin.top - margin.bottom);
 
         //////////////////////////////////////////////////////////////
@@ -73,7 +73,25 @@ class RadarChart extends D3Component {
         };
 
         // Draw the chart, get a reference the created svg element :
-        this.drawRadarChart(".radarChart", data, radarChartOptions, parent);
+        this.drawRadarChart("#radarChart", data, radarChartOptions, parent);
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.updateWidth);
+  }
+  updateWidth(node) {
+	let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+	let newWidth;
+	
+    // console.log(windowWidth)
+    // if (windowWidth < 700) {
+	// 	d3.select(".radar").remove()
+	// 	radarChartOptions.w = 300;
+	// 	this.drawRadarChart("#radarChart", data, radarChartOptions, parent);
+    // } else {
+	// 	d3.select(".radar").remove()
+	// 	radarChartOptions.w = 650;
+	// 	this.drawRadarChart("#radarChart", data, radarChartOptions, parent);
+    // }
   }
   drawRadarChart(id, data, options, parent) {
     const max = Math.max;
@@ -120,7 +138,7 @@ class RadarChart extends D3Component {
 	 dotRadius: 4, 			//The size of the colored circles of each blog
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
-	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+	 roundStrokes: true,	//If true the area and stroke will follow a round path (cardinal-closed)
 	 color: d3.scaleOrdinal(d3.schemeCategory10),	//Color function,
 	 format: '.2%',
 	 unit: '',
@@ -261,7 +279,7 @@ class RadarChart extends D3Component {
 		.angle((d,i) => i * angleSlice);
 
 	if(cfg.roundStrokes) {
-		radarLine.curve(d3.curveCardinalClosed)
+		radarLine.curve(d3.curveCardinalClosed.tension(0.5))
 	}
 
 	//Create a wrapper for the blobs

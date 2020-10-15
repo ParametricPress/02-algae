@@ -2,9 +2,9 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
-const margin = {top: 30, right: 30, bottom: 30, left: 40},
-      width = 650 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+const margin = {top: 40, right: 30, bottom: 30, left: 40};
+const height = 400 - margin.top - margin.bottom;
+let width = 650 + margin.left + margin.right;
 
 const x = d3.scaleTime()
     .rangeRound([0, width]);
@@ -29,7 +29,7 @@ const color1 = "#D8FFA2",
 class D3LineChart extends D3Component {
   initialize(node, props) {
     // console.log('Initializing custom D3 component. This component requires that the author is responsible for updating the DOM as properties change.');
-    const svg = (this.svg = d3.select(node).append('svg'));
+    const svg = (this.svg = d3.select(node).append('svg').attr("id", "multiline-chart"));
 
     this.drawChart(
       this.formatData(props.data, data_85),
@@ -37,7 +37,10 @@ class D3LineChart extends D3Component {
       this.formatData(props.scenario6, data_6),
       this.formatData(props.scenario3, data_3)
     )
+  }
 
+  componentDidMount() {
+    window.addEventListener("resize", this.updateWidth);
   }
 
   formatData(rawData, targetData) {
@@ -106,6 +109,7 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d85[d85.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
+          .attr("class", "plot-labels")
           .style("fill", color4)
           .text("RCP 8.5");
 
@@ -124,6 +128,7 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
+          .attr("class", "plot-labels")
           .style("fill", color3)
           .text("RCP 4.5");
 
@@ -142,6 +147,7 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(d6[d6.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
+          .attr("class", "plot-labels")
           .style("fill", color2)
           .text("RCP 6");
 
@@ -160,14 +166,42 @@ class D3LineChart extends D3Component {
           .attr("transform", "translate(" + (width-50) + "," + (y(data3[data3.length - 1].co2) - 10) + ")")
           .attr("dy", ".35em")
           .attr("text-anchor", "start")
+          .attr("class", "plot-labels")
           .style("fill", color1)
           .text("RCP 2.6");
 
   }
-  updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
+  updateWidth() {
+    let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    let newWidth;
+    // console.log(windowWidth)
+    if (windowWidth < 480) {
+      newWidth = 300
+    } else if (windowWidth < 600) {
+      newWidth = 400
+    } else if (windowWidth < 800) {
+      newWidth = 550
+    } else {
+      newWidth = 650;
+    }
 
-    x.domain(newXDomain);
-    console.log(x.domain())
+    d3.select('#multiline-chart').attr("width", newWidth+margin.left + margin.right)
+    x.rangeRound([0, newWidth]);
+
+    d3.select('.x-axis').transition().duration(1000).call(d3.axisBottom(x));
+    d3.select('.worst-line').transition().duration(1000).attr("d", line);
+    d3.select('.bad-line').transition().duration(1000).attr("d", line);
+    d3.select('.good-line').transition().duration(1000).attr("d", line);
+    d3.select('.best-line').transition().duration(1000).attr("d", line);
+    d3.selectAll('.plot-labels').transition().duration(1000)
+        .attr("transform", function(d, i) {
+          return "translate(" + (newWidth-50) + "," + ((i+1)*20) + ")"
+        })
+    
+  }
+  updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
+    
+    x.domain(newXDomain)
     y.domain(newYDomain)
 
     d3.select('.x-axis').transition().duration(2000).call(d3.axisBottom(x));

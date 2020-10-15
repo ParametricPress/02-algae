@@ -6,32 +6,54 @@ import React, { Component } from 'react';
 const d3 = require('d3');
 
 let gridHeightStart = 240;
-let gridWidthStart = 200;
+let gridWidthStart = 160;
 let spacing = 20;
 
-const blueDotX = {
-  1: gridWidthStart,
-  2: gridWidthStart,
-  3: gridWidthStart,
-  4: gridWidthStart+spacing,
-  5: gridWidthStart+spacing,
-  6: gridWidthStart+spacing,
-  7: gridWidthStart+(spacing*2),
-  8: gridWidthStart+(spacing*2),
-  9: gridWidthStart+(spacing*2),
-};
+let width = 500;
+let height = 350;
 
-const blueDotY = {
-  1: gridHeightStart,
-  2: gridHeightStart-spacing,
-  3: gridHeightStart-(spacing*2),
-  4: gridHeightStart,
-  5: gridHeightStart-spacing,
-  6: gridHeightStart-(spacing*2),
-  7: gridHeightStart,
-  8: gridHeightStart-spacing,
-  9: gridHeightStart-(spacing*2),
-};
+const treeLocations = [
+  {loc: {
+    x: 120,
+    y: 80
+  }},
+  {loc: {
+    x: 140,
+    y: 90
+  }},
+  {loc: {
+    x: 70,
+    y: 100
+  }},
+  {loc: {
+    x: 100,
+    y: 110
+  }},
+  {loc: {
+    x: 240,
+    y: 90
+  }},
+  {loc: {
+    x: 150,
+    y: 140
+  }},
+  {loc: {
+    x: 180,
+    y: 70
+  }},
+  {loc: {
+    x: 200,
+    y: 110
+  }},
+  {loc: {
+    x: 20,
+    y: 90
+  }},
+  {loc: {
+    x: 280,
+    y: 80
+  }}
+]
 
 class treeSimulator extends Component {
   constructor(props) {
@@ -51,18 +73,18 @@ class treeSimulator extends Component {
   updateTrees = e => {
     // this.branchList = this.createBranches(this.NUM_OF_BRANCHES);
     // this.setState({ branches: this.branchList });
-    d3.selectAll(".svg-trees").remove();
-      
+    d3.selectAll('.svg-trees').remove()
+
+    // for # of trees
     for (let i = 0; i < this.props.numtrees; i++) {
-      let randX = Math.floor(Math.random()*399) + 1;
-      let randY = (Math.floor(Math.random()*49) + 1)+70;
-      this.drawSvgTree(randX, randY)  
+      console.log(i)
+      // let randX = Math.floor(Math.random()*299) + 1;
+      // let randY = (Math.floor(Math.random()*49) + 1)+70;
+      this.drawSvgTree(treeLocations[i].loc.x, treeLocations[i].loc.y)  
     }
   };
 
   drawSvgTree(x, y) {
-    const width = 600,
-      height = 400;
 
     d3.select("#treelandscape").append("svg:image")
       .attr("xlink:href", "static/images/svg-tree-stroke-2.svg")
@@ -80,9 +102,7 @@ class treeSimulator extends Component {
   }
 
   startNodeSimulation() {
-    const width = 600,
-      height = 400,
-      radius = 2;
+    let radius = 2;
 
     let nodes = [],
         counter = 0,
@@ -233,8 +253,7 @@ class treeSimulator extends Component {
               
               // remove # of carbon that tree has sequestered
               let selec = d3.selectAll('.removed-carbon');
-              let lastNode = selec.nodes()[selec.nodes().length - 1]
-              
+              let lastNode = selec.nodes()[selec.nodes().length - 1];              
               lastNode.remove();
             }
             updateSim();
@@ -326,11 +345,11 @@ class treeSimulator extends Component {
     return (
       <div className="app row tree-sim">
         <div>
-          { this.state.simulationState == 'beforeFirstStart'  ? <h4>Let's plant a forest of { this.props.numtrees * 1000 } trees</h4> : null }
+          { this.state.simulationState == 'beforeFirstStart'  ? <h3>Let's plant a forest of { this.props.numtrees * 1000 } trees</h3> : null }
           { this.state.simulationState == 'beforeFirstStart'  ? <p>Each 🌲 represents 1,000 trees</p> : null }
         </div>
         <div >
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h4>{this.state.simulationMessage}</h4> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h3>{this.state.simulationMessage}</h3> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount * 1000}</p> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.carbonDots *10}kg CO₂</p> : null }
           {/* { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {50 - this.state.carbonDots}</p> : null } */}
@@ -338,10 +357,10 @@ class treeSimulator extends Component {
       
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="440" cy="7" rx="3" fill="#F09989"></ellipse>
-            <text class="co2-legend" x="450" y="10">= 10kg CO₂</text>
-            <text class="co2-type" x="80" y="110">Atmospheric CO₂</text>
-            <text class="co2-type" x="80" y="260">Sequestered CO₂</text>
+            <ellipse cx="340" cy="7" rx="3" fill="#F09989"></ellipse>
+            <text class="co2-legend" x="350" y="10">= 10kg CO₂</text>
+            <text class="co2-type" x="30" y="110">Atmospheric CO₂</text>
+            <text class="co2-type" x="30" y="260">Sequestered CO₂</text>
           </svg>
         </div>
 
