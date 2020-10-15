@@ -2447,11 +2447,6 @@ p.icon-name {
   display: flex;
 }
 
-.flex-child-3 {
-  width: 300px;
-  /* border: 2px solid yellow; */
-}
-
 .flex-child:first-child {
   margin-right: 20px;
 }
@@ -2494,7 +2489,7 @@ span.simulation-citation {
   background-color: #3F3F3F;
   margin: auto;
   padding: 20px;
-  height: 850px;
+  height: 750px;
 }
 
 .parametric-graphic label {
@@ -2502,9 +2497,14 @@ span.simulation-citation {
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .column {
     width: 100%;
+  }
+
+  .primer-image {
+    margin-left: 10vw;
+    width: 500px;
   }
 }
 
