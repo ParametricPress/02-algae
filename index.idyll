@@ -1,9 +1,9 @@
 [meta title:"Algae: The Tiny CO₂ Killer" description:"To fight climate change, it’s time to start thinking big by thinking small."
-  shareImageUrl:"https://parametric.press/issue-02/tk-article-slug/static/images/share.png"
+  shareImageUrl:"https://parametric.press/issue-02/algae/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
 
-[var name:"parametricSlug" value:"tk-article-slug" /]
+[var name:"parametricSlug" value:"algae" /]
 
 [Nav fullWidth:true /]
 
@@ -56,6 +56,10 @@ The IPCC has outlined four potential pathways for how the world can avoid the ir
 
 The IPCC recommendations roughly fall under two categories: reduction and removal of CO₂. Methods of reduction you’ve likely heard of: solar panels, windmills, plant-based diets. At a global scale, these changes would reduce the amount of energy we use and limit our reliance on fossil fuels.
 
+[Aside]
+  [Newsletter /]
+[/Aside]
+
 On the other side are methods of removal: things that actively suck carbon dioxide out of our atmosphere. Carbon removal includes things like planting more trees and other plants that naturally absorb CO₂. A carbon removal plan might also include newer technologies that use bioenergy with carbon capture and storage (usually called BECCS, but more on that later).
 
 This is a story about how we could get there; a story about trees and algae and giant human-sized bioreactors; and ultimately, a story about how maybe our solutions can reflect the natural world around us.
@@ -95,6 +99,10 @@ Best case estimates show that it will take [a href:"https://www.technologyreview
 The second obstacle is scale. Researchers claim that the available land we have across the world to plant more trees equals about the size of the entire United States (the study from *Nature* would require land the size of the US *plus* Canada). But this planting goal also assumes the best case scenario in which humans 1) willingly convert existing land to forests and 2) protect forests with a renewed vigor.
 
 To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [a href:"https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change"]report[/a] this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
+
+[Aside]
+  [Recirc slug:parametricSlug /]
+[/Aside]
 
 Converting farmland is not an isolated effort either: Reducing traditional crops by around 20% means the government will also count on people to adopt low-carbon farming practices, reduce food waste, and make diet changes described as "a 20% shift away from beef, lamb and dairy to alternative protein sources".
 
