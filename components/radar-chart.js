@@ -12,7 +12,7 @@ class RadarChart extends D3Component {
 		//////////////////////// Set-Up //////////////////////////////
 		//////////////////////////////////////////////////////////////
 
-		const margin = { top: 80, right: 120, bottom: 50, left: 80 },
+		const margin = { top: 80, right: 121, bottom: 50, left: 70 },
 		width = Math.min(700, window.innerWidth / 6) - margin.left - margin.right,
 		height = Math.min(width, window.innerHeight - margin.top - margin.bottom);
 
@@ -25,33 +25,33 @@ class RadarChart extends D3Component {
 			summary: 'Expensive and energy inefficient',
                 axes: [
                     {axis: 'Land use (ha)', value: 0.667},
-                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 0.963},
-                    {axis: 'Cost ($/t CO₂)', value: 1},
+                    {axis: 'CO₂ seq. (t CO₂/yr)', value: 0.963},
+                    {axis: 'Total cost ($/t CO₂)', value: 1},
                     {axis: 'Energy returned', value: 0.129},
                     // {axis: 'GHG impact (kg CO₂e/t)', value: 1},
-                    {axis: 'Water footprint (m3/t)', value: 0.614}
+                    {axis: 'Water use (m³/t)', value: 0.614}
                 ]
             },
 			{ name: 'BECCS + Soy',
 			summary: 'Energy efficient but big land/water footprint',
                 axes: [
                     {axis: 'Land use (ha)', value: 1},
-                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 1},
-                    {axis: 'Cost ($/t CO₂)', value: 0.511},
+                    {axis: 'CO₂ seq. (t CO₂/yr)', value: 1},
+                    {axis: 'Total cost ($/t CO₂)', value: 0.511},
                     {axis: 'Energy returned', value: 1},
                     // {axis: 'GHG impact', value: 1},
-                    {axis: 'Water footprint (m3/t)', value: 1}
+                    {axis: 'Water use (m³/t)', value: 1}
                 ]
             },
 			{ name: 'ABECCS',
 			summary: 'Small, energy positive and cost effective',
                 axes: [
                     {axis: 'Land use (ha)', value: 0.667},
-                    {axis: 'CO₂ Seq (t CO₂/yr)', value: 0.899},
-                    {axis: 'Cost ($/t CO₂)', value: 0.329},
+                    {axis: 'CO₂ seq. (t CO₂/yr)', value: 0.899},
+                    {axis: 'Total cost ($/t CO₂)', value: 0.329},
                     {axis: 'Energy returned', value: 0.64},
                     // {axis: 'GHG impact (kg CO₂e/t)', value: 1},
-                    {axis: 'Water footprint (m3/t)', value: 0.61}
+                    {axis: 'Water use (m³/t)', value: 0.61}
                 ]
             }
         ];
@@ -133,7 +133,7 @@ class RadarChart extends D3Component {
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
 	 labelFactor: 1.35, 	//How much farther than the radius of the outer circle should the labels be placed
-	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
+	 wrapWidth: 70, 		//The number of pixels after which a label needs to be given a new line
 	 opacityArea: 0.35, 	//The opacity of the area of the blob
 	 dotRadius: 4, 			//The size of the colored circles of each blog
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
@@ -279,7 +279,7 @@ class RadarChart extends D3Component {
 		.angle((d,i) => i * angleSlice);
 
 	if(cfg.roundStrokes) {
-		radarLine.curve(d3.curveCardinalClosed.tension(0.5))
+		radarLine.curve(d3.curveCardinalClosed.tension(0.3))
 	}
 
 	//Create a wrapper for the blobs
