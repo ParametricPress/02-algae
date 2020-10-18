@@ -153,6 +153,35 @@ input[type="range"] {
   display: none
 }
 
+
+.large-aside-container {
+  display: block;
+  position: relative;
+  max-width: calc(100vw - 800px);
+  width: calc(100vw - 800px);
+}
+
+.large-aside-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  left: 750px;
+  margin-right: 75px;
+}
+
+.large-aside {
+  width: 100%;
+}
+
+.large-aside .parametric-graphic-source {
+  margin-top: 0;
+}
+
+.large-aside .parametric-graphic .parametric-caption {
+  margin-bottom: 1em;
+}
+
+
 @media screen and (max-width: 700px) {
   .radar-chart-mobile {
     display: block
@@ -168,5 +197,24 @@ input[type="range"] {
   .fullWidth .parametric-caption {
     margin-left: 1em;
     max-width: 100%;
+  }
+  .large-aside-container {
+    max-width: calc(100vw - 2em);
+    width: calc(100vw - 2em);
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+.large-aside-wrapper {
+  margin-left: 0;
+  margin-right: 0;
+  position: static;
+}
+}
+
+@media screen and (min-width: 1441px) {
+  .fullWidth img {
+    max-width: 1330px;
   }
 }

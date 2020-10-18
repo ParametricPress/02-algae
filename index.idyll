@@ -1,4 +1,4 @@
-[meta title:"Algae: The Tiny CO₂ Killer" description:"To fight climate change, it’s time to start thinking big by thinking small."
+[meta title:"Powerful Algae and the Political Theatre of Planting One Trillion Trees" description:"To fight climate change, it’s time to start thinking big by thinking small."
   shareImageUrl:"https://parametric.press/issue-02/algae/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
@@ -8,8 +8,8 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Algae, CO₂, and the Political Theatre", "of Planting one Trillion Trees"]`
-  longTitle:`["Algae, CO₂, and the Political Theatre",  "of Planting one Trillion Trees"]`
+  title:`["Powerful Algae and the Political Theatre", "of Planting One Trillion Trees"]`
+  longTitle:`["Powerful Algae and the Political Theatre",  "of Planting One Trillion Trees"]`
   date:"October 2020"
   dek:"To fight climate change, it’s time to start thinking big by thinking small."
   fullWidth:true
@@ -64,11 +64,11 @@ This is a story about how we could get there; a story about trees and algae and 
 
 ## The hope of a trillion trees
 
-At Davos earlier this year, the World Economic Forum announced a [link text:"plan to plant one trillion trees" url:"https://www.1t.org/"/] over the next decade. The campaign received widespread approval and enthusiasm from attendees, and even received backing from President Trump through a [link text:"recent executive order" url:"https://www.axios.com/trump-one-trillion-trees-climate-change-forestry-1f4c32b7-9514-410b-a4dc-b2c6ecee72e0.html"/] to promote tree planting. (This may seem surprising to many coming from the man who notoriously [link text:"withdrew" url:"https://www.nytimes.com/2019/11/04/climate/trump-paris-agreement-climate.html" /] the US from the Paris Agreement on coordinated, global climate action.) 
+At Davos earlier this year, the World Economic Forum announced a [link text:"plan to plant one trillion trees" url:"https://www.1t.org/"/] over the next decade. The campaign received widespread approval and enthusiasm from attendees, and even received backing from President Trump through a [link text:"recent executive order" url:"https://www.axios.com/trump-one-trillion-trees-climate-change-forestry-1f4c32b7-9514-410b-a4dc-b2c6ecee72e0.html"/] to promote tree planting. (This may seem surprising to many coming from the man who notoriously [link text:"withdrew" url:"https://www.nytimes.com/2019/11/04/climate/trump-paris-agreement-climate.html" /] the US from the Paris Agreement on coordinated, global climate action.)
 
 But as we'll see, the possibility of even planting a trillion trees may be more of a romantic pipedream than an achievable reality.
 
-A plan for more trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and carbon reduction are 1) planting more trees (reforestation) and 2) keeping the trees we have now from being destroyed (avoided forest conversion). 
+A plan for more trees in the world does give us some reason to celebrate. According to a [a href:"https://www.nature.org/en-us/what-we-do/our-insights/perspectives/natures-make-or-break-potential-for-climate-change/"]study[/a] comparing natural climate solutions, the top two methods for cost-effectiveness and carbon reduction are 1) planting more trees (reforestation) and 2) keeping the trees we have now from being destroyed (avoided forest conversion).
 
 The "trillion" target for number of new trees planted is also supported by research: [a href:"https://science.sciencemag.org/content/365/6448/76"]The global tree restoration potential[/a], a study published last year in *Science*, claimed that planting 1.2 trillion tree saplings on 1.7 billion hectares could remove "two-thirds of all the emissions from human activities that remain in the atmosphere today." For scale, this would be the equivalent of reforesting an area of land the size of the United States plus Canada combined.
 [data name:"treeloss" source:"geo.json" /]
@@ -118,26 +118,22 @@ On top of all this, if somehow we did find the 1.7bn hectares of suitable land t
 
 To fully understand the complications around relying on trees to save the planet, it's useful to look at how this actually plays out with a simulation. The interactive version is embedded below, but first a few pointers:
 
-[Aside]
-  [img class:"primer-image" src:"static/images/sim-preview-1.png" /]
-[/Aside]
-
-Each [span style:`{color: '#F09989'}`]■[/span] red dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. [desktop][br/][br/][br/][br/][br/][br/][br/][br/][/desktop]
-
-[Aside]
+[LargeAside]
   [img class:"primer-image" src:"static/images/sim-preview-2.png" /]
-[/Aside]
+[/LargeAside]
+
+Each [span style:`{color: '#F09989'}`]■[/span] red dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. When a tree sequesters CO₂, it stores this unit as a [span style:`{color: '#9BBBD8'}`]■[/span] blue dot. But sadly, sometimes trees are felled, burned, or just die naturally...
+
+[Desktop][br/][br/][br/][br/][br/][br/][br/][br/][br/][br/][br/][/Desktop]
 
 
-When a tree sequesters CO₂, it stores this unit as a [span style:`{color: '#9BBBD8'}`]■[/span] blue dot. But sadly, sometimes trees are felled, burned, or just die naturally...[desktop][br/][br/][br/]
-[br/][br/][br/][br/][br/][br/][/desktop]
-
-[Aside]
+[LargeAside]
   [img class:"primer-image" src:"static/images/sim-preview-3.png" /]
-[/Aside]
+[/LargeAside]
 
-When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The simulation keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).[desktop][br/][br/][br/]
-[br/][/desktop]
+When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The simulation keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).
+
+[Desktop][br/][br/][br/][br/][br/][br/][br/][br/][br/][br/][/Desktop]
 
 Plant a forest to see how many trees it would take to remove all the CO₂ bubbles. But be careful: When you lose a tree, you also lose the CO₂!
 
@@ -152,7 +148,7 @@ Plant a forest to see how many trees it would take to remove all the CO₂ bubbl
 
     Drag the slider to grow or shrink the forest.
 
-    [Range value:trees min:0 max:10 /]
+    [Range value:trees min:1 max:10 /]
   [/TreeSimulator]
 [/FullWidth]
 
@@ -173,7 +169,7 @@ You've probably seen algae before—it's floating about on ponds and washing up 
 
 In recent years, there has been a growing interest in how we can use algae like we use trees to suck carbon dioxide out of our atmosphere. Except with algae, there are different possibilities: Due to its size and composition, algae excels at a special type of carbon removal method called bioenergy with carbon capture and storage (BECCS). This means that researchers are studying two things: 1) how we can use algae to remove carbon and 2) how we can use the captured carbon for something else, such as fuel, food, and heat.
 
-Some researchers have criticized BECCS as being too premature for industrial scale solutions since these types of solutions have seldom been demonstrated at a commercial scale.  Regardless of being a less-developed research solution, scientists agree that in the long term BECCS is no longer an optional piece to solving the climate crisis. 
+Some researchers have criticized BECCS as being too premature for industrial scale solutions since these types of solutions have seldom been demonstrated at a commercial scale.  Regardless of being a less-developed research solution, scientists agree that in the long term BECCS is no longer an optional piece to solving the climate crisis.
 
 In the latest IPCC [a href:"http://ar5-syr.ipcc.ch/topic_summary.php"]assessment report[/a] published in 2014, 101 of the 116 scenarios that achieved a "likely" chance of staying below 2°C relied on BECCS. And [a href:"http://www.nature.com/nclimate/journal/v4/n10/full/nclimate2392.html"]67% of these scenarios[/a] said BECCS would represent at least 20% of the world's primary energy by 2100.
 

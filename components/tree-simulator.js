@@ -264,7 +264,7 @@ class treeSimulator extends Component {
 
             this.setState({
               disasterCount: this.state.disasterCount + 1,
-              simulationMessage: 'A tree has died! CO₂ has been released into the atmosphere.',
+              simulationMessage: 'Trees have died! CO₂ has been released into the atmosphere.',
               simulationMessageColor: '#EE998B'
             })
 
