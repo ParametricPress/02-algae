@@ -80,18 +80,14 @@ class RadarChart extends D3Component {
   }
   updateWidth(node) {
 	let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-	let newWidth;
-
-    // console.log(windowWidth)
-    // if (windowWidth < 700) {
-	// 	d3.select(".radar").remove()
-	// 	radarChartOptions.w = 300;
-	// 	this.drawRadarChart("#radarChart", data, radarChartOptions, parent);
-    // } else {
-	// 	d3.select(".radar").remove()
-	// 	radarChartOptions.w = 650;
-	// 	this.drawRadarChart("#radarChart", data, radarChartOptions, parent);
-    // }
+	
+    if (windowWidth < 700) {
+		d3.select(".radar").style("display", "none");
+		d3.select(".radar-chart-mobile").style("display", "block");
+    } else {
+		d3.select(".radar").style("display", "block");
+		d3.select(".radar-chart-mobile").style("display", "none");
+    }
   }
   drawRadarChart(id, data, options, parent) {
     const max = Math.max;

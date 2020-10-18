@@ -77,7 +77,7 @@ p.icon-name {
 
 .primer-image {
   margin-left: 45vw;
-  width: 600px;
+  width: 700px;
 }
 
 .idyll-step {
@@ -148,6 +148,17 @@ input[type="range"] {
 .idyll-text-container img {
   margin-left: 0;
 }
+
+.radar-chart-mobile {
+  display: none
+}
+
+@media screen and (max-width: 700px) {
+  .radar-chart-mobile {
+    display: block
+  }
+}
+
 @media screen and (max-width: 800px) {
   .fullWidth img {
     margin-left: 1em;

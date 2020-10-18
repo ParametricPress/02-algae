@@ -247,8 +247,11 @@ There are also options to grow algae for carbon sequestration in controlled envi
 
 They found that in addition to the algae absorbing CO₂, the injection of flue gas from the power plant actually accelerated algae growth, increasing biomass productivity by up to 30%. The downsides of growing algae near power plants come down to the cost of adopting: Despite promising experiments, most energy companies do not consider it worth the investment due to a lack of economic incentives to adopt emerging technologies. Once implemented however, the study showed that compared to DAC and BECCS with soy, algae-based BECCS proved 36% and 67% more cost effective respectively.
 
+
+
 [ParametricGraphic hed:"Small footprint, big impact" subhed:"Using Algae for Bioenergy Carbon Capture and Storage (ABECCS) takes up a small land and water footprint while yielding similar or better results to other technologies. In a controlled study, it proved more energy efficient and less expensive than direct air capture (DAC) and far more compact than BECCS with soy. All values have been normalized." source:"Integrating Algae with Bioenergy Carbon Capture and Storage (ABECCS) Increases Sustainability"]
   [RadarChart /]
+  [img className:"radar-chart-mobile" src:"static/images/radar-mobile-still.png"/]
 [/ParametricGraphic]
 
 
