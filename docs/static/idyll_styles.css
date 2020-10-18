@@ -1008,15 +1008,15 @@ h2 {
 
 button, input[type=submit] {
   display: block;
-  margin: 1em auto;
+  margin: 0.5em auto;
   background: #adadad;
-  font-family: Silkscreen;
+  font-family: 'Graphik Web';
   border: none;
   box-shadow: none;
   border-radius: 0px;
   color: white;
-  font-size: 14px;
-  padding: 1em 2em;
+  font-size: 18px;
+  padding: 0.65em 2em;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1286,8 +1286,11 @@ a {
 }
 
 .parametric-caption a {
-  color: #D8FFA2;
+  color: #adadad;
   text-decoration: underline;
+}
+.parametric-caption a:hover {
+  color: #D8FFA2;
 }
 
 .parametric-tooltip-trigger {
@@ -1454,12 +1457,13 @@ a {
   border-top: 1px solid #2C2C2C;
   justify-content: space-between;
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 5px;
   color: #7e7e7e;
 }
 
 .parametric-graphic-source-label-wrapper {
   display: flex;
+  align-items: center;
 }
 
 .parametric-graphic-source-label {
@@ -1480,11 +1484,20 @@ a {
 }
 
 
+
 .parametric-recirc-article {
   background: #D8FFA2;
   box-shadow: 8px 8px 0 black;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   margin: 1em 0;
+}
+
+.parametric-recirc-article a {
+  text-decoration: none;
+}
+
+.parametric-recirc-article a:hover {
+  text-decoration: underline;
 }
 
 .parametric-header-text {
@@ -1841,6 +1854,11 @@ body {
 .idyll-text-container p {
   color: #ADADAD;
 }
+
+.idyll-text-container p b {
+  color: #BEBEBE;
+}
+
 .idyll-text-container p a,
 aside a, a {
   color: #ADADAD;
@@ -1853,6 +1871,18 @@ button {
   color: #222222;
 }
 
+.idyll-root .parametric-author-bio {
+  font-family: 'Graphik Web';
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 3em 0 2em;
+}
+.idyll-root .parametric-author-bio p {
+  font-family: 'Graphik Web';
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 3em 0 2em;
+}
 
 .parametric-author-bio a {
   color: #ADADAD;
@@ -1901,6 +1931,10 @@ button {
   color: #222222;
 }
 
+
+.parametric-header-metadata-component {
+  flex-wrap: wrap;
+}
 
 @media all and (max-width: 1440px) {
   .parametric-recirc-next-article {
@@ -2022,6 +2056,12 @@ button {
     margin-right: 0;
   }
 
+  .past-issue-container {
+    position: static !important;
+    margin-bottom: 1em;
+  }
+
+
   .parametric-footer form {
     margin: 1em 0;
   }
@@ -2081,12 +2121,6 @@ button {
   .parametric-header-hed-text {
     top: 60px;
   }
-
-  .past-issue-container {
-    position: static !important;
-    margin-bottom: 1em;
-  }
-
 
 	.idyll-text-container img {
 		margin: 2em auto;
@@ -2409,10 +2443,9 @@ p.icon-name {
 }
 
 .tooltip-box {
-  fill: rgb(79, 79, 79);
-  stroke: black;
-  stroke-width: 3;
-  opacity: 0.8;
+  fill: #111111;
+  stroke: none;
+  opacity: 1;
 }
 
 .tooltip-text {
@@ -2451,12 +2484,13 @@ p.icon-name {
   margin-right: 20px;
 }
 
-span.simulation-citation {
+.simulation-citation {
   font-size: 14px;
   /* margin-bottom: 20px; */
-  color: rgb(130, 130, 130);
-  max-width: 500px;
-  line-height: 16px;
+  color: #EFEFEF;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+  max-width: 700px;
 }
 
 .parametric-graphic-source-citation {
@@ -2489,11 +2523,20 @@ span.simulation-citation {
   background-color: #3F3F3F;
   margin: auto;
   padding: 20px;
-  height: 750px;
+  /* height: 650px; */
+  margin-bottom: 1em;
+}
+
+.tree-sim h3 {
+  margin-top: 0;
 }
 
 .parametric-graphic label {
   margin-right: 1em;
+}
+
+input[type="range"] {
+  max-width: 400px;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
