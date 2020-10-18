@@ -184,10 +184,15 @@ input[type="range"] {
 .idyll-text-container .parametric-graphic {
   padding: 0;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 
 @media screen and (max-width: 700px) {
+
+  .radar {
+    display: none;
+  }
   .radar-chart-mobile {
     display: block
   }

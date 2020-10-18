@@ -195,10 +195,10 @@ class D3LineChart extends D3Component {
         .attr("transform", function(d, i) {
           return "translate(" + (newWidth-70) + "," + ((i+1)*20) + ")"
         })
-    
+
   }
   updateRange(newXDomain, newYDomain, data_85, data_45, data_6, data_3) {
-    
+
     x.domain(newXDomain)
     y.domain(newYDomain)
 
