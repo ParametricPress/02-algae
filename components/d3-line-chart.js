@@ -4,7 +4,7 @@ const d3 = require('d3');
 
 const margin = {top: 40, right: 30, bottom: 30, left: 40};
 const height = 400 - margin.top - margin.bottom;
-let width = 650 + margin.left + margin.right;
+let width = 450 + margin.left + margin.right;
 
 const x = d3.scaleTime()
     .rangeRound([0, width]);
@@ -114,25 +114,6 @@ class D3LineChart extends D3Component {
           .text("RCP 8.5");
 
       g.append("path")
-          .datum(d45)
-          .attr("fill", "none")
-          .attr("stroke", color3)
-          .attr("stroke-linejoin", "round")
-          .attr("stroke-linecap", "round")
-          .attr("stroke-width", 3)
-          .attr("d", line)
-          .attr("class", "bad-line")
-          .attr("clip-path", "url(#clip)");
-
-      g.append("text")
-          .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
-          .attr("dy", ".35em")
-          .attr("text-anchor", "start")
-          .attr("class", "plot-labels")
-          .style("fill", color3)
-          .text("RCP 4.5");
-
-      g.append("path")
           .datum(d6)
           .attr("fill", "none")
           .attr("stroke", color2)
@@ -150,6 +131,25 @@ class D3LineChart extends D3Component {
           .attr("class", "plot-labels")
           .style("fill", color2)
           .text("RCP 6");
+
+      g.append("path")
+          .datum(d45)
+          .attr("fill", "none")
+          .attr("stroke", color3)
+          .attr("stroke-linejoin", "round")
+          .attr("stroke-linecap", "round")
+          .attr("stroke-width", 3)
+          .attr("d", line)
+          .attr("class", "bad-line")
+          .attr("clip-path", "url(#clip)");
+
+      g.append("text")
+          .attr("transform", "translate(" + (width-50) + "," + (y(d45[d45.length - 1].co2) - 10) + ")")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .attr("class", "plot-labels")
+          .style("fill", color3)
+          .text("RCP 4.5");
 
       g.append("path")
           .datum(data3)
@@ -179,10 +179,8 @@ class D3LineChart extends D3Component {
       newWidth = 300
     } else if (windowWidth < 600) {
       newWidth = 400
-    } else if (windowWidth < 800) {
-      newWidth = 550
     } else {
-      newWidth = 650;
+      newWidth = 500;
     }
 
     d3.select('#multiline-chart').attr("width", newWidth+margin.left + margin.right)
