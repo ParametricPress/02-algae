@@ -162,17 +162,19 @@ class treeSimulator extends Component {
         nodes.pop()
     }
 
-    d3.select("#start-btn").on("click", () => {
+    this._startHandler = () => {
 
         if (!this.state.readyToSimulate) {
           this.setState({
-            simulationMessage: "You need to reset the simulation first!"
+            simulationMessage: "You need to reset the simulation first!",
+            simulationMessageColor: '#ffffff'
           })
         } else {
           // this.updateTrees()
           this.setState({
             simulationState: 'running',
-            simulationMessage: 'Removing CO₂...'
+            simulationMessage: 'The trees are removing CO₂ from the atmosphere.',
+            simulationMessageColor: '#9CBBD7'
           });
 
           d3.select('.tooltip')
@@ -267,14 +269,16 @@ class treeSimulator extends Component {
 
             this.setState({
               disasterCount: this.state.disasterCount + 1,
-              simulationMessage: 'We lost a tree! Removing CO₂...'
+              simulationMessage: 'A tree has died! CO₂ has been released into the atmosphere.',
+              simulationMessageColor: '#EE998B'
             })
 
             if (this.props.numtrees < 1) {
               clearInterval(counterForTrees)
               this.setState({
                 simulationState: 'waitingForRestart',
-                simulationMessage: 'We ran out of trees...😔',
+                simulationMessage: 'We ran out of trees. 😔',
+                simulationMessageColor: '#EE998B',
                 readyToSimulate: false
               });
 
@@ -282,14 +286,14 @@ class treeSimulator extends Component {
               clearInterval(counterForTrees)
               this.setState({
                 simulationState: 'waitingForRestart',
-                simulationMessage: "It's been 30 yrs. We ran out of time...😔",
+                simulationMessage: "It's been 30 years, we ran out of time. 😔",
+                simulationMessageColor: '#EE998B',
                 readyToSimulate: false
               });
             }
           }, 3000);
         }
       }
-    );
 
     function updateSim() {
         simulation.nodes(nodes);
@@ -346,7 +350,7 @@ class treeSimulator extends Component {
       <div className="app row tree-sim">
         <div>
           { this.state.simulationState == 'beforeFirstStart'  ? <h3>Let's plant a forest of { this.props.numtrees * 1000 } trees</h3> : null }
-          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h3>{this.state.simulationMessage}</h3> : null }
+          { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h3 style={{color: this.state.simulationMessageColor || '#D8FFA2'}}>{this.state.simulationMessage}</h3> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount * 1000}</p> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.carbonDots *10}kg CO₂</p> : null }
           {/* { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {50 - this.state.carbonDots}</p> : null } */}
@@ -354,7 +358,7 @@ class treeSimulator extends Component {
         {this.state.simulationState == 'beforeFirstStart' ? this.props.children : null}
         <div className="flex-container">
           <div class="flex-child">
-            {this.state.simulationState == 'beforeFirstStart' ? <button id="start-btn">Start Simulation</button> : null}
+            {this.state.simulationState == 'beforeFirstStart' ? <button id="start-btn" onClick={() => this._startHandler()}>Start Simulation</button> : null}
             { this.state.simulationState == 'waitingForRestart'  ? <button id="restart-btn" onClick={() => this.resetTheSim()}>Reset</button> : null }
           </div>
           <div class="flex-child-3">
