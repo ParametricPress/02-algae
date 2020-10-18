@@ -27,8 +27,8 @@
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
     "p5": "^1.1.9",
-    "parametric-components": "^2.1.33",
-    "parametric-styles": "^2.2.24",
+    "parametric-components": "^2.1.34",
+    "parametric-styles": "^2.2.25",
     "react-map-gl": "^5.2.7",
     "react-visibility-sensor": "^5.1.1"
   }
