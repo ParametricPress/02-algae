@@ -50,7 +50,7 @@ const treeLocations = [
     y: 90
   }},
   {loc: {
-    x: 280,
+    x: 260,
     y: 80
   }}
 ]
@@ -71,15 +71,10 @@ class treeSimulator extends Component {
   };
 
   updateTrees = e => {
-    // this.branchList = this.createBranches(this.NUM_OF_BRANCHES);
-    // this.setState({ branches: this.branchList });
     d3.selectAll('.svg-trees').remove()
 
     // for # of trees
     for (let i = 0; i < this.props.numtrees; i++) {
-      console.log(i)
-      // let randX = Math.floor(Math.random()*299) + 1;
-      // let randY = (Math.floor(Math.random()*49) + 1)+70;
       this.drawSvgTree(treeLocations[i].loc.x, treeLocations[i].loc.y)
     }
   };
@@ -371,8 +366,8 @@ class treeSimulator extends Component {
 
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="340" cy="7" rx="3" fill="#F09989"></ellipse>
-            <text class="co2-legend" x="350" y="10">= 10kg CO₂</text>
+            <ellipse cx="310" cy="7" rx="3" fill="#F09989"></ellipse>
+            <text class="co2-legend" x="320" y="10">= 10kg CO₂</text>
             <text class="co2-type" x="30" y="110">Atmospheric CO₂</text>
             <text class="co2-type" x="30" y="260">Sequestered CO₂</text>
           </svg>
