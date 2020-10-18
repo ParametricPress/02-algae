@@ -73,7 +73,9 @@ More trees in the world does give us some reason to celebrate. According to a [a
 
 [FullWidth]
   [ParametricGraphic hed:"Two decades of deforestation" subhed:"The Global Forest Watch is an open-source web application to monitor global forests in near real-time. Explore the map below to see how deforestation rates have changed over time across the globe." source:"Global Forest Watch"]
-  [iframe src:"https://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100%', height: '60vh'}` /]
+  [InteractionToggle]
+    [iframe src:"https://www.globalforestwatch.org/embed/map/global/?map=eyJjZW50ZXIiOnsibGF0Ijo0Mi43NjI4MDk2ODA4MzQyOTUsImxuZyI6LTMyLjQ3MjY1NjI1MDAwMDAxfSwiYmFzZW1hcCI6eyJ2YWx1ZSI6ImRhcmsifSwiZGF0YXNldHMiOlt7ImxheWVycyI6WyJiNDUzNTBlMy01YTc2LTQ0Y2QtYjBhOS01MDM4YTBkOGJmYWUiLCJjYzM1NDMyZC0zOGQ3LTRhMDMtODcyZS0zYTcxYTJmNTU1ZmMiXSwiZGF0YXNldCI6IjBiMDIwOGI2LWI0MjQtNGI1Ny05ODRmLWNhZGRmYTI1YmEyMiIsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsib3BhY2l0eSI6MC43LCJ2aXNpYmlsaXR5Ijp0cnVlLCJkYXRhc2V0IjoiZmU4YjVmMDMtMGZmOS00YzE4LWJhMzktNzdkY2ZlNjk5MDhmIiwibGF5ZXJzIjpbIjQxMDg2NTU0LTVjYTUtNDU2Yy04MGRkLWY2YmVlNjFiYzQ1ZiJdfSx7ImRhdGFzZXQiOiJiNTg0OTU0Yy0wZDhkLTQwYzYtODU5Yy1mM2ZkZjNjMmM1ZGYiLCJsYXllcnMiOlsiNDlhODBlNzAtZWM1Mi00ZWY4LWJjYzYtZmIyNzcxZDk1YjJjIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWUsInBhcmFtcyI6eyJ0aHJlc2giOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlfX1dfQ%3D%3D" style:`{border: 'none', width: '100%', height: '70vh'}` /]
+  [/InteractionToggle]
   [/ParametricGraphic]
 [/FullWidth]
 
@@ -100,52 +102,55 @@ The second obstacle is scale. Researchers claim that the available land we have 
 
 To take a specific example, let's look at a single country. The United Kingdom has pledged to reach net zero emissions by 2050. A [a href:"https://www.carbonbrief.org/ccc-one-fifth-of-uk-farmland-must-be-used-to-tackle-climate-change"]report[/a] this year found that in order to reach that goal, the UK would need to commit 20% of its current farmland to dedicated carbon capture and storage uses. And to have a chance at reaching their targets, they need to start doing that, more or less, right now.
 
-[Aside]
-  [Recirc slug:parametricSlug /]
-[/Aside]
-
 Converting farmland is not an isolated effort either: Reducing traditional crops by around 20% means the government will also count on people to adopt low-carbon farming practices, reduce food waste, and make diet changes described as "a 20% shift away from beef, lamb and dairy to alternative protein sources".
 
 If you apply this concept across the world, the amount of farmland we need to convert is daunting. According to the IPCC report, over 70% of Earth's ice-free land is being used or shaped by human activity. Around 25-30% of this usable land is going straight to producing food, raising cattle, growing cotton for clothes, and energy production.
 
 On top of all this, if somehow we did find the 1.7bn hectares of suitable land to plant these trees, we would also need to protect them. When trees die, they release all the CO₂ they have eaten up back to the atmosphere. Deforestation in the Amazon rainforest [a href:"https://www.reuters.com/article/us-brazil-deforestation/brazil-amazon-deforestation-soars-to-11-year-high-in-2019-idUSKBN1XS1PK"]rose by nearly 30% in 2019[/a]. On the other side of the globe, bushfires in Australia emitted[a href:"https://www.theguardian.com/environment/2019/dec/13/australias-bushfires-have-emitted-250m-tonnes-of-co2-almost-half-of-countrys-annual-emissions"] nearly half[/a] of the country's annual emissions — and that's on top of Australia's usual CO₂ output.
 
-[var name:"scrollerIndex" value:0 /]
-[Scroller currentStep:scrollerIndex]
-
-  // step through images based on scroll index
-  [Graphic]
-    [Conditional if:`scrollerIndex == 0`]
-      [img class:"primer-image" src:"static/images/sim-preview-1.png" /]
-    [/Conditional]
-    [Conditional if:`scrollerIndex == 1`]
-      [img class:"primer-image" src:"static/images/sim-preview-2.png" /]
-    [/Conditional]
-    [Conditional if:`scrollerIndex == 2`]
-      [img class:"primer-image" src:"static/images/sim-preview-3.png" /]
-    [/Conditional]
-  [/Graphic]
-
-  [Step]To fully understand the complications around relying on trees to save the planet, it's useful to look at how this actually plays out with a simulation.[/Step]
-  [Step]Each [span style:`{color: '#F09989'}`]■[/span] red dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. When a tree sequesters CO₂, it stores this unit as a [span style:`{color: '#9BBBD8'}`]■[/span] blue dot. But sometimes trees are felled, burned, or just die naturally...[/Step]
-  [Step]When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The simulation keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).[/Step]
-
-
-[/Scroller]
-
 ### Can you remove all the CO₂ with trees?
+
+To fully understand the complications around relying on trees to save the planet, it's useful to look at how this actually plays out with a simulation. The interactive version is embedded below, but first a few pointers.
+
+[Aside]
+  [img class:"primer-image" src:"static/images/sim-preview-1.png" /]
+[/Aside]
+
+Each [span style:`{color: '#F09989'}`]■[/span] red dot represents a unit of CO₂. Some studies estimate that a single tree can remove up to 48 lbs CO₂ per year. [desktop][br/][br/][br/][br/][br/][br/][br/][br/][/desktop]
+
+[Aside]
+  [img class:"primer-image" src:"static/images/sim-preview-2.png" /]
+[/Aside]
+
+
+When a tree sequesters CO₂, it stores this unit as a [span style:`{color: '#9BBBD8'}`]■[/span] blue dot. But sometimes trees are felled, burned, or just die naturally...[desktop][br/][br/][br/]
+[br/][br/][br/][br/][br/][br/][/desktop]
+
+[Aside]
+  [img class:"primer-image" src:"static/images/sim-preview-3.png" /]
+[/Aside]
+
+
+When a tree does die, it releases all the CO₂ it removed back into the atmosphere. The simulation keeps track of these "deforestation" events. It also tracks how many years we have left to make meaningful changes (as noted earlier, it's somewhere between 10-30 years depending on who you ask).
+
 Plant a forest to see how many trees it would take to remove all the CO₂ bubbles. But be careful: When you lose a tree, you also lose the CO₂!
 
-Drag the slider to plant a forest.
-
-[var name:"trees" value:5 /]
-[Range value:trees min:0 max:10 /]
 [FullWidth]
-  [treeSimulator
+
+
+
+  [var name:"trees" value:5 /]
+
+  [TreeSimulator
     ref:"simulator"
     numtrees:trees
     maxTrees: 20
-    yearCounter:0 /]
+    yearCounter:0]
+
+    Drag the slider to grow or shrink the forest.
+
+    [Range value:trees min:0 max:10 /]
+  [/TreeSimulator]
 [/FullWidth]
 
 Planting trees is unquestionably a good idea, but it’s likely not the “silver bullet” solution to fighting climate change. We also need to be pursuing new technologies and methods of capturing carbon from the atmosphere, like direct carbon capture from the air. And maybe, we might find inspiration for tackling one of humanity’s biggest technical challenges in one of Earth’s smallest life forms: algae.
@@ -168,6 +173,10 @@ Some researchers have criticized BECCS as being too premature for industrial sca
 Algae presents one of the most promising BECCS candidates to date.
 
 Here are a few reasons why we're so interested in algae as a possible climate change solution:
+
+[Aside]
+  [Recirc slug:parametricSlug /]
+[/Aside]
 
 - **Usually, it's small.** Algae uses far less land than trees, which is great because as we've already seen, land is in short supply. It [a href:"https://news.cornell.edu/stories/2017/03/microalgae-could-play-key-role-relieving-climate-warming"]tends to produce[/a] an equal amount of bioenergy to terrestrial plants using only 1/10th of the land area. While most algae is small, giant sea kelp can grow up to 100ft.
 

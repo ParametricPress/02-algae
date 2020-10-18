@@ -48,7 +48,7 @@ class RadarChart extends D3Component {
                 axes: [
                     {axis: 'Land use (ha)', value: 0.667},
                     {axis: 'CO₂ Seq (t CO₂/yr)', value: 0.899},
-                    {axis: 'Cost ($/t CO₂)', value: 0.329},                    
+                    {axis: 'Cost ($/t CO₂)', value: 0.329},
                     {axis: 'Energy returned', value: 0.64},
                     // {axis: 'GHG impact (kg CO₂e/t)', value: 1},
                     {axis: 'Water footprint (m3/t)', value: 0.61}
@@ -81,7 +81,7 @@ class RadarChart extends D3Component {
   updateWidth(node) {
 	let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
 	let newWidth;
-	
+
     // console.log(windowWidth)
     // if (windowWidth < 700) {
 	// 	d3.select(".radar").remove()
@@ -98,7 +98,7 @@ class RadarChart extends D3Component {
     const sin = Math.sin;
     const cos = Math.cos;
     const HALF_PI = Math.PI / 2;
-    
+
 	//Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
 	const wrap = (text, width) => {
 	  text.each(function() {
@@ -233,7 +233,7 @@ class RadarChart extends D3Component {
 	   .attr("y", d => -d * radius / cfg.levels)
 	   .attr("dy", "0.4em")
 	   .style("font-size", "10px")
-	   .attr("fill", "white")
+	   .attr("fill", "#adadad")
 	   .text(d => Format(maxValue * d / cfg.levels) + cfg.unit);
 
 	/////////////////////////////////////////////////////////
@@ -293,8 +293,6 @@ class RadarChart extends D3Component {
 		.attr("y", -205)
 		.attr('width', 200)
 		.attr('height', 80)
-		.attr('rx', 10)
-		.attr('ry', 10)
 		.attr('class', 'tooltip-box');
 
 	const tooltipPreviewText = g.append("text")
@@ -307,7 +305,7 @@ class RadarChart extends D3Component {
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em")
 		.text('Hover for summary');
-	
+
 	const tooltip = g.append("text")
 		.attr("class", "tooltip")
 		.style('fill', 'white')
@@ -341,12 +339,12 @@ class RadarChart extends D3Component {
 			tooltip
 				.style('opacity', '1');
 
-			
+
 		})
 		.on('mousemove', function(d) {
 			tooltip
 				.attr('x', -165)
-				.attr('y', -175)			
+				.attr('y', -175)
 				.text(d.summary)
 				.call(wrap, 200);
 		})
@@ -409,7 +407,7 @@ class RadarChart extends D3Component {
 			// 	.attr('x', 100)
 			// 	.attr('y', 100)
 			// 	.transition()
-			// 	.style('display', 'block')				
+			// 	.style('display', 'block')
 			// 	.text(Format(d.value) + cfg.unit);
 		})
 		.on("mouseout", function(){

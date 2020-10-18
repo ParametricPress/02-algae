@@ -80,7 +80,7 @@ class treeSimulator extends Component {
       console.log(i)
       // let randX = Math.floor(Math.random()*299) + 1;
       // let randY = (Math.floor(Math.random()*49) + 1)+70;
-      this.drawSvgTree(treeLocations[i].loc.x, treeLocations[i].loc.y)  
+      this.drawSvgTree(treeLocations[i].loc.x, treeLocations[i].loc.y)
     }
   };
 
@@ -98,7 +98,7 @@ class treeSimulator extends Component {
   componentDidMount() {
     this.NUM_OF_BRANCHES = 10;
     this.updateTrees();
-    this.startNodeSimulation(); 
+    this.startNodeSimulation();
   }
 
   startNodeSimulation() {
@@ -161,11 +161,11 @@ class treeSimulator extends Component {
     function removeNode() {
         nodes.pop()
     }
-    
+
     d3.select("#start-btn").on("click", () => {
 
         if (!this.state.readyToSimulate) {
-          this.setState({ 
+          this.setState({
             simulationMessage: "You need to reset the simulation first!"
           })
         } else {
@@ -232,7 +232,7 @@ class treeSimulator extends Component {
             }
             updateSim();
 
-            this.setState({ 
+            this.setState({
               yearCount: this.state.yearCount + 1
             })
 
@@ -250,10 +250,10 @@ class treeSimulator extends Component {
             for (let i = 0; i < this.state.yearCount * 1; i++) {
               addNode("blue");
               this.state.carbonDots = this.state.carbonDots - 1;
-              
+
               // remove # of carbon that tree has sequestered
               let selec = d3.selectAll('.removed-carbon');
-              let lastNode = selec.nodes()[selec.nodes().length - 1];              
+              let lastNode = selec.nodes()[selec.nodes().length - 1];
               lastNode.remove();
             }
             updateSim();
@@ -265,7 +265,7 @@ class treeSimulator extends Component {
               numtrees: this.props.numtrees - 1
             })
 
-            this.setState({ 
+            this.setState({
               disasterCount: this.state.disasterCount + 1,
               simulationMessage: 'We lost a tree! Removing CO₂...'
             })
@@ -330,14 +330,14 @@ class treeSimulator extends Component {
     this.NUM_OF_BRANCHES = 10;
     this.updateTrees();
     console.log('restart the sim')
-    this.startNodeSimulation(); 
+    this.startNodeSimulation();
   }
   componentDidUpdate(prevProps) {
     if (this.props.numtrees !== prevProps.numtrees) {
       if (this.state.simulationState != "running") {
         this.updateTrees()
       }
-      
+
     }
   }
   render() {
@@ -346,15 +346,25 @@ class treeSimulator extends Component {
       <div className="app row tree-sim">
         <div>
           { this.state.simulationState == 'beforeFirstStart'  ? <h3>Let's plant a forest of { this.props.numtrees * 1000 } trees</h3> : null }
-          { this.state.simulationState == 'beforeFirstStart'  ? <p>Each 🌲 represents 1,000 trees</p> : null }
-        </div>
-        <div >
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart' ? <h3>{this.state.simulationMessage}</h3> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>Trees lost: {this.state.disasterCount * 1000}</p> : null }
           { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ sequestered: {this.state.carbonDots *10}kg CO₂</p> : null }
           {/* { this.state.simulationState == 'running' || this.state.simulationState == 'waitingForRestart'  ? <p>CO₂ released: {50 - this.state.carbonDots}</p> : null } */}
         </div>
-      
+        {this.state.simulationState == 'beforeFirstStart' ? this.props.children : null}
+        <div className="flex-container">
+          <div class="flex-child">
+            {this.state.simulationState == 'beforeFirstStart' ? <button id="start-btn">Start Simulation</button> : null}
+            { this.state.simulationState == 'waitingForRestart'  ? <button id="restart-btn" onClick={() => this.resetTheSim()}>Reset</button> : null }
+          </div>
+          <div class="flex-child-3">
+            <div class='progress-bar-outer'>
+                <div class='progress-bar-inner' style={{width: (this.state.yearCount * 3.333) + '%'}}></div>
+            </div>
+            {this.state.simulationState == 'running' ? <p>Years elapsed: {this.state.yearCount}</p> : null}
+          </div>
+        </div>
+
         <div className="content column">
           <svg id="treelandscape" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="340" cy="7" rx="3" fill="#F09989"></ellipse>
@@ -364,21 +374,9 @@ class treeSimulator extends Component {
           </svg>
         </div>
 
-        <div className="flex-container">
-          <div class="flex-child">
-            <button id="start-btn">Start Simulation</button>
-            { this.state.simulationState == 'waitingForRestart'  ? <button id="restart-btn" onClick={() => this.resetTheSim()}>Reset</button> : null }
-          </div>
-          <div class="flex-child-3">
-            <div class='progress-bar-outer'>
-                <div class='progress-bar-inner' style={{width: (this.state.yearCount * 3.333) + '%'}}></div>
-            </div>
-            <p>Years elapsed: {this.state.yearCount}</p>
-          </div>
-        </div>
-
         <div>
-        <span class="simulation-citation">The data for this simulation is based on a few estimates, but is mainly meant to illustrate a wider problem. Rate of CO₂ removal assumes that a mature tree absorbs 48 lbs/yr (estimate from the <a href="http://www.tenmilliontrees.org/trees/" target="_blank">10 Million Trees project</a>), but these estimates vary greatly by region, type of tree, and age of tree. The rate of deforestation assumes that deforestation rates will stay the same or increase in the future.</span>
+        { this.state.simulationState == 'beforeFirstStart'  ? <p>Each 🌲 represents 1,000 trees</p> : null }
+        <div class="simulation-citation">The data for this simulation is based on a few estimates, but is mainly meant to illustrate a wider problem. Rate of CO₂ removal assumes that a mature tree absorbs 48 lbs/yr (estimate from the <a href="http://www.tenmilliontrees.org/trees/" target="_blank">10 Million Trees project</a>), but these estimates vary greatly by region, type of tree, and age of tree. The rate of deforestation assumes that deforestation rates will stay the same or increase in the future.</div>
         </div>
       </div>
     );
