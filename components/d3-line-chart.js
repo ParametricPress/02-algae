@@ -2,7 +2,7 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
-const margin = {top: 40, right: 30, bottom: 30, left: 40};
+const margin = {top: 50, right: 30, bottom: 30, left: 35};
 const height = 400 - margin.top - margin.bottom;
 let width = 450 + margin.left + margin.right;
 
@@ -69,9 +69,9 @@ class D3LineChart extends D3Component {
        .attr("id", "clip")
        .append("svg:rect")
        .attr("width", width )
-       .attr("height", height )
+       .attr("height", height+3 )
        .attr("x", 0)
-       .attr("y", 0);
+       .attr("y", -2);
 
       x.domain(d3.extent(d85, function(d) { return d.date; }));
       y.domain(d3.extent(d85, function(d) { return d.co2; }));
@@ -176,7 +176,7 @@ class D3LineChart extends D3Component {
     let newWidth;
     // console.log(windowWidth)
     if (windowWidth < 480) {
-      newWidth = 300
+      newWidth = 260
     } else if (windowWidth < 600) {
       newWidth = 400
     } else {
@@ -193,7 +193,7 @@ class D3LineChart extends D3Component {
     d3.select('.best-line').transition().duration(1000).attr("d", line);
     d3.selectAll('.plot-labels').transition().duration(1000)
         .attr("transform", function(d, i) {
-          return "translate(" + (newWidth-50) + "," + ((i+1)*20) + ")"
+          return "translate(" + (newWidth-70) + "," + ((i+1)*20) + ")"
         })
     
   }
