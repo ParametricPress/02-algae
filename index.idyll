@@ -290,4 +290,4 @@ This is the power, and the potential promise, of algae. Rather than the single b
 [Footer fullWidth:true /]
 
 // Uncomment before pub
-// [Analytics google: "UA-139053456-1" tag:parametricSlug /]
+[Analytics google: "UA-139053456-1" tag:parametricSlug /]
