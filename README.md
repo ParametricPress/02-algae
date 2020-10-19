@@ -2,7 +2,7 @@
 
 *To fight climate change, it’s time to start thinking big by thinking small.*
 
-https://preview.parametric.press/issue-02/algae/
+https://parametric.press/issue-02/algae/
 
 ## Local Setup
 
