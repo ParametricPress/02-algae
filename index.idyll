@@ -1,4 +1,4 @@
-[meta title:"Tiny Algae and the Political Theatre of Planting One Trillion Trees" description:"To fight climate change, it’s time to start thinking big by thinking small."
+[meta title:"Tiny Algae and the Political Theater of Planting One Trillion Trees" description:"To fight climate change, it’s time to start thinking big by thinking small."
   shareImageUrl:"https://parametric.press/issue-02/algae/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
@@ -8,8 +8,8 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Tiny Algae and the Political Theatre", "of Planting One Trillion Trees"]`
-  longTitle:`["Tiny Algae and the Political Theatre",  "of Planting One Trillion Trees"]`
+  title:`["Tiny Algae and the Political Theater", "of Planting One Trillion Trees"]`
+  longTitle:`["Tiny Algae and the Political Theater",  "of Planting One Trillion Trees"]`
   date:"October 19, 2020"
   dek:"To fight climate change, it’s time to start thinking big by thinking small."
   fullWidth:true
