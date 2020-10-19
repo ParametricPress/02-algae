@@ -1,4 +1,4 @@
-[meta title:"Tiny Algae and the Political Theatre of Planting One Trillion Trees" description:"To fight climate change, it’s time to start thinking big by thinking small."
+[meta title:"Tiny Algae and the Political Theater of Planting One Trillion Trees" description:"To fight climate change, it’s time to start thinking big by thinking small."
   shareImageUrl:"https://parametric.press/issue-02/algae/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
@@ -8,8 +8,8 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Tiny Algae and the Political Theatre", "of Planting One Trillion Trees"]`
-  longTitle:`["Tiny Algae and the Political Theatre",  "of Planting One Trillion Trees"]`
+  title:`["Tiny Algae and the Political Theater", "of Planting One Trillion Trees"]`
+  longTitle:`["Tiny Algae and the Political Theater",  "of Planting One Trillion Trees"]`
   date:"October 19, 2020"
   dek:"To fight climate change, it’s time to start thinking big by thinking small."
   fullWidth:true
@@ -18,8 +18,8 @@
     role: "",
     url: "https://bendoesdataviz.com"
   }]`
-  doi:"https://doi.org/TK"
-  archive:`'https://parametric-press-archives.s3.amazonaws.com/issue-02/' + parametricSlug + '.warc.gz'`
+  doi:"https://zenodo.org/badge/latestdoi/241767103"
+  archive:"https://parametric-press-archives.s3-us-west-2.amazonaws.com/issue-02.wacz"
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
@@ -177,9 +177,11 @@ Algae presents one of the most promising BECCS candidates to date.
 
 Here are a few reasons why we're so interested in algae as a possible climate change solution:
 
-[Aside]
-  [Recirc slug:parametricSlug /]
-[/Aside]
+[Desktop]
+  [Aside]
+    [Recirc slug:parametricSlug /]
+  [/Aside]
+[/Desktop]
 
 - **Usually, it's small.** Algae uses far less land than trees, which is great because as we've already seen, land is in short supply. It [a href:"https://news.cornell.edu/stories/2017/03/microalgae-could-play-key-role-relieving-climate-warming"]tends to produce[/a] an equal amount of bioenergy to terrestrial plants using only 1/10th of the land area. While most algae is small, giant sea kelp can grow up to 100ft.
 
@@ -188,6 +190,11 @@ Here are a few reasons why we're so interested in algae as a possible climate ch
 - **It thrives in very high CO₂ environments.** One acre of algae can remove up to [a href:"https://www.intechopen.com/books/algae/co-sub-2-sub-capture-for-industries-by-algae#B2"]2.7 tons per day of CO₂[/a]. Certain species of microalgae have also been shown to efficiently remove CO₂ in environments at a rate of [a href:"https://aiche.onlinelibrary.wiley.com/doi/full/10.1021/bp070371k"]10–50 times higher[/a] than terrestrial plants.
 
 - **It has many applications.** Algae can be converted into fuel, food, energy and more, all within a much smaller space. One [a href:"https://spectrum.ieee.org/energy/environment/new-tech-could-turn-algae-into-the-climates-slimy-savior"]study[/a] showed that compared to a crop like soybeans, a single hectare of algae ponds generates 27 times as much protein.
+
+[Mobile]
+  [Recirc slug:parametricSlug /]
+[/Mobile]
+
 
 ## Going very, very green
 
@@ -272,7 +279,7 @@ This is the power, and the potential promise, of algae. Rather than the single b
 
 [AuthorBio]
 
-[b][a href:"https://bendoesdataviz.com"]Benjamin Cooley[/a][/b] is a designer and developer of data visualizations. He currently builds scientific analysis tools at the [a href:"https://pattern.broadinstitute.org/["]Broad Institute of MIT and Harvard[/a].
+[b][a href:"https://bendoesdataviz.com"]Benjamin Cooley[/a][/b] is a designer and developer of data visualizations. He currently builds scientific analysis tools at the [a href:"https://pattern.broadinstitute.org/"]Broad Institute of MIT and Harvard[/a].
 
 // Edited by TK editor list.
 
@@ -283,4 +290,4 @@ This is the power, and the potential promise, of algae. Rather than the single b
 [Footer fullWidth:true /]
 
 // Uncomment before pub
-// [Analytics google: "UA-139053456-1" tag:parametricSlug /]
+[Analytics google: "UA-139053456-1" tag:parametricSlug /]

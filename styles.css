@@ -13,6 +13,13 @@
   flex: 1;
 }
 
+body {
+  overflow-x: hidden;
+}
+.parametric-article-nav {
+  overflow-x: visible;
+}
+
 p.icon-name {
   font-size: 16px;
   text-align: center;
@@ -181,8 +188,17 @@ input[type="range"] {
   margin-bottom: 1em;
 }
 
+.idyll-text-container .parametric-graphic {
+  padding: 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 
 @media screen and (max-width: 700px) {
+
+  .radar {
+    display: none;
+  }
   .radar-chart-mobile {
     display: block
   }
