@@ -18,7 +18,7 @@
     role: "",
     url: "https://bendoesdataviz.com"
   }]`
-  doi:"https://doi.org/10.5281/zenodo.4105556"
+  doi:"https://doi.org/10.5281/zenodo.4105554"
   archive:`'https://parametric-press-archives.s3.amazonaws.com/issue-02/' + parametricSlug + '.warc.gz'`
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
