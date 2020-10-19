@@ -39,7 +39,7 @@ The IPCC has outlined four potential pathways for how the world can avoid these 
 [data name:"rcp_six" source:"rcp/rcp_scenario_6.csv" /]
 [data name:"rcp_fortyfive" source:"rcp/rcp_scenario_45.csv" /]
 
-[ParametricGraphic hed:"A dire scenario" subhed:"The IPCC uses four Representative Concentration Pathways (RCPs) to to demonstrate the effects of action or inaction in various scenarios. Climate scientists currently think that RCP 8.5 (sometimes called the 'business-as-usual' pathway) is the most likely scenario." source:"IPCC | The Atlantic"]
+[ParametricGraphic hed:"A dire scenario" subhed:"The IPCC uses four Representative Concentration Pathways (RCPs) to to demonstrate the effects of action or inaction on CO₂ levels in the atmosphere. Climate scientists currently think that RCP 8.5 (sometimes called the 'business-as-usual' pathway) is the most likely scenario." source:"IPCC | The Atlantic"]
   [var name:"selectVal" value:"Entire projection" /]
   [Radio value:selectVal options:`["Entire projection", "Where we are now"]`  /]
 

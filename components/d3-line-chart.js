@@ -92,7 +92,8 @@ class D3LineChart extends D3Component {
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
         .attr("class", "y-axis")
-        .text("CO2 Equivalent");
+        .style("fill", "white")
+        .text("CO₂ equivalent");
 
       g.append("path")
           .datum(d85)

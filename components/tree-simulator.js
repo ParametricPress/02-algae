@@ -5,10 +5,6 @@
 import React, { Component } from 'react';
 const d3 = require('d3');
 
-let gridHeightStart = 240;
-let gridWidthStart = 160;
-let spacing = 20;
-
 let width = 500;
 let height = 350;
 
@@ -66,7 +62,9 @@ class treeSimulator extends Component {
       simulationState: 'beforeFirstStart',
       simulationMessage: "Let's eat up this CO₂!",
       readyToSimulate: true,
-      carbonDots: 0
+      carbonDots: 0,
+      gridHeightStart: 240,
+      gridWidthStart: 160
     }
   };
 
@@ -190,30 +188,30 @@ class treeSimulator extends Component {
                   .append('rect')
                   .attr("x", ()=> {
                     if (this.state.carbonDots < 20) {
-                      return gridWidthStart+(this.state.carbonDots*10) // row 1
+                      return this.state.gridWidthStart+(this.state.carbonDots*10) // row 1
                     } else if (this.state.carbonDots >= 20 && this.state.carbonDots <39) {
-                      return gridWidthStart-190+(this.state.carbonDots*10) //  row 2
+                      return this.state.gridWidthStart-190+(this.state.carbonDots*10) //  row 2
                     } else if (this.state.carbonDots >= 40 && this.state.carbonDots <59) {
-                      return gridWidthStart-390+(this.state.carbonDots*10) // row 3
+                      return this.state.gridWidthStart-390+(this.state.carbonDots*10) // row 3
                     } else if (this.state.carbonDots >= 60 && this.state.carbonDots <79) {
-                      return gridWidthStart-590+(this.state.carbonDots*10) // row 4
+                      return this.state.gridWidthStart-590+(this.state.carbonDots*10) // row 4
                     } else if (this.state.carbonDots >= 80 && this.state.carbonDots <99) {
-                      return gridWidthStart-790+(this.state.carbonDots*10) // row 5
+                      return this.state.gridWidthStart-790+(this.state.carbonDots*10) // row 5
                     } else {
-                      return gridWidthStart-990+(this.state.carbonDots*10) // row 6
+                      return this.state.gridWidthStart-990+(this.state.carbonDots*10) // row 6
                     }
                   })
                   .attr("y", () => {
                     if (this.state.carbonDots < 20) {
-                      return gridHeightStart;
+                      return this.state.gridHeightStart;
                     } else if (this.state.carbonDots >= 20 && this.state.carbonDots <39) {
-                      return gridHeightStart+10;
+                      return this.state.gridHeightStart+10;
                     } else if (this.state.carbonDots >= 40 && this.state.carbonDots <59) {
-                      return gridHeightStart+20;
+                      return this.state.gridHeightStart+20;
                     } else if (this.state.carbonDots >= 60 && this.state.carbonDots <79) {
-                      return gridHeightStart+30;
+                      return this.state.gridHeightStart+30;
                     } else if (this.state.carbonDots >= 80 && this.state.carbonDots <100) {
-                      return gridHeightStart+40; // row 5
+                      return this.state.gridHeightStart+40; // row 5
                     } else {
                       return -50;
                     }
@@ -323,10 +321,14 @@ class treeSimulator extends Component {
       simulationMessage: "Drag the slider to plant more trees.",
       yearCount: 0,
       disasterCount: 0,
-      readyToSimulate: true
+      readyToSimulate: true,
+      carbonDots: 0,
+      gridHeightStart: 240,
+      gridWidthStart: 160
+
     });
 
-    d3.selectAll('.removed-carbon').remove()
+    d3.selectAll('.removed-carbon').remove();
 
     this.NUM_OF_BRANCHES = 10;
     this.updateTrees();
