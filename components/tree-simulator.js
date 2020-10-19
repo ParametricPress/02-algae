@@ -106,7 +106,8 @@ class treeSimulator extends Component {
     let svg = d3.select("#treelandscape")
         .attr("viewBox", `0 0 ${width} ${height}`)
         .attr("width", "100%")
-        .attr("height", "auto");
+        .attr("height", "auto")
+        .style('max-width', '600px');
 
     let simulation = d3.forceSimulation()
           .force("x", d3.forceX().x(width/2))
