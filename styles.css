@@ -13,6 +13,13 @@
   flex: 1;
 }
 
+body {
+  overflow-x: hidden;
+}
+.parametric-article-nav {
+  overflow-x: visible;
+}
+
 p.icon-name {
   font-size: 16px;
   text-align: center;

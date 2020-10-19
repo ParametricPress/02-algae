@@ -18,7 +18,7 @@ class CustomComponent extends React.Component {
           {props.children}
         </div>
         {
-          this.state.enabled ? null : <div style={{position: 'absolute', bottom: '1em', left: 'calc(50% - 175px)', right: 'calc(50% - 175px)', width: 350, maxWidth: '100%', textAlign: 'center', background: enabled ? '#ADADAD': '#D8FFA2', cursor: 'pointer', color: '#222222', padding: '0.5em 0'}} onClick={() => this.setState({ enabled: !enabled })}>
+          this.state.enabled ? null : <div style={{position: 'absolute', bottom: '1em', left: 0, right: 0, width: 350, maxWidth: '100%', textAlign: 'center', background: enabled ? '#ADADAD': '#D8FFA2', cursor: 'pointer', color: '#222222', padding: '0.5em 0', margin: '0 auto'}} onClick={() => this.setState({ enabled: !enabled })}>
             Click to {this.state.enabled ? 'disable' : 'enable'} map interactions.
           </div>
         }
