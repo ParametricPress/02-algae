@@ -1,6 +1,7 @@
 const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
+const { ticks } = require('d3');
 
 const margin = {top: 50, right: 30, bottom: 30, left: 35};
 const height = 400 - margin.top - margin.bottom;
@@ -84,15 +85,17 @@ class D3LineChart extends D3Component {
         .remove();
 
       g.append("g")
-        .call(d3.axisLeft(y))
-      .append("text")
+        .call(d3.axisLeft(y).ticks(5))
+        .attr("class", "y-axis")
+      
+      g.append("text")
         .attr("fill", "white")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
-        .attr("class", "y-axis")
         .style("fill", "white")
+        .style("font-size", "12")
         .text("CO₂ equivalent");
 
       g.append("path")
@@ -194,7 +197,7 @@ class D3LineChart extends D3Component {
     d3.select('.best-line').transition().duration(1000).attr("d", line);
     d3.selectAll('.plot-labels').transition().duration(1000)
         .attr("transform", function(d, i) {
-          return "translate(" + (newWidth-70) + "," + ((i+1)*20) + ")"
+          return "translate(" + (newWidth-170) + "," + ((i+1)*20) + ")"
         })
 
   }
@@ -202,9 +205,10 @@ class D3LineChart extends D3Component {
 
     x.domain(newXDomain)
     y.domain(newYDomain)
+    console.log(newYDomain)
 
     d3.select('.x-axis').transition().duration(2000).call(d3.axisBottom(x));
-    d3.select('.y-axis').transition().duration(2000).call(d3.axisLeft(y));
+    d3.select('.y-axis').transition().duration(2000).call(d3.axisLeft(y).ticks(5));
 
     d3.select('.worst-line').datum(data_85).transition().duration(2000).attr("d", line);
     d3.select('.bad-line').datum(data_45).transition().duration(2000).attr("d", line);
@@ -217,7 +221,8 @@ class D3LineChart extends D3Component {
     console.log(props.selectedScenario)
     if (props.selectedScenario == "Entire projection") {
       const newXDomain = [new Date(1765, 1, 1, 10, 30, 30, 0), new Date(2500, 1, 1, 10, 30, 30, 0)]
-      const newYDomain = [277, 2650]
+      const newYDomain = [0, 2650]
+      
       this.updateRange(
         newXDomain,
         newYDomain,
@@ -228,7 +233,7 @@ class D3LineChart extends D3Component {
       )
     } else {
       const newXDomain = [new Date(2000, 1, 1, 10, 30, 30, 0), new Date(2050, 1, 1, 10, 30, 30, 0)]
-      const newYDomain = [277, 600]
+      const newYDomain = [250, 650]
       this.updateRange(
         newXDomain,
         newYDomain,
