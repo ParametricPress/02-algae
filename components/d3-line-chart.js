@@ -189,6 +189,12 @@ class D3LineChart extends D3Component {
 
     d3.select('#multiline-chart').attr("width", newWidth+margin.left + margin.right)
     x.rangeRound([0, newWidth]);
+    let textOffset;
+    if (newWidth == 260) {
+      textOffset = 210
+    } else {
+      textOffset = 120
+    }
 
     d3.select('.x-axis').transition().duration(1000).call(d3.axisBottom(x));
     d3.select('.worst-line').transition().duration(1000).attr("d", line);
@@ -197,7 +203,7 @@ class D3LineChart extends D3Component {
     d3.select('.best-line').transition().duration(1000).attr("d", line);
     d3.selectAll('.plot-labels').transition().duration(1000)
         .attr("transform", function(d, i) {
-          return "translate(" + (newWidth-170) + "," + ((i+1)*20) + ")"
+          return "translate(" + (newWidth-textOffset) + "," + ((i+1)*20) + ")"
         })
 
   }
